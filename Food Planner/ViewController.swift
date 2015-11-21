@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     var DB = [Product]()
     var knownDishes = [Dish]()
-    //test
+    //tes
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
