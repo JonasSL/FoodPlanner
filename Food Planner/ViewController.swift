@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var fridge: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var dishResult: UILabel!
     @IBOutlet weak var inputWeight: UITextField!
@@ -137,6 +136,8 @@ class ViewController: UIViewController {
     //updates the fridge label with contents of database
     func updateFridge() {
         SharingManager.sharedInstance.mainDB = DB
+        
+        /*
         fridge.text = "Køleskab: "
         for p in DB {
             //delete empty products
@@ -147,6 +148,7 @@ class ViewController: UIViewController {
                 fridge.text = fridge.text! + "\n" + p.type + "(" + String(stringInterpolationSegment: p.weight) + ")"
             }
         }
+        */
     }
     
     //subtracts the weight of the products in the dish from the DB
