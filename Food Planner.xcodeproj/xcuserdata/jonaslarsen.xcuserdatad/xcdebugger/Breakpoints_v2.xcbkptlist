@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Food PlannerTests/Food_PlannerTests.swift"
+            timestampString = "469644004.867171"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "testProductsGoCorrectlyIntoDB()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Food PlannerTests/Food_PlannerTests.swift"
+            timestampString = "469654913.730883"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "Food_PlannerTests"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Food_PlannerTests.Food_PlannerTests.__deallocating_deinit"
+                  moduleName = "Food PlannerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonaslarsen/Developer/Food%20Planner/Food%20PlannerTests/Food_PlannerTests.swift"
+                  timestampString = "469654930.737802"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Food_PlannerTests.Food_PlannerTests.init (Food_PlannerTests.Food_PlannerTests.Type)(invocation : Swift.Optional&lt;__ObjC.NSInvocation&gt;) -&gt; Food_PlannerTests.Food_PlannerTests"
+                  moduleName = "Food PlannerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonaslarsen/Developer/Food%20Planner/Food%20PlannerTests/Food_PlannerTests.swift"
+                  timestampString = "469654930.738251"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Food_PlannerTests.Food_PlannerTests.init (Food_PlannerTests.Food_PlannerTests.Type)(selector : ObjectiveC.Selector) -&gt; Food_PlannerTests.Food_PlannerTests"
+                  moduleName = "Food PlannerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonaslarsen/Developer/Food%20Planner/Food%20PlannerTests/Food_PlannerTests.swift"
+                  timestampString = "469654930.738606"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Food_PlannerTests.Food_PlannerTests.init (Food_PlannerTests.Food_PlannerTests.Type)() -&gt; Food_PlannerTests.Food_PlannerTests"
+                  moduleName = "Food PlannerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonaslarsen/Developer/Food%20Planner/Food%20PlannerTests/Food_PlannerTests.swift"
+                  timestampString = "469654930.738913"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
