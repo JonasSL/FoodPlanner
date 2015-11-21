@@ -15,9 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var dishResult: UILabel!
     @IBOutlet weak var inputWeight: UITextField!
     
-    var DB = [Product]()
+    var DB = SharingManager.sharedInstance.mainDB
     var knownDishes = [Dish]()
-    //tes
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         
     }
 
+    
     //takes text from input field and adds it to DB
     @IBAction func addProduct(sender: AnyObject) {
         let product = Product(type: textField.text!, weight: Int(inputWeight.text!)!)
@@ -135,6 +136,7 @@ class ViewController: UIViewController {
     
     //updates the fridge label with contents of database
     func updateFridge() {
+        SharingManager.sharedInstance.mainDB = DB
         fridge.text = "Køleskab: "
         for p in DB {
             //delete empty products

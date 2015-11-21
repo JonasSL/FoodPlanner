@@ -16,6 +16,8 @@
 		E5C5CEDF1BFE28EB00B67F14 /* Food_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEDE1BFE28EB00B67F14 /* Food_PlannerTests.swift */; };
 		E5C5CEEA1BFE28EB00B67F14 /* Food_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEE91BFE28EB00B67F14 /* Food_PlannerUITests.swift */; };
 		E5C5CEFA1BFE2E5E00B67F14 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEF91BFE2E5E00B67F14 /* Product.swift */; };
+		E5FD65071C010F4400A6B382 /* DBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FD65061C010F4400A6B382 /* DBTableViewController.swift */; };
+		E5FD650B1C01138700A6B382 /* SharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FD650A1C01138700A6B382 /* SharingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		E5C5CEE91BFE28EB00B67F14 /* Food_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_PlannerUITests.swift; sourceTree = "<group>"; };
 		E5C5CEEB1BFE28EB00B67F14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5C5CEF91BFE2E5E00B67F14 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E5FD65061C010F4400A6B382 /* DBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBTableViewController.swift; sourceTree = "<group>"; };
+		E5FD650A1C01138700A6B382 /* SharingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				E5C5CED51BFE28EB00B67F14 /* Info.plist */,
 				E5C5CEF91BFE2E5E00B67F14 /* Product.swift */,
 				E5BFF53E1BFE51BE00449496 /* Dish.swift */,
+				E5FD65061C010F4400A6B382 /* DBTableViewController.swift */,
+				E5FD650A1C01138700A6B382 /* SharingManager.swift */,
 			);
 			path = "Food Planner";
 			sourceTree = "<group>";
@@ -265,7 +271,9 @@
 			files = (
 				E5C5CECC1BFE28EB00B67F14 /* ViewController.swift in Sources */,
 				E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */,
+				E5FD650B1C01138700A6B382 /* SharingManager.swift in Sources */,
 				E5C5CECA1BFE28EB00B67F14 /* AppDelegate.swift in Sources */,
+				E5FD65071C010F4400A6B382 /* DBTableViewController.swift in Sources */,
 				E5C5CEFA1BFE2E5E00B67F14 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
