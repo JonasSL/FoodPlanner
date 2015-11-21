@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E56DE9B31C012E8E00A60605 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DE9B21C012E8E00A60605 /* Unit.swift */; };
 		E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BFF53E1BFE51BE00449496 /* Dish.swift */; };
 		E5C5CECA1BFE28EB00B67F14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEC91BFE28EB00B67F14 /* AppDelegate.swift */; };
 		E5C5CECC1BFE28EB00B67F14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CECB1BFE28EB00B67F14 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E56DE9B21C012E8E00A60605 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		E5BFF53E1BFE51BE00449496 /* Dish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		E5C5CEC61BFE28EB00B67F14 /* Food Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C5CEC91BFE28EB00B67F14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				E5BFF53E1BFE51BE00449496 /* Dish.swift */,
 				E5FD65061C010F4400A6B382 /* DBTableViewController.swift */,
 				E5FD650A1C01138700A6B382 /* SharingManager.swift */,
+				E56DE9B21C012E8E00A60605 /* Unit.swift */,
 			);
 			path = "Food Planner";
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				E5C5CECC1BFE28EB00B67F14 /* ViewController.swift in Sources */,
 				E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */,
 				E5FD650B1C01138700A6B382 /* SharingManager.swift in Sources */,
+				E56DE9B31C012E8E00A60605 /* Unit.swift in Sources */,
 				E5C5CECA1BFE28EB00B67F14 /* AppDelegate.swift in Sources */,
 				E5FD65071C010F4400A6B382 /* DBTableViewController.swift in Sources */,
 				E5C5CEFA1BFE2E5E00B67F14 /* Product.swift in Sources */,

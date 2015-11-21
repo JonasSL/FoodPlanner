@@ -8,36 +8,49 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var dishResult: UILabel!
     @IBOutlet weak var inputWeight: UITextField!
+    @IBOutlet weak var unitPicker: UIPickerView!
     
     var DB = SharingManager.sharedInstance.mainDB
     var knownDishes = [Dish]()
+    let pickerData = Unit.allUnits
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        unitPicker.delegate = self
+        unitPicker.dataSource = self
         
         //add standard dishes
-        let ingredientsForPastaMeat = [Product(type: "pasta", weight: 100), Product(type: "oksekød", weight: 500), Product(type: "dolmio sovs", weight: 300)]
+        let ingredientsForPastaMeat = [Product(type: "pasta", weight: 100, unit: Unit.gram), Product(type: "oksekød", weight: 500, unit: Unit.gram), Product(type: "dolmio sovs", weight: 300, unit: Unit.gram)]
         let recipeForPastaMeat = "1 - Brun oksekøddet \n 2 - Hæld dolmiosovs i \n 3 - Kog pasta \n 4 - Spis"
         knownDishes.append(Dish(name: "Pasta med kødsovs", ingredients: ingredientsForPastaMeat, recipe: recipeForPastaMeat))
         
-        let ingredientsForTestDish = [Product(type: "test1", weight: 100), Product(type: "test2", weight: 100)]
+        let ingredientsForTestDish = [Product(type: "test1", weight: 100, unit: Unit.kg), Product(type: "test2", weight: 100, unit: Unit.kg)]
         let recipeForTestDish = "1 - sådan gør du først \n 2 - Så gør du sådan her \n 3 - så gør du sådan her"
         knownDishes.append(Dish(name: "TestMad", ingredients: ingredientsForTestDish, recipe: recipeForTestDish))
         
         
     }
 
+    //picker setup
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row].rawValue
+    }
     
     //takes text from input field and adds it to DB
     @IBAction func addProduct(sender: AnyObject) {
-        let product = Product(type: textField.text!, weight: Int(inputWeight.text!)!)
+        let product = Product(type: textField.text!, weight: Int(inputWeight.text!)!, unit: pickerData[unitPicker.selectedRowInComponent(0)])
         addProductToDB(product)
         textField.text = ""
         inputWeight.text = ""
@@ -107,7 +120,7 @@ class ViewController: UIViewController {
     func hasEnoughStuffOfProduct(product: Product) -> Bool {
         var isPossible = false
         for p in DB {
-            if p == product && p.weight >= product.weight {
+            if p == product && p.weight >= product.weight && p.unit == product.unit {
                 isPossible = true
             }
         }
@@ -119,7 +132,7 @@ class ViewController: UIViewController {
         
         var isIncluded = false
         for productFromDB in DB {
-            if productFromDB == p {
+            if productFromDB == p && productFromDB.unit == p.unit{
                 //add the weight from the new product to the existing product
                 productFromDB.weight += p.weight
                 
@@ -136,19 +149,6 @@ class ViewController: UIViewController {
     //updates the fridge label with contents of database
     func updateFridge() {
         SharingManager.sharedInstance.mainDB = DB
-        
-        /*
-        fridge.text = "Køleskab: "
-        for p in DB {
-            //delete empty products
-            if p.weight == 0 {
-                DB.removeObject(p)
-            } else {
-                //display products "product(weight)"
-                fridge.text = fridge.text! + "\n" + p.type + "(" + String(stringInterpolationSegment: p.weight) + ")"
-            }
-        }
-        */
     }
     
     //subtracts the weight of the products in the dish from the DB
@@ -162,6 +162,7 @@ class ViewController: UIViewController {
         }
     }
 }
+
 
 // Swift 2 Array Extension
 extension Array where Element: Equatable {

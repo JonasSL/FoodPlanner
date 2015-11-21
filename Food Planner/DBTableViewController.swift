@@ -11,10 +11,7 @@ import Foundation
 
 class DBTableViewController: UITableViewController {
     
-    var DB = SharingManager.sharedInstance.mainDB
-    var testDB = [Product(type: "test1", weight: 123),Product(type: "test2", weight: 123)]
-    var test = ["Stasldkja","asdasd","asdlkj"]
-    
+    var DB = SharingManager.sharedInstance.mainDB    
     
     override func viewDidLoad() {
         super.viewDidLoad()

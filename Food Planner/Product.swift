@@ -11,10 +11,12 @@ import Foundation
 class Product {
     var type: String
     var weight: Int
+    var unit: Unit
     
-    init(type: String, weight: Int) {
+    init(type: String, weight: Int, unit: Unit) {
         self.type = type
         self.weight = weight
+        self.unit = unit
     }
     
 }
