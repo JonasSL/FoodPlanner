@@ -26,15 +26,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         unitPicker.dataSource = self
         
         //add standard dishes
-        let ingredientsForPastaMeat = [Product(type: "pasta", weight: 100, unit: Unit.gram), Product(type: "oksekød", weight: 500, unit: Unit.gram), Product(type: "dolmio sovs", weight: 300, unit: Unit.gram)]
+        let ingredientsForPastaMeat = [Product(type: "pasta", weight: 100, unit: Unit.GRAM), Product(type: "oksekød", weight: 500, unit: Unit.GRAM), Product(type: "dolmio sovs", weight: 300, unit: Unit.GRAM)]
         let recipeForPastaMeat = "1 - Brun oksekøddet \n 2 - Hæld dolmiosovs i \n 3 - Kog pasta \n 4 - Spis"
         knownDishes.append(Dish(name: "Pasta med kødsovs", ingredients: ingredientsForPastaMeat, recipe: recipeForPastaMeat))
         
-        let ingredientsForTestDish = [Product(type: "test1", weight: 100, unit: Unit.kg), Product(type: "test2", weight: 100, unit: Unit.kg)]
+        let ingredientsForTestDish = [Product(type: "test1", weight: 100, unit: Unit.GRAM), Product(type: "test2", weight: 100, unit: Unit.GRAM)]
         let recipeForTestDish = "1 - sådan gør du først \n 2 - Så gør du sådan her \n 3 - så gør du sådan her"
         knownDishes.append(Dish(name: "TestMad", ingredients: ingredientsForTestDish, recipe: recipeForTestDish))
-        
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        DB = SharingManager.sharedInstance.mainDB
     }
 
     //picker setup
@@ -124,6 +126,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 isPossible = true
             }
         }
+        
         return isPossible
     }
     
@@ -160,6 +163,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 }
             }
         }
+        updateFridge()
     }
 }
 

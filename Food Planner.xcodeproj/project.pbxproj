@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E53CFE461C01E104005CE7A6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CFE451C01E104005CE7A6 /* AddViewController.swift */; };
 		E56DE9B31C012E8E00A60605 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DE9B21C012E8E00A60605 /* Unit.swift */; };
 		E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BFF53E1BFE51BE00449496 /* Dish.swift */; };
 		E5C5CECA1BFE28EB00B67F14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEC91BFE28EB00B67F14 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E53CFE451C01E104005CE7A6 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		E56DE9B21C012E8E00A60605 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		E5BFF53E1BFE51BE00449496 /* Dish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		E5C5CEC61BFE28EB00B67F14 /* Food Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 				E5FD65061C010F4400A6B382 /* DBTableViewController.swift */,
 				E5FD650A1C01138700A6B382 /* SharingManager.swift */,
 				E56DE9B21C012E8E00A60605 /* Unit.swift */,
+				E53CFE451C01E104005CE7A6 /* AddViewController.swift */,
 			);
 			path = "Food Planner";
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			files = (
 				E5C5CECC1BFE28EB00B67F14 /* ViewController.swift in Sources */,
 				E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */,
+				E53CFE461C01E104005CE7A6 /* AddViewController.swift in Sources */,
 				E5FD650B1C01138700A6B382 /* SharingManager.swift in Sources */,
 				E56DE9B31C012E8E00A60605 /* Unit.swift in Sources */,
 				E5C5CECA1BFE28EB00B67F14 /* AppDelegate.swift in Sources */,

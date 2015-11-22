@@ -9,9 +9,9 @@
 import Foundation
 
 enum Unit: String {
-    case gram = "gram"
-    case kg = "kg"
-    case stk = "stk"
+    case GRAM = "g"
+    case KG = "kg"
+    case STK = "stk"
     
-    static let allUnits = [gram,kg,stk]
+    static let allUnits = [GRAM,KG,STK]
 }
