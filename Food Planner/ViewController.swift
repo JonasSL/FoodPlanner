@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var dishResult: UILabel!
     
-    var DB = SharingManager.sharedInstance.mainDB
+    var DB: [Product] = []
     var knownDishes = [Dish]()
 
     override func viewDidLoad() {
@@ -20,17 +20,24 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         //add standard dishes
-        let ingredientsForPastaMeat = [Product(type: "pasta", weight: 100, unit: Unit.GRAM), Product(type: "oksekød", weight: 500, unit: Unit.GRAM), Product(type: "dolmio sovs", weight: 300, unit: Unit.GRAM)]
+        let ingredientsForPastaMeat = [Product(name: "pasta", weight: 100, unit: Unit.GRAM), Product(name: "oksekød", weight: 500, unit: Unit.GRAM), Product(name: "dolmio sovs", weight: 300, unit: Unit.GRAM)]
         let recipeForPastaMeat = "1 - Brun oksekøddet \n 2 - Hæld dolmiosovs i \n 3 - Kog pasta \n 4 - Spis"
         knownDishes.append(Dish(name: "Pasta med kødsovs", ingredients: ingredientsForPastaMeat, recipe: recipeForPastaMeat))
         
-        let ingredientsForTestDish = [Product(type: "test1", weight: 100, unit: Unit.GRAM), Product(type: "test2", weight: 100, unit: Unit.GRAM)]
+        let ingredientsForTestDish = [Product(name: "test1", weight: 100, unit: Unit.GRAM), Product(name: "test2", weight: 100, unit: Unit.GRAM)]
         let recipeForTestDish = "1 - sådan gør du først \n 2 - Så gør du sådan her \n 3 - så gør du sådan her"
         knownDishes.append(Dish(name: "TestMad", ingredients: ingredientsForTestDish, recipe: recipeForTestDish))
+        
+        if let savedProducts = loadProducts() {
+            DB = savedProducts
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
-        DB = SharingManager.sharedInstance.mainDB
+        //DB = SharingManager.sharedInstance.mainDB
+        if let savedProducts = loadProducts() {
+            DB = savedProducts
+        }
     }
     
     @IBAction func findDish(sender: AnyObject) {
@@ -83,7 +90,7 @@ class ViewController: UIViewController {
         if finalDishes.count > 0 {
             dishResult.text = finalDishes[0].name + "\n" + finalDishes[0].recipe
             removeDishProductsFromDB(finalDishes[0])
-            updateFridge()
+            saveProducts()
         } else {
             //display error to user
             let alert = UIAlertController(title: "Fejl", message: "Du har ikke nok til at lave noget!", preferredStyle: .Alert)
@@ -103,22 +110,30 @@ class ViewController: UIViewController {
         
         return isPossible
     }
-        
-    //updates the fridge label with contents of database
-    func updateFridge() {
-        SharingManager.sharedInstance.mainDB = DB
-    }
     
     //subtracts the weight of the products in the dish from the DB
     func removeDishProductsFromDB(dish: Dish) {
         for dishP in dish.ingredients {
             for fridgeP in DB {
-                if dishP.type.lowercaseString == fridgeP.type.lowercaseString {
+                if dishP.name.lowercaseString == fridgeP.name.lowercaseString {
                     fridgeP.weight -= dishP.weight
                 }
             }
         }
-        updateFridge()
+        saveProducts()
+    }
+    
+    //MARK: NSCoding
+    func saveProducts() {
+        let isSuccecfulSave = NSKeyedArchiver.archiveRootObject(DB, toFile: Product.ArchiveURL.path!)
+        
+        if !isSuccecfulSave {
+            print("Failed to save products")
+        }
+    }
+    
+    func loadProducts() -> [Product]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Product.ArchiveURL.path!) as? [Product]
     }
 }
 

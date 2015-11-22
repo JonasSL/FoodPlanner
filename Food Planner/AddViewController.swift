@@ -42,7 +42,7 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             let weight = Int(productWeight.text! )!
             let unit = pickerData[productUnit.selectedRowInComponent(0)]
             
-            product = Product(type: name, weight: weight, unit: unit)
+            product = Product(name: name, weight: weight, unit: unit)
         }
     }
     
@@ -71,5 +71,4 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row].rawValue
     }
-
 }
