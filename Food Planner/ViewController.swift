@@ -8,22 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ViewController: UIViewController {
     
-    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var dishResult: UILabel!
-    @IBOutlet weak var inputWeight: UITextField!
-    @IBOutlet weak var unitPicker: UIPickerView!
     
     var DB = SharingManager.sharedInstance.mainDB
     var knownDishes = [Dish]()
-    let pickerData = Unit.allUnits
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        unitPicker.delegate = self
-        unitPicker.dataSource = self
         
         //add standard dishes
         let ingredientsForPastaMeat = [Product(type: "pasta", weight: 100, unit: Unit.GRAM), Product(type: "oksekød", weight: 500, unit: Unit.GRAM), Product(type: "dolmio sovs", weight: 300, unit: Unit.GRAM)]
@@ -37,26 +31,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     override func viewWillAppear(animated: Bool) {
         DB = SharingManager.sharedInstance.mainDB
-    }
-
-    //picker setup
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row].rawValue
-    }
-    
-    //takes text from input field and adds it to DB
-    @IBAction func addProduct(sender: AnyObject) {
-        let product = Product(type: textField.text!, weight: Int(inputWeight.text!)!, unit: pickerData[unitPicker.selectedRowInComponent(0)])
-        addProductToDB(product)
-        textField.text = ""
-        inputWeight.text = ""
-        updateFridge()
     }
     
     @IBAction func findDish(sender: AnyObject) {
@@ -129,26 +103,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         return isPossible
     }
-    
-    //add the products to the database
-    func addProductToDB(p: Product) {
         
-        var isIncluded = false
-        for productFromDB in DB {
-            if productFromDB == p && productFromDB.unit == p.unit{
-                //add the weight from the new product to the existing product
-                productFromDB.weight += p.weight
-                
-                isIncluded = true
-                break
-            }
-        }
-        
-        if !isIncluded {
-            DB.append(p)
-        }
-    }
-    
     //updates the fridge label with contents of database
     func updateFridge() {
         SharingManager.sharedInstance.mainDB = DB

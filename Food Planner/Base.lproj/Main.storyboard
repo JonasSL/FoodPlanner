@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Tilføj vare-->
+        <!--Find Ret-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Food_Planner" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,102 +18,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQx-qI-GZW">
-                                <rect key="frame" x="257" y="252" width="86" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="PAG-9o-M3j"/>
-                                    <constraint firstAttribute="width" constant="86" id="lh5-df-xZ7"/>
-                                </constraints>
-                                <state key="normal" title="Tilføj vare"/>
-                                <connections>
-                                    <action selector="addProduct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gTG-Fc-vD0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpM-kZ-0fn">
-                                <rect key="frame" x="267" y="316" width="67" height="34"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Find ret!"/>
-                                <connections>
-                                    <action selector="findDish:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQh-s4-WEB"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Du kan lave:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M55-fc-3Lb">
-                                <rect key="frame" x="266" y="346" width="69" height="15"/>
+                                <rect key="frame" x="266" y="180" width="69" height="15"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.50388652146464641" green="0.50388652146464641" blue="0.50388652146464641" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vægt" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i4c-65-4fV">
-                                <rect key="frame" x="162" y="201" width="94" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="94" id="hA4-Re-4TT"/>
-                                    <constraint firstAttribute="height" constant="30" id="qTB-l7-qd4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci2-eX-i4M">
-                                <rect key="frame" x="151" y="368" width="299" height="207"/>
+                                <rect key="frame" x="151" y="203" width="299" height="207"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="asd"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="299" id="eFH-We-Ylm"/>
-                                    <constraint firstAttribute="height" constant="207" id="pzg-8c-moz"/>
+                                    <constraint firstAttribute="height" constant="207" id="3IE-bH-mpe"/>
+                                    <constraint firstAttribute="width" constant="299" id="a0W-fV-ajY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jfy-P8-B7m">
-                                <rect key="frame" x="264" y="172" width="175" height="87"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpM-kZ-0fn">
+                                <rect key="frame" x="213" y="76" width="175" height="89"/>
                                 <animations/>
-                            </pickerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Navn" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ol7-Z5-54a">
-                                <rect key="frame" x="162" y="134" width="277" height="30"/>
-                                <animations/>
-                                <accessibility key="accessibilityConfiguration" hint="Navn" identifier="inputTextField"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="168" id="J29-uz-GHD"/>
-                                    <constraint firstAttribute="height" constant="30" id="T8B-yr-vY8"/>
-                                    <constraint firstAttribute="width" constant="277" id="UKT-h2-WC3"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="lwO-Qy-I7k"/>
+                                    <constraint firstAttribute="width" constant="175" id="1Do-Ab-Cxn"/>
+                                    <constraint firstAttribute="height" constant="89" id="Xww-v5-7eP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textField>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Find ret!"/>
+                                <connections>
+                                    <action selector="findDish:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQh-s4-WEB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Jfy-P8-B7m" firstAttribute="trailing" secondItem="Ol7-Z5-54a" secondAttribute="trailing" id="7hm-Qd-LDs"/>
-                            <constraint firstItem="ci2-eX-i4M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CI3-Xq-Szs"/>
-                            <constraint firstItem="Ol7-Z5-54a" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="114" id="DXw-wd-Tc4"/>
-                            <constraint firstItem="jQx-qI-GZW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eim-1a-tAJ"/>
-                            <constraint firstItem="M55-fc-3Lb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fkd-yj-8wy"/>
-                            <constraint firstItem="Jfy-P8-B7m" firstAttribute="centerY" secondItem="i4c-65-4fV" secondAttribute="centerY" id="GhR-lb-BXm"/>
-                            <constraint firstItem="M55-fc-3Lb" firstAttribute="top" secondItem="jQx-qI-GZW" secondAttribute="bottom" constant="64" id="Na1-t2-C4k"/>
-                            <constraint firstItem="gpM-kZ-0fn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ns6-gZ-ytJ"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="ci2-eX-i4M" secondAttribute="bottom" constant="25" id="Pd5-1G-dRt"/>
-                            <constraint firstItem="Jfy-P8-B7m" firstAttribute="leading" secondItem="i4c-65-4fV" secondAttribute="trailing" constant="8" symbolic="YES" id="cis-Xo-YuR"/>
-                            <constraint firstItem="gpM-kZ-0fn" firstAttribute="top" secondItem="jQx-qI-GZW" secondAttribute="bottom" constant="34" id="nJ6-hB-8QU"/>
-                            <constraint firstItem="i4c-65-4fV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-91" id="pEb-BL-Ebu"/>
-                            <constraint firstItem="i4c-65-4fV" firstAttribute="top" secondItem="Ol7-Z5-54a" secondAttribute="bottom" constant="37" id="s9t-fr-jff"/>
-                            <constraint firstItem="Jfy-P8-B7m" firstAttribute="top" secondItem="Ol7-Z5-54a" secondAttribute="bottom" constant="8" symbolic="YES" id="sSB-z4-hJg"/>
-                            <constraint firstItem="M55-fc-3Lb" firstAttribute="top" secondItem="gpM-kZ-0fn" secondAttribute="bottom" constant="-4" id="vea-QQ-BSg"/>
-                            <constraint firstItem="jQx-qI-GZW" firstAttribute="top" secondItem="Jfy-P8-B7m" secondAttribute="bottom" constant="-7" id="wbp-ar-2ef"/>
-                            <constraint firstItem="Ol7-Z5-54a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yDF-Nv-gQH"/>
+                            <constraint firstItem="M55-fc-3Lb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0xJ-sx-be2"/>
+                            <constraint firstItem="M55-fc-3Lb" firstAttribute="top" secondItem="gpM-kZ-0fn" secondAttribute="bottom" constant="15" id="A0G-gg-tAe"/>
+                            <constraint firstItem="ci2-eX-i4M" firstAttribute="top" secondItem="M55-fc-3Lb" secondAttribute="bottom" constant="8" id="HgF-m1-L0W"/>
+                            <constraint firstItem="ci2-eX-i4M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vtq-lb-C7A"/>
+                            <constraint firstItem="gpM-kZ-0fn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ayZ-9F-dda"/>
+                            <constraint firstItem="gpM-kZ-0fn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="56" id="z1w-ou-LjL"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tilføj vare" id="Nhj-26-k7e"/>
+                    <tabBarItem key="tabBarItem" title="Find Ret" id="Nhj-26-k7e"/>
                     <connections>
                         <outlet property="dishResult" destination="ci2-eX-i4M" id="Dka-Wh-dmX"/>
-                        <outlet property="inputWeight" destination="i4c-65-4fV" id="Yka-lN-LlI"/>
-                        <outlet property="textField" destination="Ol7-Z5-54a" id="Ywc-Ax-RCs"/>
-                        <outlet property="unitPicker" destination="Jfy-P8-B7m" id="Jnt-SQ-JnA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
