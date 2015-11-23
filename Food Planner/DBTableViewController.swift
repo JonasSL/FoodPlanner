@@ -20,6 +20,9 @@ class DBTableViewController: UITableViewController {
         if let savedProducts = loadProducts() {
             DB = savedProducts
         }
+        
+        //Add edit button
+        navigationItem.leftBarButtonItem = editButtonItem()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -43,13 +46,25 @@ class DBTableViewController: UITableViewController {
         return cell
         
     }
-    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DB.count
     }
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            DB.removeAtIndex(indexPath.row)
+            saveProducts()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert {
+            //do something else
+        }
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
     }
     
     //add product from AddViewController to DB and insert row if it is a new product
