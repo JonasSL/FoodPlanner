@@ -20,7 +20,14 @@ class DetailViewController: UIViewController {
             navigationItem.title = "Detaljer"
             nameLabel.text = product.name
             weightUnitLabel.text = String(product.weight) + " " + product.unit.rawValue
+            
+            //Display the date
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            let dateString = formatter.stringFromDate(product.dateAdded)
+            descriptionLabel.text = "Tilføjet den " + dateString
         }
     }
+    
 
 }

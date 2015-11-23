@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FindDishViewController: UIViewController {
     
     @IBOutlet weak var dishResult: UILabel!
     
     var DB: [Product] = []
     var knownDishes = [Dish]()
+    var resultDishes = [Dish]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class ViewController: UIViewController {
         
         //add standard dishes
         let ingredientsForPastaMeat = [Product(name: "pasta", weight: 100, unit: Unit.GRAM), Product(name: "oksekød", weight: 500, unit: Unit.GRAM), Product(name: "dolmio sovs", weight: 300, unit: Unit.GRAM)]
-        let recipeForPastaMeat = "1 - Brun oksekøddet \n 2 - Hæld dolmiosovs i \n 3 - Kog pasta \n 4 - Spis"
+        let recipeForPastaMeat = " 1 - Brun oksekøddet \n2 - Hæld dolmiosovs i \n3 - Kog pasta \n4 - Spis"
         knownDishes.append(Dish(name: "Pasta med kødsovs", ingredients: ingredientsForPastaMeat, recipe: recipeForPastaMeat))
         
         let ingredientsForTestDish = [Product(name: "test1", weight: 100, unit: Unit.GRAM), Product(name: "test2", weight: 100, unit: Unit.GRAM)]
@@ -92,9 +93,9 @@ class ViewController: UIViewController {
             saveProducts()
         } else {
             //display error to user
-            let alert = UIAlertController(title: "Fejl", message: "Du har ikke nok til at lave noget!", preferredStyle: .Alert)
+            /*let alert = UIAlertController(title: "Fejl", message: "Du har ikke nok til at lave noget!", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.presentViewController(alert, animated: true, completion: nil)*/
         }
     }
 
@@ -134,6 +135,18 @@ class ViewController: UIViewController {
     func loadProducts() -> [Product]? {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Product.ArchiveURL.path!) as? [Product]
     }
+    
+    //MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "FindDish" {
+            let dishResultViewController = segue.destinationViewController as! SeachResultTableViewController
+            let ingredientsForPastaMeat = [Product(name: "Pasta", weight: 100, unit: Unit.GRAM), Product(name: "Oksekød", weight: 500, unit: Unit.GRAM), Product(name: "Dolmio sovs", weight: 300, unit: Unit.GRAM)]
+            let recipeForPastaMeat = "1 - Brun oksekøddet \n2 - Hæld dolmiosovs i \n3 - Kog pasta \n4 - Spis"
+            resultDishes.append(Dish(name: "Pasta med kødsovs", ingredients: ingredientsForPastaMeat, recipe: recipeForPastaMeat))
+            dishResultViewController.resultDishes = resultDishes
+        }
+    }
+    
 }
 
 

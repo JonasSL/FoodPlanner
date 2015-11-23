@@ -12,11 +12,13 @@ class Product: NSObject, NSCoding {
     var name: String
     var weight: Int
     var unit: Unit
+    var dateAdded: NSDate
     
     init(name: String, weight: Int, unit: Unit) {
         self.name = name
         self.weight = weight
         self.unit = unit
+        self.dateAdded = NSDate.init()
         
         super.init()
     }
