@@ -52,7 +52,6 @@ class DBTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             DB.removeAtIndex(indexPath.row)
@@ -62,11 +61,11 @@ class DBTableViewController: UITableViewController {
             //do something else
         }
     }
-    
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
     
+    //MARK: Navigation
     //add product from AddViewController to DB and insert row if it is a new product
     @IBAction func unwwindToProductList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? AddViewController, product = sourceViewController.product {
@@ -85,6 +84,23 @@ class DBTableViewController: UITableViewController {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowDetail" {
+            let productDetailViewController = segue.destinationViewController as! DetailViewController
+            if let selectedProductCell = sender as? UITableViewCell {
+                let indexPath = tableView.indexPathForCell(selectedProductCell)!
+                let selectedProduct = DB[indexPath.row]
+                productDetailViewController.product = selectedProduct
+                
+            }
+            
+        } else if segue.identifier == "AddItem" {
+            
+        }
+    }
+    
+    
+    //MARK: DB Management
     //add the products to the database - return true if new product is added
     func addProductToDB(p: Product) -> Bool{
         var isIncluded = false

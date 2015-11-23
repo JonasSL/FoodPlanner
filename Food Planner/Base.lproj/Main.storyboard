@@ -108,6 +108,9 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="4nt-g9-FhG" kind="show" identifier="ShowDetail" id="SVV-4T-V19"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -126,6 +129,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9wj-aW-yH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1361" y="996"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="v2e-95-LDa">
+            <objects>
+                <viewController id="4nt-g9-FhG" customClass="DetailViewController" customModule="Food_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gFl-U3-wK4"/>
+                        <viewControllerLayoutGuide type="bottom" id="d1R-H8-Ma1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wtm-N0-6Jg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Navn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2A2-Sl-uaO">
+                                <rect key="frame" x="134" y="64" width="333" height="58"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="MPr-aR-Np3"/>
+                                    <constraint firstAttribute="width" constant="333" id="WqZ-Hf-h37"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blablabalbalba" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpN-rW-5yw">
+                                <rect key="frame" x="134" y="185" width="333" height="155"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="333" id="6ci-RC-47B"/>
+                                    <constraint firstAttribute="height" constant="155" id="hte-Ih-z44"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WeightUnit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3g-8w-uHD">
+                                <rect key="frame" x="134" y="130" width="333" height="47"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="6YQ-XE-AtB"/>
+                                    <constraint firstAttribute="width" constant="333" id="QjM-wz-ooq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2A2-Sl-uaO" firstAttribute="centerX" secondItem="wtm-N0-6Jg" secondAttribute="centerX" id="KrV-1X-dtD"/>
+                            <constraint firstItem="2A2-Sl-uaO" firstAttribute="top" secondItem="gFl-U3-wK4" secondAttribute="bottom" id="M7a-d9-Zdz"/>
+                            <constraint firstItem="rpN-rW-5yw" firstAttribute="top" secondItem="D3g-8w-uHD" secondAttribute="bottom" constant="8" id="V9T-XU-P0x"/>
+                            <constraint firstItem="D3g-8w-uHD" firstAttribute="centerX" secondItem="wtm-N0-6Jg" secondAttribute="centerX" id="XDK-Y3-S4r"/>
+                            <constraint firstItem="rpN-rW-5yw" firstAttribute="centerX" secondItem="wtm-N0-6Jg" secondAttribute="centerX" id="ZIW-H4-2vw"/>
+                            <constraint firstItem="D3g-8w-uHD" firstAttribute="top" secondItem="2A2-Sl-uaO" secondAttribute="bottom" constant="8" id="v0f-KG-WSt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="rpN-rW-5yw" id="kP8-gn-u0F"/>
+                        <outlet property="nameLabel" destination="2A2-Sl-uaO" id="0h5-vK-sGV"/>
+                        <outlet property="weightUnitLabel" destination="D3g-8w-uHD" id="PQr-NW-4I9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MLT-Sp-5q4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1361" y="1743"/>
         </scene>
         <!--Tilføj Vare-->
         <scene sceneID="AsY-eu-u7R">
