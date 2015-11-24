@@ -127,11 +127,11 @@
 			children = (
 				E547FDB31C0356AB00C4BD9C /* DataObjects */,
 				E5C5CEC91BFE28EB00B67F14 /* AppDelegate.swift */,
-				E5C5CECB1BFE28EB00B67F14 /* FindDishViewController.swift */,
 				E5C5CECD1BFE28EB00B67F14 /* Main.storyboard */,
 				E5C5CED01BFE28EB00B67F14 /* Assets.xcassets */,
 				E5C5CED21BFE28EB00B67F14 /* LaunchScreen.storyboard */,
 				E5C5CED51BFE28EB00B67F14 /* Info.plist */,
+				E5C5CECB1BFE28EB00B67F14 /* FindDishViewController.swift */,
 				E5FD65061C010F4400A6B382 /* DBTableViewController.swift */,
 				E53CFE451C01E104005CE7A6 /* AddViewController.swift */,
 				E547FDB11C03426600C4BD9C /* ProductDetailViewController.swift */,

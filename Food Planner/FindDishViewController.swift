@@ -40,6 +40,8 @@ class FindDishViewController: UIViewController {
     
     //MARK: Algorithms
     @IBAction func findDish(sender: AnyObject) {
+        //Reset resultDishes
+        resultDishes = []
         //check if you have products and enough of them
         for dish in knownDishes {
             var isPossible = true
