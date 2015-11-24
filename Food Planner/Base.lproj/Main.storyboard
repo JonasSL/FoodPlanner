@@ -18,18 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci2-eX-i4M">
-                                <rect key="frame" x="151" y="203" width="299" height="207"/>
-                                <animations/>
-                                <accessibility key="accessibilityConfiguration" hint="asd"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="207" id="3IE-bH-mpe"/>
-                                    <constraint firstAttribute="width" constant="299" id="a0W-fV-ajY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpM-kZ-0fn">
                                 <rect key="frame" x="213" y="134" width="175" height="89"/>
                                 <animations/>
@@ -47,15 +35,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ci2-eX-i4M" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="139" id="6IR-lm-VbF"/>
-                            <constraint firstItem="ci2-eX-i4M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vtq-lb-C7A"/>
                             <constraint firstItem="gpM-kZ-0fn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ayZ-9F-dda"/>
                             <constraint firstItem="gpM-kZ-0fn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="z1w-ou-LjL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sXM-ye-qdu"/>
                     <connections>
-                        <outlet property="dishResult" destination="ci2-eX-i4M" id="Dka-Wh-dmX"/>
                         <segue destination="KnY-1c-LSn" kind="show" identifier="FindDish" id="Huf-gl-bbf"/>
                     </connections>
                 </viewController>
@@ -427,11 +412,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8a-Sj-jiL">
+                                <rect key="frame" x="232" y="513" width="136" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Jeg laver denne ret!"/>
+                                <connections>
+                                    <action selector="makeDish:" destination="GwH-N9-dln" eventType="touchUpInside" id="OyV-ZF-Vcl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sda-yp-z5O" firstAttribute="top" secondItem="6rN-pZ-bqH" secondAttribute="bottom" constant="8" id="2Kb-Za-yD5"/>
+                            <constraint firstItem="h8a-Sj-jiL" firstAttribute="centerX" secondItem="bss-0A-Jbq" secondAttribute="centerX" id="6SC-zM-QKE"/>
                             <constraint firstItem="6rN-pZ-bqH" firstAttribute="trailing" secondItem="bss-0A-Jbq" secondAttribute="trailingMargin" id="8LU-wt-gTs"/>
                             <constraint firstItem="xkC-1y-4UG" firstAttribute="trailing" secondItem="bss-0A-Jbq" secondAttribute="trailingMargin" id="8oF-dT-wFv"/>
                             <constraint firstItem="xkC-1y-4UG" firstAttribute="leading" secondItem="bss-0A-Jbq" secondAttribute="leadingMargin" id="8tL-dN-rfz"/>
@@ -439,6 +433,7 @@
                             <constraint firstItem="6rN-pZ-bqH" firstAttribute="top" secondItem="uhz-Be-UH8" secondAttribute="bottom" id="MOR-GQ-Qd3"/>
                             <constraint firstItem="uhz-Be-UH8" firstAttribute="top" secondItem="3aC-4Q-Hc5" secondAttribute="bottom" constant="8" id="TsC-Z6-XAW"/>
                             <constraint firstItem="6rN-pZ-bqH" firstAttribute="leading" secondItem="bss-0A-Jbq" secondAttribute="leadingMargin" id="W6p-5n-dcB"/>
+                            <constraint firstItem="4xb-AY-k2Y" firstAttribute="top" secondItem="h8a-Sj-jiL" secondAttribute="bottom" constant="8" id="iQE-Fp-iGW"/>
                             <constraint firstItem="sda-yp-z5O" firstAttribute="leading" secondItem="bss-0A-Jbq" secondAttribute="leadingMargin" id="tr8-o1-ebG"/>
                             <constraint firstItem="xkC-1y-4UG" firstAttribute="top" secondItem="sda-yp-z5O" secondAttribute="bottom" id="yq4-7S-Qlj"/>
                         </constraints>

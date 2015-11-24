@@ -9,9 +9,7 @@
 import UIKit
 
 class FindDishViewController: UIViewController {
-    
-    @IBOutlet weak var dishResult: UILabel!
-    
+        
     var DB: [Product] = []
     var knownDishes = [Dish]()
     var resultDishes = [Dish]()
@@ -26,7 +24,7 @@ class FindDishViewController: UIViewController {
         knownDishes.append(Dish(name: "Pasta med kødsovs", ingredients: ingredientsForPastaMeat, recipe: recipeForPastaMeat))
         
         let ingredientsForTestDish = [Product(name: "test1", weight: 100, unit: Unit.GRAM), Product(name: "test2", weight: 100, unit: Unit.GRAM)]
-        let recipeForTestDish = "1 - sådan gør du først \n 2 - Så gør du sådan her \n 3 - så gør du sådan her"
+        let recipeForTestDish = "1 - sådan gør du først \n2 - Så gør du sådan her \n3 - så gør du sådan her"
         knownDishes.append(Dish(name: "TestMad", ingredients: ingredientsForTestDish, recipe: recipeForTestDish))
         
         if let savedProducts = loadProducts() {
@@ -76,20 +74,7 @@ class FindDishViewController: UIViewController {
                 isPossible = true
             }
         }
-        
         return isPossible
-    }
-    
-    //subtracts the weight of the products in the dish from the DB
-    func removeDishProductsFromDB(dish: Dish) {
-        for dishP in dish.ingredients {
-            for fridgeP in DB {
-                if dishP.name.lowercaseString == fridgeP.name.lowercaseString {
-                    fridgeP.weight -= dishP.weight
-                }
-            }
-        }
-        saveProducts()
     }
     
     //MARK: NSCoding

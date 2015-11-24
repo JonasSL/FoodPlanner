@@ -39,4 +39,46 @@ class DishDetailViewController: UIViewController {
         }
         return resultString
     }
+    
+    //MARK: Database manipulation
+    @IBAction func makeDish(sender: AnyObject) {
+        let database = loadProducts()
+        
+        //Subtracts the weight of the products in the dish from the DB
+        if var DB = database {
+            for dishProduct in dish!.ingredients {
+                for databaseProduct in DB {
+                    if dishProduct.name.lowercaseString == databaseProduct.name.lowercaseString {
+                        databaseProduct.weight -= dishProduct.weight
+                        
+                        //remove product if weight is now 0
+                        if databaseProduct.weight == 0 {
+                            DB.removeObject(databaseProduct)
+                        }
+                    }
+                }
+            }
+            saveProducts(DB)
+            
+            //Display message to user
+            let alert = UIAlertController(title: "Held og Lykke!", message: "Ovenstående varer er fjernet fra køleskabet", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    //Subtracts the weight of the products in the dish from the DB
+    
+    //MARK: NSCoding
+    func saveProducts(DB: [Product]) {
+        let isSuccecfulSave = NSKeyedArchiver.archiveRootObject(DB, toFile: Product.ArchiveURL.path!)
+        
+        if !isSuccecfulSave {
+            print("Failed to save products")
+        }
+    }
+    
+    func loadProducts() -> [Product]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Product.ArchiveURL.path!) as? [Product]
+    }
 }
