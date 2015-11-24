@@ -11,6 +11,7 @@ import UIKit
 class DishDetailViewController: UIViewController {
     @IBOutlet weak var recipeDescription: UITextView!
     @IBOutlet weak var ingredientsDescription: UITextView!
+    @IBOutlet weak var makeDishButton: UIButton!
     
     var dish: Dish?
 
@@ -64,6 +65,7 @@ class DishDetailViewController: UIViewController {
             let alert = UIAlertController(title: "Held og Lykke!", message: "Ovenstående varer er fjernet fra køleskabet", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
+            makeDishButton.enabled = false
         }
     }
     

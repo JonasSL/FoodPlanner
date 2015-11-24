@@ -106,14 +106,14 @@
                                                 <constraint firstAttribute="width" constant="223" id="5fV-j2-owY"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edv-Vh-OgD">
                                             <rect key="frame" x="18" y="30" width="223" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days remaining" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYK-LG-Wf3">
@@ -123,7 +123,7 @@
                                                 <constraint firstAttribute="width" constant="189" id="Vsq-QL-XFm"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -381,7 +381,7 @@
         <scene sceneID="8Oy-3s-Duh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UUx-nC-z6x" userLabel="123" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Køleskab" id="Yy4-YU-dqu"/>
+                    <tabBarItem key="tabBarItem" title="Køleskab" image="Fridge" id="Yy4-YU-dqu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FO1-vZ-ves">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -498,6 +498,7 @@
                     </view>
                     <connections>
                         <outlet property="ingredientsDescription" destination="6rN-pZ-bqH" id="9xH-8w-YiC"/>
+                        <outlet property="makeDishButton" destination="h8a-Sj-jiL" id="U8X-nt-x5s"/>
                         <outlet property="recipeDescription" destination="xkC-1y-4UG" id="zG8-nn-VG9"/>
                     </connections>
                 </viewController>
@@ -509,7 +510,7 @@
         <scene sceneID="URa-N1-qyK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iTm-de-UMn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Find Ret" id="Nhj-26-k7e"/>
+                    <tabBarItem key="tabBarItem" title="Find Ret" image="Seach" id="Nhj-26-k7e"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WaR-Ex-qiZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -526,4 +527,8 @@
             <point key="canvasLocation" x="1239" y="264"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Fridge" width="25" height="25"/>
+        <image name="Seach" width="25" height="25"/>
+    </resources>
 </document>
