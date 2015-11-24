@@ -31,6 +31,9 @@ class DBTableViewController: UITableViewController {
         if let savedProducts = loadProducts() {
             DB = savedProducts
         }
+        DB = DB.sort() {
+            $0.daysToExpiration < $1.daysToExpiration
+        }
         tableView.reloadData()
     }
 
@@ -45,7 +48,7 @@ class DBTableViewController: UITableViewController {
         cell.nameCellLabel?.text = DB[indexPath.row].name
         cell.weightCellLabel?.text = String(stringInterpolationSegment: DB[indexPath.row].weight) + " " + DB[indexPath.row].unit.rawValue
         
-        let days = daysBetweenDate(DB[indexPath.row].dateAdded, endDate: DB[indexPath.row].dateExpires)
+        let days = DB[indexPath.row].daysToExpiration
         var daysRemainingString = " dage tilbage"
         if days == 1 {
             daysRemainingString = " dag tilbage"
@@ -59,6 +62,9 @@ class DBTableViewController: UITableViewController {
         } else if days <= 5 {
             //Yellow
             cell.daysRemainingCellLabel.textColor = UIColor(colorLiteralRed: 1.00, green: 0.85, blue: 0.40, alpha: 1.0)
+        } else {
+            //Black
+            cell.daysRemainingCellLabel.textColor = UIColor(colorLiteralRed: 0.00, green: 0.00, blue: 0.00, alpha: 1.0)
         }
         
         return cell
@@ -83,11 +89,7 @@ class DBTableViewController: UITableViewController {
         return true
     }
     
-    func daysBetweenDate(startDate: NSDate, endDate: NSDate) -> Int {
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([.Day], fromDate: startDate, toDate: endDate, options: [])
-        return components.day
-    }
+    
 
     
     //MARK: Navigation

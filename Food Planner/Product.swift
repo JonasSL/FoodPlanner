@@ -14,6 +14,7 @@ class Product: NSObject, NSCoding {
     var unit: Unit
     var dateAdded: NSDate
     var dateExpires: NSDate
+    var daysToExpiration: Int
     
     init(name: String, weight: Int, unit: Unit, dateExpires: NSDate) {
         self.name = name
@@ -21,7 +22,20 @@ class Product: NSObject, NSCoding {
         self.unit = unit
         self.dateAdded = NSDate.init()
         self.dateExpires = dateExpires
+        
+        //Find days remaining of product
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day], fromDate: dateAdded, toDate: self.dateExpires, options: [])
+        daysToExpiration = components.day
         super.init()
+        
+
+    }
+    
+    func daysBetweenDate(startDate: NSDate, endDate: NSDate) -> Int {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day], fromDate: startDate, toDate: endDate, options: [])
+        return components.day
     }
     
     //MARK: Properties
