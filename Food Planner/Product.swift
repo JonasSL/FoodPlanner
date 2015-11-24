@@ -13,13 +13,14 @@ class Product: NSObject, NSCoding {
     var weight: Int
     var unit: Unit
     var dateAdded: NSDate
+    var dateExpires: NSDate
     
-    init(name: String, weight: Int, unit: Unit) {
+    init(name: String, weight: Int, unit: Unit, dateExpires: NSDate) {
         self.name = name
         self.weight = weight
         self.unit = unit
         self.dateAdded = NSDate.init()
-        
+        self.dateExpires = dateExpires
         super.init()
     }
     
@@ -28,6 +29,8 @@ class Product: NSObject, NSCoding {
         static let nameKey = "name"
         static let weightKey = "weight"
         static let unitKey = "unit"
+        static let dateAddedKey = "dateAdded"
+        static let dateExpiresKey = "dateExpires"
     }
     
     //MARK: Archiving Paths
@@ -39,14 +42,18 @@ class Product: NSObject, NSCoding {
         aCoder.encodeObject(name, forKey: PropertyKey.nameKey)
         aCoder.encodeInteger(weight, forKey: PropertyKey.weightKey)
         aCoder.encodeObject(unit.rawValue, forKey: PropertyKey.unitKey)
+        aCoder.encodeObject(dateAdded, forKey: PropertyKey.dateAddedKey)
+        aCoder.encodeObject(dateExpires, forKey: PropertyKey.dateExpiresKey)
     }
     required convenience init?(coder aDecoder: NSCoder) {
         let name = aDecoder.decodeObjectForKey(PropertyKey.nameKey) as! String
         let weight = aDecoder.decodeIntegerForKey(PropertyKey.weightKey)
         let unitRaw = aDecoder.decodeObjectForKey(PropertyKey.unitKey) as! String
-        
-        self.init(name: name, weight: weight, unit: Unit(rawValue: unitRaw)!)
-        
+        let dateAddedStored = aDecoder.decodeObjectForKey(PropertyKey.dateAddedKey) as! NSDate
+        let dateExpiresStored = aDecoder.decodeObjectForKey(PropertyKey.dateExpiresKey) as! NSDate
+    
+        self.init(name: name, weight: weight, unit: Unit(rawValue: unitRaw)!, dateExpires: dateExpiresStored)
+        dateAdded = dateAddedStored
     }
 
 }

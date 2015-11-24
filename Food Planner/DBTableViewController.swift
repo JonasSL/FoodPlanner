@@ -41,9 +41,26 @@ class DBTableViewController: UITableViewController {
     
     //MARK: UITableView
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell!
-        cell.textLabel?.text = DB[indexPath.row].name
-        cell.detailTextLabel?.text = String(stringInterpolationSegment: DB[indexPath.row].weight) + " " + DB[indexPath.row].unit.rawValue
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ProductTableViewCell
+        cell.nameCellLabel?.text = DB[indexPath.row].name
+        cell.weightCellLabel?.text = String(stringInterpolationSegment: DB[indexPath.row].weight) + " " + DB[indexPath.row].unit.rawValue
+        
+        let days = daysBetweenDate(DB[indexPath.row].dateAdded, endDate: DB[indexPath.row].dateExpires)
+        var daysRemainingString = " dage tilbage"
+        if days == 1 {
+            daysRemainingString = " dag tilbage"
+        }
+        cell.daysRemainingCellLabel?.text = String(stringInterpolationSegment: days) + daysRemainingString
+        
+        //Edit the label color
+        if days <= 2 {
+            //Red
+            cell.daysRemainingCellLabel.textColor = UIColor(colorLiteralRed: 0.80, green: 0.00, blue: 0.00, alpha: 1.0)
+        } else if days <= 5 {
+            //Yellow
+            cell.daysRemainingCellLabel.textColor = UIColor(colorLiteralRed: 1.00, green: 0.85, blue: 0.40, alpha: 1.0)
+        }
+        
         return cell
         
     }
@@ -66,6 +83,13 @@ class DBTableViewController: UITableViewController {
         return true
     }
     
+    func daysBetweenDate(startDate: NSDate, endDate: NSDate) -> Int {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day], fromDate: startDate, toDate: endDate, options: [])
+        return components.day
+    }
+
+    
     //MARK: Navigation
     //add product from AddViewController to DB and insert row if it is a new product
     @IBAction func unwwindToProductList(sender: UIStoryboardSegue) {
@@ -87,7 +111,7 @@ class DBTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowDetail" {
-            let productDetailViewController = segue.destinationViewController as! DetailViewController
+            let productDetailViewController = segue.destinationViewController as! ProductDetailViewController
             if let selectedProductCell = sender as? UITableViewCell {
                 let indexPath = tableView.indexPathForCell(selectedProductCell)!
                 let selectedProduct = DB[indexPath.row]

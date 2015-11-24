@@ -14,6 +14,7 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     @IBOutlet weak var productName: UITextField!
     @IBOutlet weak var productWeight: UITextField!
     @IBOutlet weak var productUnit: UIPickerView!
+    @IBOutlet weak var dateExpirationPicker: UIDatePicker!
     
     var product: Product?
     let pickerData = Unit.allUnits
@@ -29,6 +30,9 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         
         //Enable the save button only if input is valid
         checkValidInput()
+        
+        //Setup the date picker
+        dateExpirationPicker.minimumDate = NSDate.init()
     }
     
     //MARK: Navigation
@@ -41,8 +45,9 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             let name = productName.text!
             let weight = Int(productWeight.text! )!
             let unit = pickerData[productUnit.selectedRowInComponent(0)]
+            let dateExpiration = dateExpirationPicker.date
             
-            product = Product(name: name, weight: weight, unit: unit)
+            product = Product(name: name, weight: weight, unit: unit, dateExpires: dateExpiration)
         }
     }
     

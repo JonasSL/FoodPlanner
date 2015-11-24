@@ -19,11 +19,11 @@ class FindDishViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         //add standard dishes
-        let ingredientsForPastaMeat = [Product(name: "pasta", weight: 100, unit: Unit.GRAM), Product(name: "oksekød", weight: 500, unit: Unit.GRAM), Product(name: "dolmio sovs", weight: 300, unit: Unit.GRAM)]
+        let ingredientsForPastaMeat = [Product(name: "pasta", weight: 100, unit: Unit.GRAM, dateExpires: NSDate.init()), Product(name: "oksekød", weight: 500, unit: Unit.GRAM, dateExpires: NSDate.init()), Product(name: "dolmio sovs", weight: 300, unit: Unit.GRAM, dateExpires: NSDate.init())]
         let recipeForPastaMeat = " 1 - Brun oksekøddet \n2 - Hæld dolmiosovs i \n3 - Kog pasta \n4 - Spis"
         knownDishes.append(Dish(name: "Pasta med kødsovs", ingredients: ingredientsForPastaMeat, recipe: recipeForPastaMeat))
         
-        let ingredientsForTestDish = [Product(name: "test1", weight: 100, unit: Unit.GRAM), Product(name: "test2", weight: 100, unit: Unit.GRAM)]
+        let ingredientsForTestDish = [Product(name: "test1", weight: 100, unit: Unit.GRAM, dateExpires: NSDate.init()), Product(name: "test2", weight: 100, unit: Unit.GRAM, dateExpires: NSDate.init())]
         let recipeForTestDish = "1 - sådan gør du først \n2 - Så gør du sådan her \n3 - så gør du sådan her"
         knownDishes.append(Dish(name: "TestMad", ingredients: ingredientsForTestDish, recipe: recipeForTestDish))
         

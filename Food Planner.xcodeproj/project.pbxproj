@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E53CFE461C01E104005CE7A6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CFE451C01E104005CE7A6 /* AddViewController.swift */; };
-		E547FDB21C03426600C4BD9C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547FDB11C03426600C4BD9C /* DetailViewController.swift */; };
+		E547FDB21C03426600C4BD9C /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547FDB11C03426600C4BD9C /* ProductDetailViewController.swift */; };
 		E547FDB51C03789900C4BD9C /* SeachResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */; };
 		E56DE9B31C012E8E00A60605 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DE9B21C012E8E00A60605 /* Unit.swift */; };
 		E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BFF53E1BFE51BE00449496 /* Dish.swift */; };
@@ -20,6 +20,7 @@
 		E5C5CEDF1BFE28EB00B67F14 /* Food_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEDE1BFE28EB00B67F14 /* Food_PlannerTests.swift */; };
 		E5C5CEEA1BFE28EB00B67F14 /* Food_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEE91BFE28EB00B67F14 /* Food_PlannerUITests.swift */; };
 		E5C5CEFA1BFE2E5E00B67F14 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEF91BFE2E5E00B67F14 /* Product.swift */; };
+		E5F09DD51C04F4BE000C7C92 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */; };
 		E5F67A6F1C038A1E004852FF /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */; };
 		E5FD65071C010F4400A6B382 /* DBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FD65061C010F4400A6B382 /* DBTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -43,7 +44,7 @@
 
 /* Begin PBXFileReference section */
 		E53CFE451C01E104005CE7A6 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		E547FDB11C03426600C4BD9C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E547FDB11C03426600C4BD9C /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeachResultTableViewController.swift; sourceTree = "<group>"; };
 		E56DE9B21C012E8E00A60605 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		E5BFF53E1BFE51BE00449496 /* Dish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		E5C5CEE91BFE28EB00B67F14 /* Food_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_PlannerUITests.swift; sourceTree = "<group>"; };
 		E5C5CEEB1BFE28EB00B67F14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5C5CEF91BFE2E5E00B67F14 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
 		E5FD65061C010F4400A6B382 /* DBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,9 +134,10 @@
 				E5C5CED51BFE28EB00B67F14 /* Info.plist */,
 				E5FD65061C010F4400A6B382 /* DBTableViewController.swift */,
 				E53CFE451C01E104005CE7A6 /* AddViewController.swift */,
-				E547FDB11C03426600C4BD9C /* DetailViewController.swift */,
+				E547FDB11C03426600C4BD9C /* ProductDetailViewController.swift */,
 				E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */,
 				E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */,
+				E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */,
 			);
 			path = "Food Planner";
 			sourceTree = "<group>";
@@ -289,13 +292,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E547FDB21C03426600C4BD9C /* DetailViewController.swift in Sources */,
+				E547FDB21C03426600C4BD9C /* ProductDetailViewController.swift in Sources */,
 				E5F67A6F1C038A1E004852FF /* DishDetailViewController.swift in Sources */,
 				E547FDB51C03789900C4BD9C /* SeachResultTableViewController.swift in Sources */,
 				E5C5CECC1BFE28EB00B67F14 /* FindDishViewController.swift in Sources */,
 				E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */,
 				E53CFE461C01E104005CE7A6 /* AddViewController.swift in Sources */,
 				E56DE9B31C012E8E00A60605 /* Unit.swift in Sources */,
+				E5F09DD51C04F4BE000C7C92 /* ProductTableViewCell.swift in Sources */,
 				E5C5CECA1BFE28EB00B67F14 /* AppDelegate.swift in Sources */,
 				E5FD65071C010F4400A6B382 /* DBTableViewController.swift in Sources */,
 				E5C5CEFA1BFE2E5E00B67F14 /* Product.swift in Sources */,
