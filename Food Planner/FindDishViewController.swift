@@ -40,40 +40,10 @@ class FindDishViewController: UIViewController {
         }
     }
     
+    //MARK: Algorithms
     @IBAction func findDish(sender: AnyObject) {
-        /*
-        (maybe used later)
-        //make array with DB types
-        var dbTypes = [String]()
-        for p in DB {
-            dbTypes.append(p.type.lowercaseString)
-        }
-        
-        //find the dishes that you have ingredients for
-        var possibleDishes = [Dish]()
-        for dish in knownDishes {
-            //make array with ingredient type
-            var ingredientTypes = [String]()
-            for ingredient in dish.ingredients {
-                ingredientTypes.append(ingredient.type.lowercaseString)
-            }
-            
-            var canMake = true
-            for ingredient in ingredientTypes {
-                if !(dbTypes.contains(ingredient)) {
-                    canMake = false
-                    break
-                }
-            }
-            
-            if canMake { possibleDishes.append(dish) }
-        }
-        */
-        
         //check if you have products and enough of them
-        var finalDishes = [Dish]()
         for dish in knownDishes {
-            
             var isPossible = true
             for p in dish.ingredients {
                 if !hasEnoughStuffOfProduct(p) {
@@ -82,21 +52,20 @@ class FindDishViewController: UIViewController {
             }
             
             if isPossible {
-                finalDishes.append(dish)
+                resultDishes.append(dish)
             }
         }
         
-        //display the first resulting dish - if any
-        if finalDishes.count > 0 {
-            dishResult.text = finalDishes[0].name + "\n" + finalDishes[0].recipe
-            removeDishProductsFromDB(finalDishes[0])
-            saveProducts()
+        //Perform segue to detail view if resultDishes is non-empty
+        if resultDishes.count > 0 {
+            performSegueWithIdentifier("FindDish", sender: nil)
         } else {
             //display error to user
-            /*let alert = UIAlertController(title: "Fejl", message: "Du har ikke nok til at lave noget!", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Fejl", message: "Du har ikke nok til at lave noget!", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)*/
+            self.presentViewController(alert, animated: true, completion: nil)
         }
+        
     }
 
     //checks if the product is in the DB and if
@@ -140,9 +109,6 @@ class FindDishViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "FindDish" {
             let dishResultViewController = segue.destinationViewController as! SeachResultTableViewController
-            let ingredientsForPastaMeat = [Product(name: "Pasta", weight: 100, unit: Unit.GRAM), Product(name: "Oksekød", weight: 500, unit: Unit.GRAM), Product(name: "Dolmio sovs", weight: 300, unit: Unit.GRAM)]
-            let recipeForPastaMeat = "1 - Brun oksekøddet \n2 - Hæld dolmiosovs i \n3 - Kog pasta \n4 - Spis"
-            resultDishes.append(Dish(name: "Pasta med kødsovs", ingredients: ingredientsForPastaMeat, recipe: recipeForPastaMeat))
             dishResultViewController.resultDishes = resultDishes
         }
     }

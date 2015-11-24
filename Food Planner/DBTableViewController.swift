@@ -13,6 +13,7 @@ class DBTableViewController: UITableViewController {
     
     var DB: [Product] = []
     
+    //MARK: Initialisation
     override func viewDidLoad() {
         super.viewDidLoad()
         
