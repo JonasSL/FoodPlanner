@@ -10,6 +10,7 @@ import UIKit
 
 class SeachResultTableViewController: UITableViewController {
     var resultDishes = [Dish]()
+    var numberOfPersons = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,7 @@ class SeachResultTableViewController: UITableViewController {
                 let indexPath = tableView.indexPathForCell(selectedProductCell)!
                 let selectedProduct = resultDishes[indexPath.row]
                 dishDetailViewController.dish = selectedProduct
+                dishDetailViewController.numberOfPersons = numberOfPersons
             }
             
         }

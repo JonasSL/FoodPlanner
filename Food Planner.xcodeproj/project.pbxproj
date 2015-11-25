@@ -17,6 +17,8 @@
 		E54456C51C051BE500E3D730 /* FoodPlannerIcon180.png in Resources */ = {isa = PBXBuildFile; fileRef = E54456C31C051BE500E3D730 /* FoodPlannerIcon180.png */; };
 		E547FDB21C03426600C4BD9C /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547FDB11C03426600C4BD9C /* ProductDetailViewController.swift */; };
 		E547FDB51C03789900C4BD9C /* SeachResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */; };
+		E548DA801C0618DB0013A08B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E548DA7F1C0618DB0013A08B /* Launch Screen.storyboard */; };
+		E548DA841C061A6B0013A08B /* LaunchScreenRetinaHD55.png in Resources */ = {isa = PBXBuildFile; fileRef = E548DA831C061A6B0013A08B /* LaunchScreenRetinaHD55.png */; };
 		E56DE9B31C012E8E00A60605 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DE9B21C012E8E00A60605 /* Unit.swift */; };
 		E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BFF53E1BFE51BE00449496 /* Dish.swift */; };
 		E5C5CECA1BFE28EB00B67F14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEC91BFE28EB00B67F14 /* AppDelegate.swift */; };
@@ -27,7 +29,6 @@
 		E5C5CEEA1BFE28EB00B67F14 /* Food_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEE91BFE28EB00B67F14 /* Food_PlannerUITests.swift */; };
 		E5C5CEFA1BFE2E5E00B67F14 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEF91BFE2E5E00B67F14 /* Product.swift */; };
 		E5F09DD51C04F4BE000C7C92 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */; };
-		E5F09DE41C051426000C7C92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5F09DE31C051426000C7C92 /* LaunchScreen.storyboard */; };
 		E5F67A6F1C038A1E004852FF /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */; };
 		E5FD65071C010F4400A6B382 /* DBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FD65061C010F4400A6B382 /* DBTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,8 @@
 		E54456C31C051BE500E3D730 /* FoodPlannerIcon180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FoodPlannerIcon180.png; sourceTree = "<group>"; };
 		E547FDB11C03426600C4BD9C /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeachResultTableViewController.swift; sourceTree = "<group>"; };
+		E548DA7F1C0618DB0013A08B /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E548DA831C061A6B0013A08B /* LaunchScreenRetinaHD55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenRetinaHD55.png; sourceTree = "<group>"; };
 		E56DE9B21C012E8E00A60605 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		E5BFF53E1BFE51BE00449496 /* Dish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		E5C5CEC61BFE28EB00B67F14 /* Food Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +79,6 @@
 		E5C5CEEB1BFE28EB00B67F14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5C5CEF91BFE2E5E00B67F14 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
-		E5F09DE31C051426000C7C92 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
 		E5FD65061C010F4400A6B382 /* DBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,21 @@
 			name = DataObjects;
 			sourceTree = "<group>";
 		};
+		E548DA851C061A8C0013A08B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E54456B41C051B2C00E3D730 /* Fridge.png */,
+				E54456B51C051B2C00E3D730 /* Search.png */,
+				E54456B81C051B3600E3D730 /* Fridge@2x.png */,
+				E54456B91C051B3600E3D730 /* Search@2x.png */,
+				E54456B21C0518B600E3D730 /* logo.png */,
+				E54456C21C051BE500E3D730 /* FoodPlannerIcon120.png */,
+				E54456C31C051BE500E3D730 /* FoodPlannerIcon180.png */,
+				E548DA831C061A6B0013A08B /* LaunchScreenRetinaHD55.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		E5C5CEBD1BFE28EA00B67F14 = {
 			isa = PBXGroup;
 			children = (
@@ -139,13 +156,7 @@
 		E5C5CEC81BFE28EB00B67F14 /* Food Planner */ = {
 			isa = PBXGroup;
 			children = (
-				E54456B41C051B2C00E3D730 /* Fridge.png */,
-				E54456B51C051B2C00E3D730 /* Search.png */,
-				E54456B81C051B3600E3D730 /* Fridge@2x.png */,
-				E54456B91C051B3600E3D730 /* Search@2x.png */,
-				E54456B21C0518B600E3D730 /* logo.png */,
-				E54456C21C051BE500E3D730 /* FoodPlannerIcon120.png */,
-				E54456C31C051BE500E3D730 /* FoodPlannerIcon180.png */,
+				E548DA851C061A8C0013A08B /* Images */,
 				E547FDB31C0356AB00C4BD9C /* DataObjects */,
 				E5C5CEC91BFE28EB00B67F14 /* AppDelegate.swift */,
 				E5C5CECD1BFE28EB00B67F14 /* Main.storyboard */,
@@ -158,7 +169,7 @@
 				E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */,
 				E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */,
 				E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */,
-				E5F09DE31C051426000C7C92 /* LaunchScreen.storyboard */,
+				E548DA7F1C0618DB0013A08B /* Launch Screen.storyboard */,
 			);
 			path = "Food Planner";
 			sourceTree = "<group>";
@@ -288,10 +299,11 @@
 			files = (
 				E54456BB1C051B3600E3D730 /* Search@2x.png in Resources */,
 				E54456B31C0518B600E3D730 /* logo.png in Resources */,
-				E5F09DE41C051426000C7C92 /* LaunchScreen.storyboard in Resources */,
+				E548DA841C061A6B0013A08B /* LaunchScreenRetinaHD55.png in Resources */,
 				E54456C51C051BE500E3D730 /* FoodPlannerIcon180.png in Resources */,
 				E54456C41C051BE500E3D730 /* FoodPlannerIcon120.png in Resources */,
 				E54456B71C051B2C00E3D730 /* Search.png in Resources */,
+				E548DA801C0618DB0013A08B /* Launch Screen.storyboard in Resources */,
 				E5C5CED11BFE28EB00B67F14 /* Assets.xcassets in Resources */,
 				E54456B61C051B2C00E3D730 /* Fridge.png in Resources */,
 				E5C5CECF1BFE28EB00B67F14 /* Main.storyboard in Resources */,

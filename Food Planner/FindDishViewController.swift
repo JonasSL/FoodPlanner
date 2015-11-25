@@ -8,12 +8,16 @@
 
 import UIKit
 
-class FindDishViewController: UIViewController {
+class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
         
     var DB: [Product] = []
     var knownDishes = [Dish]()
     var resultDishes = [Dish]()
-
+    
+    @IBOutlet weak var personPickerView: UIPickerView!
+    var pickerData: [Int] = [1,2,3,4,5,6,7,8,9,10]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,15 +25,17 @@ class FindDishViewController: UIViewController {
         //add standard dishes
         let ingredientsForPastaMeat = [Product(name: "pasta", weight: 100, unit: Unit.GRAM, dateExpires: NSDate.init()), Product(name: "oksekød", weight: 500, unit: Unit.GRAM, dateExpires: NSDate.init()), Product(name: "dolmio sovs", weight: 300, unit: Unit.GRAM, dateExpires: NSDate.init())]
         let recipeForPastaMeat = " 1 - Brun oksekøddet \n2 - Hæld dolmiosovs i \n3 - Kog pasta \n4 - Spis"
-        knownDishes.append(Dish(name: "Pasta med kødsovs", ingredients: ingredientsForPastaMeat, recipe: recipeForPastaMeat))
+        knownDishes.append(Dish(name: "Pasta med kødsovs", ingredients: ingredientsForPastaMeat, recipe: recipeForPastaMeat, persons: 2))
         
         let ingredientsForTestDish = [Product(name: "test1", weight: 100, unit: Unit.GRAM, dateExpires: NSDate.init()), Product(name: "test2", weight: 100, unit: Unit.GRAM, dateExpires: NSDate.init())]
         let recipeForTestDish = "1 - sådan gør du først \n2 - Så gør du sådan her \n3 - så gør du sådan her"
-        knownDishes.append(Dish(name: "TestMad", ingredients: ingredientsForTestDish, recipe: recipeForTestDish))
+        knownDishes.append(Dish(name: "TestMad", ingredients: ingredientsForTestDish, recipe: recipeForTestDish, persons: 4))
         
         if let savedProducts = loadProducts() {
             DB = savedProducts
         }
+        personPickerView.delegate = self
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -46,7 +52,7 @@ class FindDishViewController: UIViewController {
         for dish in knownDishes {
             var isPossible = true
             for p in dish.ingredients {
-                if !hasEnoughStuffOfProduct(p) {
+                if !hasEnoughStuffOfProduct(p, dishForPersons: dish.persons) {
                     isPossible = false
                 }
             }
@@ -69,10 +75,12 @@ class FindDishViewController: UIViewController {
     }
 
     //checks if the product is in the DB and if
-    func hasEnoughStuffOfProduct(product: Product) -> Bool {
+    func hasEnoughStuffOfProduct(product: Product, dishForPersons: Int) -> Bool {
         var isPossible = false
         for p in DB {
-            if p == product && p.weight >= product.weight && p.unit == product.unit {
+            //Find weight of ingredient for number of persons picked
+            let productWeightForPersons = (product.weight / dishForPersons) * pickerData[personPickerView.selectedRowInComponent(0)]
+            if p == product && p.weight >= productWeightForPersons && p.unit == product.unit {
                 isPossible = true
             }
         }
@@ -97,7 +105,20 @@ class FindDishViewController: UIViewController {
         if segue.identifier == "FindDish" {
             let dishResultViewController = segue.destinationViewController as! SeachResultTableViewController
             dishResultViewController.resultDishes = resultDishes
+            //Send the picked number of person to SeachResultTableViewController
+            dishResultViewController.numberOfPersons = pickerData[personPickerView.selectedRowInComponent(0)]
         }
+    }
+    
+    // MARK: UIPickerViewDelegate
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return String(stringInterpolationSegment: pickerData[row])
     }
     
 }

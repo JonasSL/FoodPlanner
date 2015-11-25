@@ -12,6 +12,9 @@ class DishDetailViewController: UIViewController {
     @IBOutlet weak var recipeDescription: UITextView!
     @IBOutlet weak var ingredientsDescription: UITextView!
     @IBOutlet weak var makeDishButton: UIButton!
+    @IBOutlet weak var forPersonsLabel: UILabel!
+    var numberOfPersons = 0
+
     
     var dish: Dish?
 
@@ -29,6 +32,7 @@ class DishDetailViewController: UIViewController {
             navigationItem.title = dish.name
             ingredientsDescription.text = generateIngredientsString(dish.ingredients)
             recipeDescription.text = dish.recipe
+            forPersonsLabel.text = "- til " + String(numberOfPersons) + " personer (originalt til " + String(dish.persons) + " personer)"
         }
     }
     
@@ -36,7 +40,8 @@ class DishDetailViewController: UIViewController {
     func generateIngredientsString(products: [Product]) -> String {
         var resultString = ""
         for p in products {
-            resultString += String(p.weight) + " " + p.unit.rawValue + " " + p.name + "\n"
+            let productWeightForPersons = (p.weight / dish!.persons) * numberOfPersons
+            resultString += String(productWeightForPersons) + " " + p.unit.rawValue + " " + p.name + "\n"
         }
         return resultString
     }
@@ -50,7 +55,8 @@ class DishDetailViewController: UIViewController {
             for dishProduct in dish!.ingredients {
                 for databaseProduct in DB {
                     if dishProduct.name.lowercaseString == databaseProduct.name.lowercaseString {
-                        databaseProduct.weight -= dishProduct.weight
+                        let dishProductForPersonsWeight = (dishProduct.weight / dish!.persons) * numberOfPersons
+                        databaseProduct.weight -= dishProductForPersonsWeight
                         
                         //remove product if weight is now 0
                         if databaseProduct.weight == 0 {
@@ -68,8 +74,6 @@ class DishDetailViewController: UIViewController {
             makeDishButton.enabled = false
         }
     }
-    
-    //Subtracts the weight of the products in the dish from the DB
     
     //MARK: NSCoding
     func saveProducts(DB: [Product]) {
