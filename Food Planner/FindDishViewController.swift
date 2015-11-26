@@ -42,12 +42,14 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
         if let savedProducts = loadProducts() {
             DB = savedProducts
         }
+        resultDishes = []
     }
     
     //MARK: Algorithms
     @IBAction func findDish(sender: AnyObject) {
         //Reset resultDishes
         resultDishes = []
+        
         //check if you have products and enough of them
         for dish in knownDishes {
             var isPossible = true
@@ -112,6 +114,7 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
             let dishSuggestionViewController = segue.destinationViewController as! SuggestionViewController
             dishSuggestionViewController.knownDishes = knownDishes
             dishSuggestionViewController.products = DB
+            dishSuggestionViewController.persons = pickerData[personPickerView.selectedRowInComponent(0)]
         }
     }
     

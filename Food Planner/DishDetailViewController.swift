@@ -32,7 +32,14 @@ class DishDetailViewController: UIViewController {
             navigationItem.title = dish.name
             ingredientsDescription.text = generateIngredientsString(dish.ingredients)
             recipeDescription.text = dish.recipe
-            forPersonsLabel.text = "- til " + String(numberOfPersons) + " personer (originalt til " + String(dish.persons) + " personer)"
+            
+            var personsString = ""
+            if numberOfPersons == 1 {
+                personsString = "person"
+            } else {
+                personsString = "personer"
+            }
+            forPersonsLabel.text = "- til \(numberOfPersons) \(personsString) (originalt til \(dish.persons) personer)"
         }
     }
     

@@ -8,11 +8,14 @@
 
 import Foundation
 
-class Dish {
+class Dish: Hashable {
     var name: String
     var ingredients: [Product]
     var recipe: String
     var persons: Int
+    var hashValue: Int {
+        return name.hash + persons
+    }
     
     init(name: String, ingredients: [Product], recipe: String, persons: Int) {
         self.name = name
@@ -20,4 +23,9 @@ class Dish {
         self.recipe = recipe
         self.persons = persons
     }
+}
+
+
+func ==(lhs: Dish, rhs: Dish) -> Bool{
+    return lhs.name == rhs.name
 }
