@@ -69,6 +69,7 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
             //display error to user
             let alert = UIAlertController(title: "Fejl", message: "Du har ikke nok til at lave noget!", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Forslag", style: .Default, handler: { (action: UIAlertAction!) -> () in self.performSegueWithIdentifier("NeedHelp", sender: self) } ))
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
@@ -107,6 +108,10 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
             dishResultViewController.resultDishes = resultDishes
             //Send the picked number of person to SeachResultTableViewController
             dishResultViewController.numberOfPersons = pickerData[personPickerView.selectedRowInComponent(0)]
+        } else if segue.identifier == "NeedHelp" {
+            let dishSuggestionViewController = segue.destinationViewController as! SuggestionViewController
+            dishSuggestionViewController.knownDishes = knownDishes
+            dishSuggestionViewController.products = DB
         }
     }
     
