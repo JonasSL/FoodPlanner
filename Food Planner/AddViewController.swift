@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Parse
+import Parse
 
 class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
@@ -36,8 +36,9 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         //Setup the date picker
         dateExpirationPicker.minimumDate = NSDate.init()
         
-        //Hide barcode label
+        //Hide barcode label when you load the VC
         barcodeLabel.hidden = true
+        
     }
     
     //MARK: Navigation
@@ -51,11 +52,9 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         barcodeLabel.hidden = false
         barcodeLabel.text = barcode
         
-        /*let testObject = PFObject(className: "Barcodes")
-        testObject["EAN"] = barcode
-        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            print("Object has been saved.")
-        }*/
+        //Check if barcode is in Parse DB - set boolean if it needs to be uploaded (deosn't exist already)
+        
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -66,6 +65,18 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             let dateExpiration = dateExpirationPicker.date
             
             product = Product(name: name, weight: weight, unit: unit, dateExpires: dateExpiration)
+            
+            //Send product data to Parse if barcode is read (label is not hidden)
+            if barcodeLabel.hidden == false {
+                let testObject = PFObject(className: "Barcodes")
+                testObject["EAN"] = barcodeLabel.text
+                testObject["name"] = name
+                testObject["weight"] = String(weight)
+                testObject["unit"] = unit.rawValue
+                testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                    print("Object has been saved.")
+                }
+            }
         }
     }
     
@@ -93,5 +104,40 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     }
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row].rawValue
+    }
+    
+    
+    //MARK: Parse Datase methods
+    func updateLabelsWithInfoFor(barcode: String) -> Bool {
+        var foundObject = false
+
+        let query = PFQuery(className:"Barcodes")
+        //query.whereKey("playerName", equalTo:"Sean Plott")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+
+            if error == nil {
+                //Unrwrap optional valus
+                if let objects = objects {
+                    for object in objects {
+                        if object["EAN"] as! String == barcode {
+                            self.productName.text = object["name"] as? String
+                            self.productWeight.text = object["weight"] as? String
+                            
+                            let unitString = object["unit"] as! String
+                            if let indexOfString = self.pickerData.indexOf(Unit(rawValue: unitString)!) {
+                                self.productUnit.selectRow(indexOfString, inComponent: 0, animated: true)
+                            }
+                            foundObject = true
+                        }
+                    }
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
+        return foundObject
     }
 }
