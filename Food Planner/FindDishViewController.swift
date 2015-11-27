@@ -14,6 +14,7 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var knownDishes = [Dish]()
     var resultDishes = [Dish]()
     
+    @IBOutlet weak var findButton: UIButton!
     @IBOutlet weak var personPickerView: UIPickerView!
     var pickerData: [Int] = [1,2,3,4,5,6,7,8,9,10]
     
@@ -31,18 +32,26 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let recipeForTestDish = "1 - sådan gør du først \n2 - Så gør du sådan her \n3 - så gør du sådan her"
         knownDishes.append(Dish(name: "TestMad", ingredients: ingredientsForTestDish, recipe: recipeForTestDish, persons: 4))
         
+        //Load the products from the DB
         if let savedProducts = loadProducts() {
             DB = savedProducts
         }
+        
         personPickerView.delegate = self
         
+        findButton.layer.cornerRadius = 10
+        
     }
+    
+
     
     override func viewWillAppear(animated: Bool) {
         if let savedProducts = loadProducts() {
             DB = savedProducts
         }
         resultDishes = []
+        navigationController?.setNavigationBarHidden(true, animated: true)
+
     }
     
     //MARK: Algorithms

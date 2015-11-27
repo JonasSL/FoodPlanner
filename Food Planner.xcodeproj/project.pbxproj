@@ -19,6 +19,19 @@
 		E547FDB51C03789900C4BD9C /* SeachResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */; };
 		E548DA801C0618DB0013A08B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E548DA7F1C0618DB0013A08B /* Launch Screen.storyboard */; };
 		E548DA841C061A6B0013A08B /* LaunchScreenRetinaHD55.png in Resources */ = {isa = PBXBuildFile; fileRef = E548DA831C061A6B0013A08B /* LaunchScreenRetinaHD55.png */; };
+		E55933C91C088D7C006C749C /* ScannerViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = E55933C81C088D7C006C749C /* ScannerViewController .swift */; };
+		E55933CD1C08FFF8006C749C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933CB1C08FFF8006C749C /* Bolts.framework */; };
+		E55933CE1C08FFF8006C749C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933CC1C08FFF8006C749C /* Parse.framework */; };
+		E55933D01C09003B006C749C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933CF1C09003B006C749C /* AudioToolbox.framework */; };
+		E55933D21C09004A006C749C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933D11C09004A006C749C /* CFNetwork.framework */; };
+		E55933D41C090052006C749C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933D31C090052006C749C /* CoreGraphics.framework */; };
+		E55933D61C09005B006C749C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933D51C09005B006C749C /* CoreLocation.framework */; };
+		E55933D81C090062006C749C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933D71C090062006C749C /* QuartzCore.framework */; };
+		E55933DA1C090069006C749C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933D91C090069006C749C /* Security.framework */; };
+		E55933DC1C090072006C749C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933DB1C090072006C749C /* StoreKit.framework */; };
+		E55933DE1C09007C006C749C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933DD1C09007C006C749C /* SystemConfiguration.framework */; };
+		E55933E01C090085006C749C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933DF1C090085006C749C /* libz.tbd */; };
+		E55933E21C090091006C749C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933E11C090091006C749C /* libsqlite3.tbd */; };
 		E56DE9B31C012E8E00A60605 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DE9B21C012E8E00A60605 /* Unit.swift */; };
 		E5A331DC1C070BFB00A0F81A /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */; };
 		E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BFF53E1BFE51BE00449496 /* Dish.swift */; };
@@ -64,6 +77,19 @@
 		E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeachResultTableViewController.swift; sourceTree = "<group>"; };
 		E548DA7F1C0618DB0013A08B /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E548DA831C061A6B0013A08B /* LaunchScreenRetinaHD55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenRetinaHD55.png; sourceTree = "<group>"; };
+		E55933C81C088D7C006C749C /* ScannerViewController .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScannerViewController .swift"; sourceTree = "<group>"; };
+		E55933CB1C08FFF8006C749C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Food Planner/Bolts.framework"; sourceTree = "<group>"; };
+		E55933CC1C08FFF8006C749C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Food Planner/Parse.framework"; sourceTree = "<group>"; };
+		E55933CF1C09003B006C749C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E55933D11C09004A006C749C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E55933D31C090052006C749C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E55933D51C09005B006C749C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E55933D71C090062006C749C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E55933D91C090069006C749C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E55933DB1C090072006C749C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E55933DD1C09007C006C749C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E55933DF1C090085006C749C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E55933E11C090091006C749C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E56DE9B21C012E8E00A60605 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		E5BFF53E1BFE51BE00449496 /* Dish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
@@ -90,6 +116,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E55933CE1C08FFF8006C749C /* Parse.framework in Frameworks */,
+				E55933E21C090091006C749C /* libsqlite3.tbd in Frameworks */,
+				E55933E01C090085006C749C /* libz.tbd in Frameworks */,
+				E55933DE1C09007C006C749C /* SystemConfiguration.framework in Frameworks */,
+				E55933DC1C090072006C749C /* StoreKit.framework in Frameworks */,
+				E55933DA1C090069006C749C /* Security.framework in Frameworks */,
+				E55933D81C090062006C749C /* QuartzCore.framework in Frameworks */,
+				E55933D61C09005B006C749C /* CoreLocation.framework in Frameworks */,
+				E55933D41C090052006C749C /* CoreGraphics.framework in Frameworks */,
+				E55933D21C09004A006C749C /* CFNetwork.framework in Frameworks */,
+				E55933D01C09003B006C749C /* AudioToolbox.framework in Frameworks */,
+				E55933CD1C08FFF8006C749C /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,10 +173,46 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		E55933CA1C089045006C749C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E5C5CECB1BFE28EB00B67F14 /* FindDishViewController.swift */,
+				E5FD65061C010F4400A6B382 /* DBTableViewController.swift */,
+				E53CFE451C01E104005CE7A6 /* AddViewController.swift */,
+				E547FDB11C03426600C4BD9C /* ProductDetailViewController.swift */,
+				E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */,
+				E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */,
+				E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */,
+				E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */,
+				E55933C81C088D7C006C749C /* ScannerViewController .swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E55933E31C09009E006C749C /* FrameWorks */ = {
+			isa = PBXGroup;
+			children = (
+				E55933CB1C08FFF8006C749C /* Bolts.framework */,
+				E55933CC1C08FFF8006C749C /* Parse.framework */,
+				E55933E11C090091006C749C /* libsqlite3.tbd */,
+				E55933DF1C090085006C749C /* libz.tbd */,
+				E55933DD1C09007C006C749C /* SystemConfiguration.framework */,
+				E55933DB1C090072006C749C /* StoreKit.framework */,
+				E55933D91C090069006C749C /* Security.framework */,
+				E55933D71C090062006C749C /* QuartzCore.framework */,
+				E55933D51C09005B006C749C /* CoreLocation.framework */,
+				E55933D31C090052006C749C /* CoreGraphics.framework */,
+				E55933D11C09004A006C749C /* CFNetwork.framework */,
+				E55933CF1C09003B006C749C /* AudioToolbox.framework */,
+			);
+			name = FrameWorks;
+			sourceTree = "<group>";
+		};
 		E5C5CEBD1BFE28EA00B67F14 = {
 			isa = PBXGroup;
 			children = (
 				E5C5CEC81BFE28EB00B67F14 /* Food Planner */,
+				E55933E31C09009E006C749C /* FrameWorks */,
 				E5C5CEDD1BFE28EB00B67F14 /* Food PlannerTests */,
 				E5C5CEE81BFE28EB00B67F14 /* Food PlannerUITests */,
 				E5C5CEC71BFE28EB00B67F14 /* Products */,
@@ -160,19 +234,12 @@
 			children = (
 				E548DA851C061A8C0013A08B /* Images */,
 				E547FDB31C0356AB00C4BD9C /* DataObjects */,
+				E55933CA1C089045006C749C /* ViewControllers */,
 				E5C5CEC91BFE28EB00B67F14 /* AppDelegate.swift */,
 				E5C5CECD1BFE28EB00B67F14 /* Main.storyboard */,
 				E5C5CED01BFE28EB00B67F14 /* Assets.xcassets */,
 				E5C5CED51BFE28EB00B67F14 /* Info.plist */,
-				E5C5CECB1BFE28EB00B67F14 /* FindDishViewController.swift */,
-				E5FD65061C010F4400A6B382 /* DBTableViewController.swift */,
-				E53CFE451C01E104005CE7A6 /* AddViewController.swift */,
-				E547FDB11C03426600C4BD9C /* ProductDetailViewController.swift */,
-				E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */,
-				E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */,
-				E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */,
 				E548DA7F1C0618DB0013A08B /* Launch Screen.storyboard */,
-				E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */,
 			);
 			path = "Food Planner";
 			sourceTree = "<group>";
@@ -338,6 +405,7 @@
 				E547FDB21C03426600C4BD9C /* ProductDetailViewController.swift in Sources */,
 				E5F67A6F1C038A1E004852FF /* DishDetailViewController.swift in Sources */,
 				E547FDB51C03789900C4BD9C /* SeachResultTableViewController.swift in Sources */,
+				E55933C91C088D7C006C749C /* ScannerViewController .swift in Sources */,
 				E5C5CECC1BFE28EB00B67F14 /* FindDishViewController.swift in Sources */,
 				E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */,
 				E53CFE461C01E104005CE7A6 /* AddViewController.swift in Sources */,
@@ -480,6 +548,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Food",
+					Planner,
+					"$(PROJECT_DIR)/Food",
+					Planner,
+				);
 				INFOPLIST_FILE = "Food Planner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Food-Planner";
@@ -494,6 +569,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Food",
+					Planner,
+					"$(PROJECT_DIR)/Food",
+					Planner,
+				);
 				INFOPLIST_FILE = "Food Planner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Food-Planner";

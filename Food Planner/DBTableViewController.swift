@@ -31,7 +31,7 @@ class DBTableViewController: UITableViewController {
         if let savedProducts = loadProducts() {
             DB = savedProducts
         }
-        DB = DB.sort() {
+        DB.sortInPlace() {
             $0.daysToExpiration < $1.daysToExpiration
         }
         tableView.reloadData()
@@ -52,8 +52,12 @@ class DBTableViewController: UITableViewController {
         var daysRemainingString = " dage tilbage"
         if days == 1 {
             daysRemainingString = " dag tilbage"
+        } else if days == -1 {
+            daysRemainingString = " dag for gammel"
+        } else if days < -1 {
+            daysRemainingString = " dage for gammel"
         }
-        cell.daysRemainingCellLabel?.text = String(stringInterpolationSegment: days) + daysRemainingString
+        cell.daysRemainingCellLabel?.text = String(abs(days)) + daysRemainingString
         
         //Edit the label color
         if days <= 2 {
@@ -120,9 +124,6 @@ class DBTableViewController: UITableViewController {
                 productDetailViewController.product = selectedProduct
                 
             }
-            
-        } else if segue.identifier == "AddItem" {
-            
         }
     }
     

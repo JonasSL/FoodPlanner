@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import Parse
 
 class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
@@ -15,6 +16,7 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     @IBOutlet weak var productWeight: UITextField!
     @IBOutlet weak var productUnit: UIPickerView!
     @IBOutlet weak var dateExpirationPicker: UIDatePicker!
+    @IBOutlet weak var barcodeLabel: UILabel!
     
     var product: Product?
     let pickerData = Unit.allUnits
@@ -33,11 +35,27 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         
         //Setup the date picker
         dateExpirationPicker.minimumDate = NSDate.init()
+        
+        //Hide barcode label
+        barcodeLabel.hidden = true
     }
     
     //MARK: Navigation
     @IBAction func cancel(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func didReceiveBarCode(segue: UIStoryboardSegue) {
+        let barcodeVC = segue.sourceViewController as! ScannerViewController
+        let barcode = barcodeVC.barcode
+        barcodeLabel.hidden = false
+        barcodeLabel.text = barcode
+        
+        /*let testObject = PFObject(className: "Barcodes")
+        testObject["EAN"] = barcode
+        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            print("Object has been saved.")
+        }*/
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
