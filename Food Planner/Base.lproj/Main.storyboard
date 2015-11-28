@@ -573,7 +573,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="7e4-8a-Y8a">
                             <connections>
-                                <segue destination="Ghb-pt-Ufx" kind="unwind" unwindAction="unwwindToProductList:" id="ywe-Ne-jYR"/>
+                                <action selector="saveButtonPressed:" destination="22H-K0-3Tp" id="xfX-qY-8l6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -584,6 +584,7 @@
                         <outlet property="productUnit" destination="yS7-Mo-hHI" id="s88-ZP-kT1"/>
                         <outlet property="productWeight" destination="alN-Xq-Chm" id="v8Y-13-XYG"/>
                         <outlet property="saveButton" destination="7e4-8a-Y8a" id="089-EK-1fr"/>
+                        <segue destination="Ghb-pt-Ufx" kind="unwind" identifier="SaveProduct" unwindAction="unwwindToProductList:" id="dHd-eK-MMx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rz8-1h-T0V" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -54,8 +54,15 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         updateLabelsWithInfoFor(barcode)
     }
     
+    //Start "save"-segue if input is valid
+    @IBAction func saveButtonPressed(sender: AnyObject) {
+        if checkValidInput() {
+            performSegueWithIdentifier("SaveProduct", sender: nil)
+        } 
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if saveButton === sender {
+        if segue.identifier == "SaveProduct" {
             let name = productName.text!
             let weight = Int(productWeight.text! )!
             let unit = pickerData[productUnit.selectedRowInComponent(0)]
@@ -64,7 +71,7 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             product = Product(name: name, weight: weight, unit: unit, dateExpires: dateExpiration)
             
             //Send product data to Parse if barcode is read (label is not hidden)
-            if !isInDatabase {
+            if !isInDatabase && barcodeLabel.hidden == false {
                 let testObject = PFObject(className: "Barcodes")
                 testObject["EAN"] = barcodeLabel.text
                 testObject["name"] = name
@@ -91,7 +98,7 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             errorString = "Vægt skal være et tal"
         }
         
-        if errorString == "" {
+        if errorString != "" {
             let alert = UIAlertController(title: "Fejl", message: errorString, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
