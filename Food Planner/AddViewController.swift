@@ -20,6 +20,7 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     
     var product: Product?
     let pickerData = Unit.allUnits
+    var isInDatabase = false
 
     
     override func viewDidLoad() {
@@ -29,9 +30,6 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         productUnit.dataSource = self
         productName.delegate = self
         productWeight.delegate = self
-        
-        //Enable the save button only if input is valid
-        checkValidInput()
         
         //Setup the date picker
         dateExpirationPicker.minimumDate = NSDate.init()
@@ -53,8 +51,7 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         barcodeLabel.text = barcode
         
         //Check if barcode is in Parse DB - set boolean if it needs to be uploaded (deosn't exist already)
-        
-        
+        updateLabelsWithInfoFor(barcode)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -67,7 +64,7 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             product = Product(name: name, weight: weight, unit: unit, dateExpires: dateExpiration)
             
             //Send product data to Parse if barcode is read (label is not hidden)
-            if barcodeLabel.hidden == false {
+            if !isInDatabase {
                 let testObject = PFObject(className: "Barcodes")
                 testObject["EAN"] = barcodeLabel.text
                 testObject["name"] = name
@@ -81,18 +78,28 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     }
     
     //MARK: UITextFieldDelegate
-    func checkValidInput() {
-        let textName = productName.text ?? ""
-        let textWeight = productWeight.text ?? ""
-        saveButton.enabled = !textName.isEmpty && !textWeight.isEmpty
-    }
-    
-    func textFieldDidBeginEditing(textField: UITextField) {
-        if textField === productWeight {
-            saveButton.enabled = true
+    func checkValidInput() -> Bool{
+        let textName = productName.text
+        let textWeight = productWeight.text
+        
+        var errorString = ""
+        if textName == "" {
+            errorString = "Varenavn må ikke være tomt"
+        } else if textWeight == "" {
+            errorString = "Vægt må ikke være tom"
+        } else if Int(textWeight!) == nil {
+            errorString = "Vægt skal være et tal"
         }
+        
+        if errorString == "" {
+            let alert = UIAlertController(title: "Fejl", message: errorString, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            return false
+        }
+        
+        return true
     }
-    
     
     
     // MARK: UIPickerViewDelegate
@@ -108,11 +115,9 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     
     
     //MARK: Parse Datase methods
-    func updateLabelsWithInfoFor(barcode: String) -> Bool {
-        var foundObject = false
-
+    func updateLabelsWithInfoFor(barcode: String) {
         let query = PFQuery(className:"Barcodes")
-        //query.whereKey("playerName", equalTo:"Sean Plott")
+        
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
 
@@ -121,6 +126,8 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
                 if let objects = objects {
                     for object in objects {
                         if object["EAN"] as! String == barcode {
+                            self.isInDatabase = true
+                            
                             self.productName.text = object["name"] as? String
                             self.productWeight.text = object["weight"] as? String
                             
@@ -128,9 +135,9 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
                             if let indexOfString = self.pickerData.indexOf(Unit(rawValue: unitString)!) {
                                 self.productUnit.selectRow(indexOfString, inComponent: 0, animated: true)
                             }
-                            foundObject = true
                         }
                     }
+
                 }
             } else {
                 // Log details of the failure
@@ -138,6 +145,6 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             }
         }
         
-        return foundObject
+        
     }
 }
