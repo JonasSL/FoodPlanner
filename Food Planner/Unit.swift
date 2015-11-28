@@ -12,6 +12,8 @@ enum Unit: String {
     case GRAM = "g"
     case KG = "kg"
     case STK = "stk"
+    case L = "l"
+    case ML = "ml"
     
-    static let allUnits = [GRAM,KG,STK]
+    static let allUnits = [GRAM,KG,STK,L,ML]
 }
