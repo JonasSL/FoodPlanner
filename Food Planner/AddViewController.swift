@@ -21,8 +21,8 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     var product: Product?
     let pickerData = Unit.allUnits
     var isInDatabase = false
+    var barcode = ""
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,12 +46,16 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     
     @IBAction func didReceiveBarCode(segue: UIStoryboardSegue) {
         let barcodeVC = segue.sourceViewController as! ScannerViewController
-        let barcode = barcodeVC.barcode
+        barcode = barcodeVC.barcode
         barcodeLabel.hidden = false
-        barcodeLabel.text = barcode
         
         //Check if barcode is in Parse DB - set boolean if it needs to be uploaded (deosn't exist already)
         updateLabelsWithInfoFor(barcode)
+        
+        if !isInDatabase {
+            barcodeLabel.text = "Produkt er ikke fundet - vil blive tilføjet!"
+            barcodeLabel.textColor = UIColor(red: 1.00, green: 0.00, blue: 0.00, alpha: 1.0)
+        }
     }
     
     //Start "save"-segue if input is valid
@@ -73,7 +77,7 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             //Send product data to Parse if barcode is read (label is not hidden)
             if !isInDatabase && barcodeLabel.hidden == false {
                 let testObject = PFObject(className: "Barcodes")
-                testObject["EAN"] = barcodeLabel.text
+                testObject["EAN"] = barcode
                 testObject["name"] = name
                 testObject["weight"] = String(weight)
                 testObject["unit"] = unit.rawValue
@@ -142,6 +146,9 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
                             if let indexOfString = self.pickerData.indexOf(Unit(rawValue: unitString)!) {
                                 self.productUnit.selectRow(indexOfString, inComponent: 0, animated: true)
                             }
+                            
+                            self.barcodeLabel.text = "Produkt fundet!"
+                            self.barcodeLabel.textColor = UIColor(red: 0.08, green: 0.93, blue: 0.08, alpha: 1.0)
                         }
                     }
 
