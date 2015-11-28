@@ -116,8 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E55933E21C090091006C749C /* libsqlite3.tbd in Frameworks */,
 				E55933CE1C08FFF8006C749C /* Parse.framework in Frameworks */,
+				E55933E21C090091006C749C /* libsqlite3.tbd in Frameworks */,
 				E55933E01C090085006C749C /* libz.tbd in Frameworks */,
 				E55933DE1C09007C006C749C /* SystemConfiguration.framework in Frameworks */,
 				E55933DC1C090072006C749C /* StoreKit.framework in Frameworks */,
@@ -560,6 +560,10 @@
 					Planner,
 					"$(PROJECT_DIR)/Food",
 					Planner,
+					"$(PROJECT_DIR)/Food",
+					Planner,
+					"$(PROJECT_DIR)/Food",
+					Planner,
 				);
 				INFOPLIST_FILE = "Food Planner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -577,6 +581,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Food",
+					Planner,
+					"$(PROJECT_DIR)/Food",
+					Planner,
 					"$(PROJECT_DIR)/Food",
 					Planner,
 					"$(PROJECT_DIR)/Food",
