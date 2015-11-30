@@ -27,7 +27,6 @@ class DBTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        //DB = SharingManager.sharedInstance.mainDB
         if let savedProducts = loadProducts() {
             DB = savedProducts
         }

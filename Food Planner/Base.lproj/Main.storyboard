@@ -138,6 +138,31 @@
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNP-NK-DJs">
+                                <rect key="frame" x="498" y="112" width="82" height="30"/>
+                                <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="Dish1Button"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="EhA-9V-H1E"/>
+                                    <constraint firstAttribute="height" constant="30" id="meU-aL-9eX"/>
+                                </constraints>
+                                <state key="normal" title="Tilføj til liste"/>
+                                <connections>
+                                    <action selector="addDishToShoppingList:" destination="BvV-76-qYg" eventType="touchUpInside" id="yBV-Gx-Owg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="Dish2Button" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAf-dg-xWR">
+                                <rect key="frame" x="498" y="325" width="82" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="Uwc-SB-1db"/>
+                                    <constraint firstAttribute="height" constant="30" id="eEF-MF-2tx"/>
+                                </constraints>
+                                <state key="normal" title="Tilføj til liste"/>
+                                <connections>
+                                    <action selector="addDishToShoppingList:" destination="BvV-76-qYg" eventType="touchUpInside" id="dsM-Z1-pcR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,6 +173,8 @@
                             <constraint firstItem="8ja-Ug-hcf" firstAttribute="trailing" secondItem="eeD-dg-ZK0" secondAttribute="trailingMargin" id="9md-yb-QH0"/>
                             <constraint firstItem="GDy-K7-z8f" firstAttribute="leading" secondItem="eeD-dg-ZK0" secondAttribute="leadingMargin" id="Hug-rF-d8z"/>
                             <constraint firstItem="pXr-cu-KNV" firstAttribute="top" secondItem="glZ-5s-JdW" secondAttribute="bottom" constant="1" id="ID8-vX-3tP"/>
+                            <constraint firstItem="GAf-dg-xWR" firstAttribute="trailing" secondItem="eeD-dg-ZK0" secondAttribute="trailingMargin" id="J8Q-83-ztM"/>
+                            <constraint firstItem="GAf-dg-xWR" firstAttribute="top" secondItem="MzD-si-eff" secondAttribute="bottom" constant="-1" id="KsA-J0-We4"/>
                             <constraint firstItem="pXr-cu-KNV" firstAttribute="trailing" secondItem="eeD-dg-ZK0" secondAttribute="trailingMargin" id="NXG-yx-eMb"/>
                             <constraint firstItem="mjX-xk-Zoy" firstAttribute="top" secondItem="Qmv-zH-DAq" secondAttribute="bottom" constant="43" id="OuE-4Z-RRg"/>
                             <constraint firstItem="t9w-FC-EOL" firstAttribute="leading" secondItem="eeD-dg-ZK0" secondAttribute="leadingMargin" id="P5P-uN-hBN"/>
@@ -155,6 +182,7 @@
                             <constraint firstItem="Wge-PY-adG" firstAttribute="top" secondItem="gTP-Ul-Ufj" secondAttribute="bottom" constant="8" id="QnA-bq-mou"/>
                             <constraint firstItem="mjX-xk-Zoy" firstAttribute="leading" secondItem="eeD-dg-ZK0" secondAttribute="leadingMargin" id="TGk-KN-ksD"/>
                             <constraint firstItem="glZ-5s-JdW" firstAttribute="top" secondItem="GDy-K7-z8f" secondAttribute="bottom" constant="19" id="ZP4-pM-77W"/>
+                            <constraint firstItem="MNP-NK-DJs" firstAttribute="trailing" secondItem="eeD-dg-ZK0" secondAttribute="trailingMargin" id="cri-0w-r2T"/>
                             <constraint firstItem="GDy-K7-z8f" firstAttribute="top" secondItem="Qmv-zH-DAq" secondAttribute="bottom" constant="23" id="el7-GM-6gc"/>
                             <constraint firstItem="Qmv-zH-DAq" firstAttribute="top" secondItem="kpB-R9-Hom" secondAttribute="bottom" constant="1" id="i80-oc-BnG"/>
                             <constraint firstItem="kpB-R9-Hom" firstAttribute="top" secondItem="Wge-PY-adG" secondAttribute="bottom" constant="19" id="kEE-xL-TRs"/>
@@ -165,6 +193,7 @@
                             <constraint firstItem="8ja-Ug-hcf" firstAttribute="top" secondItem="gTP-Ul-Ufj" secondAttribute="bottom" constant="28" id="tO0-pv-N2Q"/>
                             <constraint firstItem="kpB-R9-Hom" firstAttribute="leading" secondItem="eeD-dg-ZK0" secondAttribute="leadingMargin" id="uoI-Vz-VlR"/>
                             <constraint firstItem="MzD-si-eff" firstAttribute="top" secondItem="Qmv-zH-DAq" secondAttribute="bottom" constant="43" id="vaN-fW-Pe8"/>
+                            <constraint firstItem="MNP-NK-DJs" firstAttribute="top" secondItem="8ja-Ug-hcf" secondAttribute="bottom" constant="-1" id="x5h-g2-Vxp"/>
                             <constraint firstItem="esZ-dn-f8Y" firstAttribute="top" secondItem="gTP-Ul-Ufj" secondAttribute="bottom" constant="8" id="zv9-2e-rs6"/>
                         </constraints>
                     </view>
@@ -691,7 +720,13 @@
                             <outlet property="delegate" destination="3ji-pw-q6S" id="WDv-bW-y8S"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Indkøbsliste" id="b10-v0-c2B"/>
+                    <navigationItem key="navigationItem" title="Indkøbsliste" id="b10-v0-c2B">
+                        <barButtonItem key="rightBarButtonItem" title="Fjern fundne" id="ZXG-Dv-ADa">
+                            <connections>
+                                <action selector="removeFoundProducts:" destination="3ji-pw-q6S" id="Zy8-wT-KL1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7im-14-wPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

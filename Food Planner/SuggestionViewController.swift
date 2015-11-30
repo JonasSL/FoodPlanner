@@ -21,6 +21,7 @@ class SuggestionViewController: UIViewController {
     var knownDishes = [Dish]()
     var suggestionDishes = [Dish]()
     var subtractedWeight = [Product: Int]()
+    var shoppingList = [ShoppingProduct]()
     var persons = 0
     
     override func viewDidLoad() {
@@ -43,8 +44,10 @@ class SuggestionViewController: UIViewController {
         originalPersons1Label.text = "(originalt til \(knownDishes[0].persons) personer)"
         originalPersons2Label.text = "(originalt til \(knownDishes[1].persons) personer)"
 
-        
-        // Do any additional setup after loading the view.
+        //Load saved shoppingList
+        if let savedShoppingList = loadProducts() {
+            shoppingList = savedShoppingList
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -118,14 +121,48 @@ class SuggestionViewController: UIViewController {
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: - ShoppingList administration
+    @IBAction func addDishToShoppingList(sender: AnyObject) {
+        var message = ""
+        var newProducts = [Product]()
+        
+        if sender.tag == 1 {
+            newProducts = knownDishes[0].ingredients
+            message = "Foreslag 1 er tilføjet indkøbslisten"
+        } else {
+            newProducts = knownDishes[1].ingredients
+            message = "Foreslag 2 er tilføjet indkøbslisten"
+        }
+        
+        for product in newProducts {
+            //Only add product ingredient if the subtracted weight is positive (dont add things you dont need)
+            if subtractedWeight[product]! > 0 {
+                let shoppingProduct = ShoppingProduct(name: product.name, weight: subtractedWeight[product]!, unit: product.unit, dateExpires: product.dateExpires)
+                shoppingList.append(shoppingProduct)
+            }
+        }
+        
+        let alert = UIAlertController(title: "Indkøbsliste", message: message, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        saveProducts()
     }
-    */
+    
+    
+    //MARK: NSCoding
+    func saveProducts() {
+        let isSuccecfulSave = NSKeyedArchiver.archiveRootObject(shoppingList, toFile: ShoppingProduct.ArchiveURLShopping.path!)
+        if !isSuccecfulSave {
+            print("Failed to save products")
+        } else {
+            print("Save succesful")
+        }
+    }
+    
+    func loadProducts() -> [ShoppingProduct]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(ShoppingProduct.ArchiveURLShopping.path!) as? [ShoppingProduct]
+    }
 
 }

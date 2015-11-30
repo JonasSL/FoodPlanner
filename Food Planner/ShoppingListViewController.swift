@@ -15,8 +15,16 @@ class ShoppingListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadPlaceholderProducts()
+        //loadPlaceholderProducts()
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        //Load saved shoppingList
+        if let savedShoppingList = loadProducts() {
+            shoppingList = savedShoppingList
+        }
+        tableView.reloadData()
     }
     
     func loadPlaceholderProducts() {
@@ -62,6 +70,17 @@ class ShoppingListViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    //Clean up the list and remove the found products (green cells)
+    @IBAction func removeFoundProducts(sender: AnyObject) {
+        for product in shoppingList {
+            if product.hasFound {
+                shoppingList.removeObject(product)
+            }
+        }
+        
+        saveProducts()
+        tableView.reloadData()
+    }
     
     //MARK: NSCoding
     func saveProducts() {
