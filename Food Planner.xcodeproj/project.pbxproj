@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E51A7EB51C0B701A00F76735 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7EB41C0B701A00F76735 /* ShoppingListViewController.swift */; };
+		E51A7EB91C0B734E00F76735 /* ShoppingProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7EB81C0B734E00F76735 /* ShoppingProduct.swift */; };
+		E51A7EBB1C0B76C100F76735 /* ShoppingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7EBA1C0B76C100F76735 /* ShoppingListCell.swift */; };
 		E53CFE461C01E104005CE7A6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CFE451C01E104005CE7A6 /* AddViewController.swift */; };
 		E54456B31C0518B600E3D730 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E54456B21C0518B600E3D730 /* logo.png */; };
 		E54456B61C051B2C00E3D730 /* Fridge.png in Resources */ = {isa = PBXBuildFile; fileRef = E54456B41C051B2C00E3D730 /* Fridge.png */; };
@@ -20,8 +23,6 @@
 		E548DA801C0618DB0013A08B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E548DA7F1C0618DB0013A08B /* Launch Screen.storyboard */; };
 		E548DA841C061A6B0013A08B /* LaunchScreenRetinaHD55.png in Resources */ = {isa = PBXBuildFile; fileRef = E548DA831C061A6B0013A08B /* LaunchScreenRetinaHD55.png */; };
 		E55933C91C088D7C006C749C /* ScannerViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = E55933C81C088D7C006C749C /* ScannerViewController .swift */; };
-		E55933CD1C08FFF8006C749C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933CB1C08FFF8006C749C /* Bolts.framework */; };
-		E55933CE1C08FFF8006C749C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933CC1C08FFF8006C749C /* Parse.framework */; };
 		E55933D01C09003B006C749C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933CF1C09003B006C749C /* AudioToolbox.framework */; };
 		E55933D21C09004A006C749C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933D11C09004A006C749C /* CFNetwork.framework */; };
 		E55933D41C090052006C749C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933D31C090052006C749C /* CoreGraphics.framework */; };
@@ -34,6 +35,8 @@
 		E55933E21C090091006C749C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E55933E11C090091006C749C /* libsqlite3.tbd */; };
 		E56DE9B31C012E8E00A60605 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DE9B21C012E8E00A60605 /* Unit.swift */; };
 		E5A331DC1C070BFB00A0F81A /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */; };
+		E5B268DD1C0B4C38000BC1B5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B268DB1C0B4C38000BC1B5 /* Bolts.framework */; };
+		E5B268DE1C0B4C38000BC1B5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B268DC1C0B4C38000BC1B5 /* Parse.framework */; };
 		E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BFF53E1BFE51BE00449496 /* Dish.swift */; };
 		E5C5CECA1BFE28EB00B67F14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEC91BFE28EB00B67F14 /* AppDelegate.swift */; };
 		E5C5CECC1BFE28EB00B67F14 /* FindDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CECB1BFE28EB00B67F14 /* FindDishViewController.swift */; };
@@ -65,6 +68,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E51A7EB41C0B701A00F76735 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
+		E51A7EB81C0B734E00F76735 /* ShoppingProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingProduct.swift; sourceTree = "<group>"; };
+		E51A7EBA1C0B76C100F76735 /* ShoppingListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListCell.swift; sourceTree = "<group>"; };
 		E53CFE451C01E104005CE7A6 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		E54456B21C0518B600E3D730 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		E54456B41C051B2C00E3D730 /* Fridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fridge.png; sourceTree = "<group>"; };
@@ -78,8 +84,6 @@
 		E548DA7F1C0618DB0013A08B /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E548DA831C061A6B0013A08B /* LaunchScreenRetinaHD55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenRetinaHD55.png; sourceTree = "<group>"; };
 		E55933C81C088D7C006C749C /* ScannerViewController .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScannerViewController .swift"; sourceTree = "<group>"; };
-		E55933CB1C08FFF8006C749C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Food Planner/Bolts.framework"; sourceTree = "<group>"; };
-		E55933CC1C08FFF8006C749C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Food Planner/Parse.framework"; sourceTree = "<group>"; };
 		E55933CF1C09003B006C749C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E55933D11C09004A006C749C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E55933D31C090052006C749C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -92,6 +96,8 @@
 		E55933E11C090091006C749C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E56DE9B21C012E8E00A60605 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
+		E5B268DB1C0B4C38000BC1B5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		E5B268DC1C0B4C38000BC1B5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E5BFF53E1BFE51BE00449496 /* Dish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		E5C5CEC61BFE28EB00B67F14 /* Food Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C5CEC91BFE28EB00B67F14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,18 +122,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E55933CE1C08FFF8006C749C /* Parse.framework in Frameworks */,
+				E5B268DE1C0B4C38000BC1B5 /* Parse.framework in Frameworks */,
 				E55933E21C090091006C749C /* libsqlite3.tbd in Frameworks */,
 				E55933E01C090085006C749C /* libz.tbd in Frameworks */,
 				E55933DE1C09007C006C749C /* SystemConfiguration.framework in Frameworks */,
 				E55933DC1C090072006C749C /* StoreKit.framework in Frameworks */,
 				E55933DA1C090069006C749C /* Security.framework in Frameworks */,
 				E55933D81C090062006C749C /* QuartzCore.framework in Frameworks */,
+				E5B268DD1C0B4C38000BC1B5 /* Bolts.framework in Frameworks */,
 				E55933D61C09005B006C749C /* CoreLocation.framework in Frameworks */,
 				E55933D41C090052006C749C /* CoreGraphics.framework in Frameworks */,
 				E55933D21C09004A006C749C /* CFNetwork.framework in Frameworks */,
 				E55933D01C09003B006C749C /* AudioToolbox.framework in Frameworks */,
-				E55933CD1C08FFF8006C749C /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +160,7 @@
 				E5C5CEF91BFE2E5E00B67F14 /* Product.swift */,
 				E56DE9B21C012E8E00A60605 /* Unit.swift */,
 				E5BFF53E1BFE51BE00449496 /* Dish.swift */,
+				E51A7EB81C0B734E00F76735 /* ShoppingProduct.swift */,
 			);
 			name = DataObjects;
 			sourceTree = "<group>";
@@ -185,6 +192,8 @@
 				E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */,
 				E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */,
 				E55933C81C088D7C006C749C /* ScannerViewController .swift */,
+				E51A7EB41C0B701A00F76735 /* ShoppingListViewController.swift */,
+				E51A7EBA1C0B76C100F76735 /* ShoppingListCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -192,8 +201,8 @@
 		E55933E31C09009E006C749C /* FrameWorks */ = {
 			isa = PBXGroup;
 			children = (
-				E55933CB1C08FFF8006C749C /* Bolts.framework */,
-				E55933CC1C08FFF8006C749C /* Parse.framework */,
+				E5B268DB1C0B4C38000BC1B5 /* Bolts.framework */,
+				E5B268DC1C0B4C38000BC1B5 /* Parse.framework */,
 				E55933E11C090091006C749C /* libsqlite3.tbd */,
 				E55933DF1C090085006C749C /* libz.tbd */,
 				E55933DD1C09007C006C749C /* SystemConfiguration.framework */,
@@ -407,11 +416,14 @@
 				E547FDB51C03789900C4BD9C /* SeachResultTableViewController.swift in Sources */,
 				E55933C91C088D7C006C749C /* ScannerViewController .swift in Sources */,
 				E5C5CECC1BFE28EB00B67F14 /* FindDishViewController.swift in Sources */,
+				E51A7EBB1C0B76C100F76735 /* ShoppingListCell.swift in Sources */,
 				E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */,
 				E53CFE461C01E104005CE7A6 /* AddViewController.swift in Sources */,
 				E56DE9B31C012E8E00A60605 /* Unit.swift in Sources */,
 				E5F09DD51C04F4BE000C7C92 /* ProductTableViewCell.swift in Sources */,
+				E51A7EB91C0B734E00F76735 /* ShoppingProduct.swift in Sources */,
 				E5A331DC1C070BFB00A0F81A /* SuggestionViewController.swift in Sources */,
+				E51A7EB51C0B701A00F76735 /* ShoppingListViewController.swift in Sources */,
 				E5C5CECA1BFE28EB00B67F14 /* AppDelegate.swift in Sources */,
 				E5FD65071C010F4400A6B382 /* DBTableViewController.swift in Sources */,
 				E5C5CEFA1BFE2E5E00B67F14 /* Product.swift in Sources */,
@@ -566,6 +578,9 @@
 					Planner,
 					"$(PROJECT_DIR)/Food",
 					Planner,
+					"$(PROJECT_DIR)/Food",
+					Planner,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Food Planner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -599,6 +614,9 @@
 					Planner,
 					"$(PROJECT_DIR)/Food",
 					Planner,
+					"$(PROJECT_DIR)/Food",
+					Planner,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Food Planner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
