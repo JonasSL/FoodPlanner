@@ -45,6 +45,8 @@
 		E5C5CEDF1BFE28EB00B67F14 /* Food_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEDE1BFE28EB00B67F14 /* Food_PlannerTests.swift */; };
 		E5C5CEEA1BFE28EB00B67F14 /* Food_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEE91BFE28EB00B67F14 /* Food_PlannerUITests.swift */; };
 		E5C5CEFA1BFE2E5E00B67F14 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEF91BFE2E5E00B67F14 /* Product.swift */; };
+		E5E8431F1C0E3D0200155629 /* Forward100.png in Resources */ = {isa = PBXBuildFile; fileRef = E5E8431E1C0E3D0200155629 /* Forward100.png */; };
+		E5E843211C0E3F4800155629 /* AddProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E843201C0E3F4800155629 /* AddProductTableViewController.swift */; };
 		E5F09DD51C04F4BE000C7C92 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */; };
 		E5F67A6F1C038A1E004852FF /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */; };
 		E5FD65071C010F4400A6B382 /* DBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FD65061C010F4400A6B382 /* DBTableViewController.swift */; };
@@ -112,6 +114,8 @@
 		E5C5CEE91BFE28EB00B67F14 /* Food_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_PlannerUITests.swift; sourceTree = "<group>"; };
 		E5C5CEEB1BFE28EB00B67F14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5C5CEF91BFE2E5E00B67F14 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E5E8431E1C0E3D0200155629 /* Forward100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Forward100.png; sourceTree = "<group>"; };
+		E5E843201C0E3F4800155629 /* AddProductTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductTableViewController.swift; sourceTree = "<group>"; };
 		E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
 		E5FD65061C010F4400A6B382 /* DBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBTableViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 		E548DA851C061A8C0013A08B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E5E8431E1C0E3D0200155629 /* Forward100.png */,
 				E54456B41C051B2C00E3D730 /* Fridge.png */,
 				E54456B51C051B2C00E3D730 /* Search.png */,
 				E54456B81C051B3600E3D730 /* Fridge@2x.png */,
@@ -194,6 +199,7 @@
 				E55933C81C088D7C006C749C /* ScannerViewController .swift */,
 				E51A7EB41C0B701A00F76735 /* ShoppingListViewController.swift */,
 				E51A7EBA1C0B76C100F76735 /* ShoppingListCell.swift */,
+				E5E843201C0E3F4800155629 /* AddProductTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 				E54456B61C051B2C00E3D730 /* Fridge.png in Resources */,
 				E5C5CECF1BFE28EB00B67F14 /* Main.storyboard in Resources */,
 				E54456BA1C051B3600E3D730 /* Fridge@2x.png in Resources */,
+				E5E8431F1C0E3D0200155629 /* Forward100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +429,7 @@
 				E56DE9B31C012E8E00A60605 /* Unit.swift in Sources */,
 				E5F09DD51C04F4BE000C7C92 /* ProductTableViewCell.swift in Sources */,
 				E51A7EB91C0B734E00F76735 /* ShoppingProduct.swift in Sources */,
+				E5E843211C0E3F4800155629 /* AddProductTableViewController.swift in Sources */,
 				E5A331DC1C070BFB00A0F81A /* SuggestionViewController.swift in Sources */,
 				E51A7EB51C0B701A00F76735 /* ShoppingListViewController.swift in Sources */,
 				E5C5CECA1BFE28EB00B67F14 /* AppDelegate.swift in Sources */,

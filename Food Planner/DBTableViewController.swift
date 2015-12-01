@@ -112,6 +112,21 @@ class DBTableViewController: UITableViewController {
             //update the shared DB
             saveProducts()
         }
+        
+        if let sourceViewController = sender.sourceViewController as? AddProductTableViewController, product = sourceViewController.product {
+            let newIndexPath = NSIndexPath(forRow: DB.count, inSection: 0)
+            if addProductToDB(product) {
+                //add product to table
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            } else {
+                
+                //reload the data
+                tableView.reloadData()
+            }
+            
+            //update the shared DB
+            saveProducts()
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
