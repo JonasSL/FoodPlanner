@@ -15,7 +15,8 @@ class AddProductTableViewController: UITableViewController, UIPickerViewDataSour
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var productName: UITextField!
     @IBOutlet weak var productWeight: UITextField!
-    @IBOutlet weak var barcodeLabel: UILabel!
+    @IBOutlet weak var scanBarcodeLabel: UILabel!
+    @IBOutlet weak var arrowLabel: UIImageView!
     
     let pickerData = Unit.allUnits
     var product: Product?
@@ -61,14 +62,18 @@ class AddProductTableViewController: UITableViewController, UIPickerViewDataSour
     @IBAction func didReceiveBarCode(segue: UIStoryboardSegue) {
         let barcodeVC = segue.sourceViewController as! ScannerViewController
         barcode = barcodeVC.barcode
-        barcodeLabel.hidden = false
         
         //Check if barcode is in Parse DB - set boolean if it needs to be uploaded (deosn't exist already)
         updateLabelsWithInfoFor(barcode)
         
         if !isInDatabase {
-            barcodeLabel.text = "Produkt er ikke fundet - vil blive tilføjet!"
-            barcodeLabel.textColor = UIColor(red: 1.00, green: 0.00, blue: 0.00, alpha: 1.0)
+            scanBarcodeLabel.text = "Produkt er ikke fundet - vil blive tilføjet!"
+            scanBarcodeLabel.textColor = UIColor(red: 1.00, green: 0.00, blue: 0.00, alpha: 1.0)
+            
+            //Hide arrow and make cell unclickable
+            arrowLabel.hidden = true
+            let cell = tableView.dequeueReusableCellWithIdentifier("scanButtonCell")
+            cell?.selectionStyle = UITableViewCellSelectionStyle.None
         }
     }
     
@@ -83,14 +88,14 @@ class AddProductTableViewController: UITableViewController, UIPickerViewDataSour
         if segue.identifier == "SaveProduct" {
             let name = productName.text!
             let weight = Int(productWeight.text! )!
-            let unit = pickerData[productUnit.selectedRowInComponent(0)]
+            let unit = Unit(rawValue: unitTextField.text!)!
             //let dateExpiration = dateExpirationPicker.date
             let dateExpiration = NSDate.init()
 
             product = Product(name: name, weight: weight, unit: unit, dateExpires: dateExpiration)
             
             //Send product data to Parse if barcode is read (label is not hidden)
-            if !isInDatabase && barcodeLabel.hidden == false {
+            if !isInDatabase && arrowLabel.hidden == true {
                 let testObject = PFObject(className: "Barcodes")
                 testObject["EAN"] = barcode
                 testObject["name"] = name
@@ -101,6 +106,16 @@ class AddProductTableViewController: UITableViewController, UIPickerViewDataSour
                 }
             }
         }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "ScanSegue" {
+            //If the arrow label is hidden, it means that a barcode has been scanned. Then the user should not be able to scan again.
+            if arrowLabel.hidden {
+                return false
+            }
+        }
+        return true
     }
     
     //MARK: UITextFieldDelegate
@@ -153,18 +168,21 @@ class AddProductTableViewController: UITableViewController, UIPickerViewDataSour
                 if let objects = objects {
                     for object in objects {
                         if object["EAN"] as! String == barcode {
+                            //Product has been found!
                             self.isInDatabase = true
                             
                             self.productName.text = object["name"] as? String
                             self.productWeight.text = object["weight"] as? String
                             
                             let unitString = object["unit"] as! String
+                            self.unitTextField.text = unitString
+                            /*
                             if let indexOfString = self.pickerData.indexOf(Unit(rawValue: unitString)!) {
                                 self.productUnit.selectRow(indexOfString, inComponent: 0, animated: true)
-                            }
-                            
-                            self.barcodeLabel.text = "Produkt fundet!"
-                            self.barcodeLabel.textColor = UIColor(red: 0.08, green: 0.93, blue: 0.08, alpha: 1.0)
+                            }*/
+
+                            self.scanBarcodeLabel.text = "Produkt fundet!"
+                            self.scanBarcodeLabel.textColor = UIColor(red: 0.08, green: 0.93, blue: 0.08, alpha: 1.0)
                         }
                     }
                     
