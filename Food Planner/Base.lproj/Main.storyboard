@@ -485,139 +485,6 @@
             </objects>
             <point key="canvasLocation" x="1361" y="1743"/>
         </scene>
-        <!--Tilføj Vare-->
-        <scene sceneID="AsY-eu-u7R">
-            <objects>
-                <viewController id="22H-K0-3Tp" customClass="AddViewController" customModule="Food_Planner" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="a54-sc-5Vk"/>
-                        <viewControllerLayoutGuide type="bottom" id="lSz-Np-BKS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HuZ-5Z-ZO9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Navn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7S-vX-C7i">
-                                <rect key="frame" x="20" y="93" width="40" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vægt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7W-X7-1RD">
-                                <rect key="frame" x="20" y="167" width="41" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mindst holdbar til" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mz3-To-OqX">
-                                <rect key="frame" x="20" y="267" width="133" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Indtast vægt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alN-Xq-Chm">
-                                <rect key="frame" x="20" y="196" width="399" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yS7-Mo-hHI">
-                                <rect key="frame" x="427" y="158" width="153" height="105"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="153" id="gib-F1-ifW"/>
-                                    <constraint firstAttribute="height" constant="105" id="rWI-g4-Q9J"/>
-                                </constraints>
-                            </pickerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Skriv varenavn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aYg-Xq-AMc">
-                                <rect key="frame" x="20" y="120" width="560" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="iAo-Ke-fpJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tth-nv-qnF">
-                                <rect key="frame" x="283" y="511" width="35" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Scan"/>
-                            </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="IJA-in-Uv4">
-                                <rect key="frame" x="20" y="296" width="560" height="186"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="186" id="k4K-43-3Tf"/>
-                                </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="470085785.39139801">
-                                    <!--2015-11-24 19:23:05 +0000-->
-                                </date>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="barcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gs-EO-fT2">
-                                <rect key="frame" x="268" y="549" width="64" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="IJA-in-Uv4" firstAttribute="top" secondItem="mz3-To-OqX" secondAttribute="bottom" constant="8" id="1qx-a0-6yw"/>
-                            <constraint firstItem="yS7-Mo-hHI" firstAttribute="leading" secondItem="alN-Xq-Chm" secondAttribute="trailing" constant="8" id="45A-2J-kRF"/>
-                            <constraint firstItem="p7W-X7-1RD" firstAttribute="leading" secondItem="HuZ-5Z-ZO9" secondAttribute="leadingMargin" id="4g0-oL-vE8"/>
-                            <constraint firstItem="5Gs-EO-fT2" firstAttribute="top" secondItem="tth-nv-qnF" secondAttribute="bottom" constant="8" id="AVU-8j-AAG"/>
-                            <constraint firstItem="p7W-X7-1RD" firstAttribute="top" secondItem="aYg-Xq-AMc" secondAttribute="bottom" constant="17" id="BNZ-ay-Twd"/>
-                            <constraint firstItem="tth-nv-qnF" firstAttribute="centerX" secondItem="HuZ-5Z-ZO9" secondAttribute="centerX" id="E5F-2a-T1i"/>
-                            <constraint firstItem="yS7-Mo-hHI" firstAttribute="top" secondItem="aYg-Xq-AMc" secondAttribute="bottom" constant="8" id="KTI-cp-w58"/>
-                            <constraint firstItem="aYg-Xq-AMc" firstAttribute="top" secondItem="Y7S-vX-C7i" secondAttribute="bottom" constant="6" id="NFL-sL-mzS"/>
-                            <constraint firstItem="5Gs-EO-fT2" firstAttribute="centerX" secondItem="HuZ-5Z-ZO9" secondAttribute="centerX" id="P2V-oZ-cQr"/>
-                            <constraint firstItem="Y7S-vX-C7i" firstAttribute="leading" secondItem="HuZ-5Z-ZO9" secondAttribute="leadingMargin" id="aBe-B4-5jT"/>
-                            <constraint firstItem="alN-Xq-Chm" firstAttribute="top" secondItem="p7W-X7-1RD" secondAttribute="bottom" constant="8" id="aeS-Qf-ylV"/>
-                            <constraint firstItem="tth-nv-qnF" firstAttribute="top" secondItem="IJA-in-Uv4" secondAttribute="bottom" constant="29" id="cvy-96-Mzy"/>
-                            <constraint firstItem="mz3-To-OqX" firstAttribute="top" secondItem="alN-Xq-Chm" secondAttribute="bottom" constant="41" id="eyb-5g-FeQ"/>
-                            <constraint firstItem="IJA-in-Uv4" firstAttribute="leading" secondItem="HuZ-5Z-ZO9" secondAttribute="leadingMargin" id="gJm-Az-FRD"/>
-                            <constraint firstItem="mz3-To-OqX" firstAttribute="leading" secondItem="HuZ-5Z-ZO9" secondAttribute="leadingMargin" id="jmt-wF-WBr"/>
-                            <constraint firstItem="alN-Xq-Chm" firstAttribute="leading" secondItem="HuZ-5Z-ZO9" secondAttribute="leadingMargin" id="l2o-pN-BjW"/>
-                            <constraint firstItem="alN-Xq-Chm" firstAttribute="leading" secondItem="HuZ-5Z-ZO9" secondAttribute="leadingMargin" id="luZ-XV-nig"/>
-                            <constraint firstItem="IJA-in-Uv4" firstAttribute="trailing" secondItem="HuZ-5Z-ZO9" secondAttribute="trailingMargin" id="mhK-WF-Svc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aYg-Xq-AMc" secondAttribute="trailing" id="oAK-VC-G54"/>
-                            <constraint firstItem="yS7-Mo-hHI" firstAttribute="trailing" secondItem="HuZ-5Z-ZO9" secondAttribute="trailingMargin" id="oMZ-f9-jhO"/>
-                            <constraint firstItem="aYg-Xq-AMc" firstAttribute="leading" secondItem="HuZ-5Z-ZO9" secondAttribute="leadingMargin" id="rOa-Ww-AV1"/>
-                            <constraint firstItem="Y7S-vX-C7i" firstAttribute="top" secondItem="a54-sc-5Vk" secondAttribute="bottom" constant="29" id="vbl-h8-FlL"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Tilføj Vare" id="gzL-p6-tzq">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="on9-o8-lnw">
-                            <connections>
-                                <action selector="cancel:" destination="22H-K0-3Tp" id="Oyv-VP-LvY"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7e4-8a-Y8a">
-                            <connections>
-                                <action selector="saveButtonPressed:" destination="22H-K0-3Tp" id="xfX-qY-8l6"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="barcodeLabel" destination="5Gs-EO-fT2" id="Gro-Iq-aHi"/>
-                        <outlet property="dateExpirationPicker" destination="IJA-in-Uv4" id="uuj-Fr-dMo"/>
-                        <outlet property="productName" destination="aYg-Xq-AMc" id="oZm-HN-8tl"/>
-                        <outlet property="productUnit" destination="yS7-Mo-hHI" id="s88-ZP-kT1"/>
-                        <outlet property="productWeight" destination="alN-Xq-Chm" id="v8Y-13-XYG"/>
-                        <outlet property="saveButton" destination="7e4-8a-Y8a" id="089-EK-1fr"/>
-                        <segue destination="Ghb-pt-Ufx" kind="unwind" identifier="SaveProduct" unwindAction="unwwindToProductList:" id="dHd-eK-MMx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rz8-1h-T0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Ghb-pt-Ufx" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2740" y="996"/>
-        </scene>
         <!--Scanner View Controller-->
         <scene sceneID="G2s-B6-EJo">
             <objects>
@@ -767,25 +634,6 @@
             </objects>
             <point key="canvasLocation" x="673" y="996"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="bqk-fK-9og">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0pI-zq-Epn" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YEo-Eu-dRy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="22H-K0-3Tp" kind="relationship" relationship="rootViewController" id="KNM-51-TjU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qYA-kS-Lex" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2070" y="996"/>
-        </scene>
         <!--Tilføj Vare-->
         <scene sceneID="nL5-XF-qce">
             <objects>
@@ -817,7 +665,7 @@
                                                     <rect key="frame" x="43" y="8" width="549" height="27"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 </textField>
                                             </subviews>
                                             <animations/>
@@ -865,7 +713,7 @@
                                                     <rect key="frame" x="44" y="8" width="481" height="27"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <animations/>
@@ -905,7 +753,7 @@
                                                     <color key="textColor" red="0.25882352939999997" green="0.68235294120000001" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hr6-Wt-u9I">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tryk for at vælge dato" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hr6-Wt-u9I">
                                                     <rect key="frame" x="71" y="8" width="521" height="27"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -990,6 +838,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="arrowLabel" destination="7Jk-dA-VjR" id="xqs-gS-pFk"/>
+                        <outlet property="dateTextField" destination="hr6-Wt-u9I" id="ihw-Jg-dqr"/>
                         <outlet property="productName" destination="tTm-gh-jfx" id="N8n-s3-9rT"/>
                         <outlet property="productWeight" destination="IzQ-nR-iO5" id="u0l-Jw-yMi"/>
                         <outlet property="saveButton" destination="dyG-xy-Okn" id="9kD-RB-SuO"/>

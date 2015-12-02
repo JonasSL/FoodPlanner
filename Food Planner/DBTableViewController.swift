@@ -98,21 +98,6 @@ class DBTableViewController: UITableViewController {
     //MARK: Navigation
     //add product from AddViewController to DB and insert row if it is a new product
     @IBAction func unwwindToProductList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.sourceViewController as? AddViewController, product = sourceViewController.product {
-            let newIndexPath = NSIndexPath(forRow: DB.count, inSection: 0)
-            if addProductToDB(product) {
-                //add product to table
-                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
-            } else {
-                
-                //reload the data
-                tableView.reloadData()
-            }
-            
-            //update the shared DB
-            saveProducts()
-        }
-        
         if let sourceViewController = sender.sourceViewController as? AddProductTableViewController, product = sourceViewController.product {
             let newIndexPath = NSIndexPath(forRow: DB.count, inSection: 0)
             if addProductToDB(product) {

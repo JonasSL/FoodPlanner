@@ -10,7 +10,6 @@
 		E51A7EB51C0B701A00F76735 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7EB41C0B701A00F76735 /* ShoppingListViewController.swift */; };
 		E51A7EB91C0B734E00F76735 /* ShoppingProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7EB81C0B734E00F76735 /* ShoppingProduct.swift */; };
 		E51A7EBB1C0B76C100F76735 /* ShoppingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7EBA1C0B76C100F76735 /* ShoppingListCell.swift */; };
-		E53CFE461C01E104005CE7A6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CFE451C01E104005CE7A6 /* AddViewController.swift */; };
 		E54456B31C0518B600E3D730 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E54456B21C0518B600E3D730 /* logo.png */; };
 		E54456B61C051B2C00E3D730 /* Fridge.png in Resources */ = {isa = PBXBuildFile; fileRef = E54456B41C051B2C00E3D730 /* Fridge.png */; };
 		E54456B71C051B2C00E3D730 /* Search.png in Resources */ = {isa = PBXBuildFile; fileRef = E54456B51C051B2C00E3D730 /* Search.png */; };
@@ -73,7 +72,6 @@
 		E51A7EB41C0B701A00F76735 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		E51A7EB81C0B734E00F76735 /* ShoppingProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingProduct.swift; sourceTree = "<group>"; };
 		E51A7EBA1C0B76C100F76735 /* ShoppingListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListCell.swift; sourceTree = "<group>"; };
-		E53CFE451C01E104005CE7A6 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		E54456B21C0518B600E3D730 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		E54456B41C051B2C00E3D730 /* Fridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fridge.png; sourceTree = "<group>"; };
 		E54456B51C051B2C00E3D730 /* Search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Search.png; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 			children = (
 				E5C5CECB1BFE28EB00B67F14 /* FindDishViewController.swift */,
 				E5FD65061C010F4400A6B382 /* DBTableViewController.swift */,
-				E53CFE451C01E104005CE7A6 /* AddViewController.swift */,
 				E547FDB11C03426600C4BD9C /* ProductDetailViewController.swift */,
 				E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */,
 				E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */,
@@ -425,7 +422,6 @@
 				E5C5CECC1BFE28EB00B67F14 /* FindDishViewController.swift in Sources */,
 				E51A7EBB1C0B76C100F76735 /* ShoppingListCell.swift in Sources */,
 				E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */,
-				E53CFE461C01E104005CE7A6 /* AddViewController.swift in Sources */,
 				E56DE9B31C012E8E00A60605 /* Unit.swift in Sources */,
 				E5F09DD51C04F4BE000C7C92 /* ProductTableViewCell.swift in Sources */,
 				E51A7EB91C0B734E00F76735 /* ShoppingProduct.swift in Sources */,

@@ -17,13 +17,14 @@ class AddProductTableViewController: UITableViewController, UIPickerViewDataSour
     @IBOutlet weak var productWeight: UITextField!
     @IBOutlet weak var scanBarcodeLabel: UILabel!
     @IBOutlet weak var arrowLabel: UIImageView!
+    @IBOutlet weak var dateTextField: UITextField!
     
     let pickerData = Unit.allUnits
     var product: Product?
     var isInDatabase = false
     var barcode = ""
     let productUnit = UIPickerView()
-
+    let dateExpirationPicker = UIDatePicker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +49,18 @@ class AddProductTableViewController: UITableViewController, UIPickerViewDataSour
         toolBar.userInteractionEnabled = true
 
         unitTextField.inputAccessoryView = toolBar
+        
+        //Setup the date picker
+        dateExpirationPicker.minimumDate = NSDate.init()
+        dateTextField.inputView = dateExpirationPicker
+        dateExpirationPicker.addTarget(self, action: "datePicked", forControlEvents: UIControlEvents.ValueChanged)
+        dateExpirationPicker.datePickerMode = UIDatePickerMode.Date
+        dateTextField.inputAccessoryView = toolBar
     }
     
     func donePicking() {
         unitTextField.endEditing(true)
+        dateTextField.endEditing(true)
     }
     
     //MARK: Navigation
@@ -90,7 +99,7 @@ class AddProductTableViewController: UITableViewController, UIPickerViewDataSour
             let weight = Int(productWeight.text! )!
             let unit = Unit(rawValue: unitTextField.text!)!
             //let dateExpiration = dateExpirationPicker.date
-            let dateExpiration = NSDate.init()
+            let dateExpiration = dateExpirationPicker.date
 
             product = Product(name: name, weight: weight, unit: unit, dateExpires: dateExpiration)
             
@@ -155,6 +164,20 @@ class AddProductTableViewController: UITableViewController, UIPickerViewDataSour
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         unitTextField.text = pickerData[row].rawValue
     }
+    
+    //MARK: UIDatePicker
+    func datePicked() {
+        dateTextField.text = formatDate(dateExpirationPicker.date)
+    }
+    
+    func formatDate(date: NSDate) -> String {
+        let formatter = NSDateFormatter()
+        let danishFormat = NSDateFormatter.dateFormatFromTemplate("MMMMddyyyy", options: 0, locale: NSLocale(localeIdentifier: "da-DK"))
+        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        formatter.dateFormat = danishFormat
+        return formatter.stringFromDate(date)
+    }
+    
     
     //MARK: Parse Datase methods
     func updateLabelsWithInfoFor(barcode: String) {
