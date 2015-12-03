@@ -224,28 +224,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpM-kZ-0fn">
-                                <rect key="frame" x="213" y="430" width="175" height="89"/>
+                                <rect key="frame" x="125" y="451" width="350" height="50"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.62352941176470589" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="1Do-Ab-Cxn"/>
-                                    <constraint firstAttribute="height" constant="89" id="Xww-v5-7eP"/>
+                                    <constraint firstAttribute="width" constant="350" id="1Do-Ab-Cxn"/>
+                                    <constraint firstAttribute="height" constant="50" id="Xww-v5-7eP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="Find ret!"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Find ret">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="findDish:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQh-s4-WEB"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgH-Mf-2oP">
-                                <rect key="frame" x="213" y="287" width="175" height="135"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="HGq-a3-wZf"/>
-                                    <constraint firstAttribute="height" constant="135" id="Tj5-un-1uK"/>
-                                </constraints>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Antal personer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQJ-TO-L8N">
-                                <rect key="frame" x="213" y="270" width="175" height="21"/>
+                                <rect key="frame" x="213" y="314" width="175" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="175" id="gkS-S7-jt5"/>
@@ -254,7 +249,7 @@
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="37y-u2-2EF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo3.png" translatesAutoresizingMaskIntoConstraints="NO" id="37y-u2-2EF">
                                 <rect key="frame" x="142" y="72" width="317" height="169"/>
                                 <animations/>
                                 <constraints>
@@ -263,19 +258,26 @@
                                     <constraint firstAttribute="height" constant="169" id="Pca-c9-99V"/>
                                 </constraints>
                             </imageView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgH-Mf-2oP">
+                                <rect key="frame" x="125" y="331" width="350" height="200"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="HGq-a3-wZf"/>
+                                    <constraint firstAttribute="height" constant="200" id="Tj5-un-1uK"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.58823529409999997" green="0.74117647060000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="37y-u2-2EF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="0R9-Aa-lkb"/>
-                            <constraint firstItem="nQJ-TO-L8N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="206" id="1WO-Qd-eyG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gpM-kZ-0fn" secondAttribute="bottom" constant="50" id="12E-QT-En7"/>
+                            <constraint firstItem="nQJ-TO-L8N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="250" id="1WO-Qd-eyG"/>
                             <constraint firstItem="pgH-Mf-2oP" firstAttribute="top" secondItem="nQJ-TO-L8N" secondAttribute="bottom" constant="-4" id="9Dk-UM-1pH"/>
                             <constraint firstItem="pgH-Mf-2oP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CWC-6t-n0i"/>
                             <constraint firstItem="gpM-kZ-0fn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ayZ-9F-dda"/>
                             <constraint firstItem="nQJ-TO-L8N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gVv-mz-9Po"/>
-                            <constraint firstItem="pgH-Mf-2oP" firstAttribute="top" secondItem="gpM-kZ-0fn" secondAttribute="bottom" constant="-232" id="oSU-l0-s71"/>
                             <constraint firstItem="37y-u2-2EF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uKT-nF-LZp"/>
-                            <constraint firstItem="gpM-kZ-0fn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="366" id="z1w-ou-LjL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Find Ret" id="sXM-ye-qdu"/>
@@ -1013,6 +1015,6 @@
         <image name="Fridge" width="25" height="25"/>
         <image name="Seach" width="25" height="25"/>
         <image name="ShoppingCart" width="25" height="25"/>
-        <image name="logo.png" width="1000" height="500"/>
+        <image name="logo3.png" width="1000" height="500"/>
     </resources>
 </document>

@@ -37,9 +37,13 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
             DB = savedProducts
         }
         
+        //Set delegate
         personPickerView.delegate = self
         
-        findButton.layer.cornerRadius = 10
+        //Make find button a rounded rectangle
+        let btnLayer = findButton.layer
+        btnLayer.masksToBounds = true
+        btnLayer.cornerRadius = 5
         
     }
     
