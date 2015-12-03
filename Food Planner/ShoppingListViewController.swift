@@ -15,8 +15,11 @@ class ShoppingListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadPlaceholderProducts()
         
+        //Remove empty cells
+        let tblView = UIView(frame: CGRectZero)
+        tableView.tableFooterView = tblView
+        tableView.tableFooterView?.hidden = true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -24,16 +27,6 @@ class ShoppingListViewController: UITableViewController {
         if let savedShoppingList = loadProducts() {
             shoppingList = savedShoppingList
         }
-        tableView.reloadData()
-    }
-    
-    func loadPlaceholderProducts() {
-        let benJerryIs = ShoppingProduct(name: "Ben&Jerry", weight: 500, unit: Unit.GRAM, dateExpires: NSDate.init())
-        let marabou = ShoppingProduct(name: "Marabou Daim", weight: 200, unit: Unit.GRAM, dateExpires: NSDate.init())
-        let slik = ShoppingProduct(name: "Slik", weight: 200, unit: Unit.GRAM, dateExpires: NSDate.init())
-        shoppingList.append(benJerryIs)
-        shoppingList.append(marabou)
-        shoppingList.append(slik)
         tableView.reloadData()
     }
     
@@ -48,7 +41,7 @@ class ShoppingListViewController: UITableViewController {
         if product.hasFound {
             cell.backgroundColor = UIColor.greenColor()
         } else {
-            cell.backgroundColor = nil
+            cell.backgroundColor = UIColor.whiteColor()
         }
         
         return cell
@@ -59,7 +52,20 @@ class ShoppingListViewController: UITableViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        let emptyLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height))
+        emptyLabel.text = "Tilføj varer ved at tilføje foreslåede retter"
+        emptyLabel.textAlignment = NSTextAlignment.Center
+        self.tableView.backgroundView = emptyLabel
+        if shoppingList.count == 0{
+            emptyLabel.hidden = false
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+            return 0
+        } else {
+            emptyLabel.hidden = true
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+            return 1
+        }
+
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -69,6 +75,7 @@ class ShoppingListViewController: UITableViewController {
         }*/
         tableView.reloadData()
     }
+    
     
     //Clean up the list and remove the found products (green cells)
     @IBAction func removeFoundProducts(sender: AnyObject) {

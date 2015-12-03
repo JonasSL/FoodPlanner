@@ -24,6 +24,11 @@ class DBTableViewController: UITableViewController {
         
         //Add edit button
         navigationItem.leftBarButtonItem = editButtonItem()
+        
+        //Remove empty cells
+        let tblView = UIView(frame: CGRectZero)
+        tableView.tableFooterView = tblView
+        tableView.tableFooterView?.hidden = true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -93,10 +98,8 @@ class DBTableViewController: UITableViewController {
     }
     
     
-
-    
     //MARK: Navigation
-    //add product from AddViewController to DB and insert row if it is a new product
+    //add product from AddProductTableViewController to DB and insert row if it is a new product
     @IBAction func unwwindToProductList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? AddProductTableViewController, product = sourceViewController.product {
             let newIndexPath = NSIndexPath(forRow: DB.count, inSection: 0)
