@@ -268,7 +268,7 @@
                             </pickerView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="37y-u2-2EF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="0R9-Aa-lkb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gpM-kZ-0fn" secondAttribute="bottom" constant="50" id="12E-QT-En7"/>

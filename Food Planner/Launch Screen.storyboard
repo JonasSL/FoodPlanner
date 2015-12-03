@@ -33,7 +33,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenRetinaHD55.png" translatesAutoresizingMaskIntoConstraints="NO" id="sxJ-3c-EJb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenRetina2HD55.png" translatesAutoresizingMaskIntoConstraints="NO" id="sxJ-3c-EJb">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
@@ -60,6 +60,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchScreenRetinaHD55.png" width="1242" height="2208"/>
+        <image name="LaunchScreenRetina2HD55.png" width="1242" height="2208"/>
     </resources>
 </document>
