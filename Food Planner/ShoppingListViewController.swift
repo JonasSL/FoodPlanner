@@ -39,9 +39,9 @@ class ShoppingListViewController: UITableViewController {
         cell.weightLabel.text = String(product.weight) + " \(product.unit.rawValue)"
         
         if product.hasFound {
-            cell.backgroundColor = UIColor.greenColor()
+            cell.checkMark.hidden = false
         } else {
-            cell.backgroundColor = UIColor.whiteColor()
+            cell.checkMark.hidden = true
         }
         
         return cell
@@ -70,9 +70,6 @@ class ShoppingListViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         shoppingList[indexPath.row].hasFound = !shoppingList[indexPath.row].hasFound
-        /*shoppingList.sortInPlace() {
-            $0.hasFound != $1.hasFound
-        }*/
         tableView.reloadData()
     }
     

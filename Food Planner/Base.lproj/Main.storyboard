@@ -563,17 +563,28 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheckmarkBlue-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="O4B-VE-R2O">
+                                            <rect key="frame" x="555" y="8" width="27" height="27"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="O4B-VE-R2O" secondAttribute="height" multiplier="1:1" id="KQB-cs-uKj"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <animations/>
                                     <constraints>
                                         <constraint firstItem="tnH-nw-T2g" firstAttribute="centerY" secondItem="T4O-qT-01m" secondAttribute="centerY" id="6Uw-c9-vsA"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="O4B-VE-R2O" secondAttribute="trailing" constant="10" id="CJ9-If-tyi"/>
                                         <constraint firstItem="IX5-k8-d4v" firstAttribute="leading" secondItem="T4O-qT-01m" secondAttribute="leadingMargin" constant="76" id="M2w-kh-523"/>
                                         <constraint firstItem="tnH-nw-T2g" firstAttribute="leading" secondItem="T4O-qT-01m" secondAttribute="leadingMargin" constant="10" id="PY6-lY-x5D"/>
                                         <constraint firstItem="IX5-k8-d4v" firstAttribute="centerY" secondItem="T4O-qT-01m" secondAttribute="centerY" id="Qh9-cH-6Gj"/>
+                                        <constraint firstItem="O4B-VE-R2O" firstAttribute="top" secondItem="T4O-qT-01m" secondAttribute="topMargin" id="fL3-Q2-Alh"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="O4B-VE-R2O" secondAttribute="bottom" id="qiE-h8-qI6"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
+                                    <outlet property="checkMark" destination="O4B-VE-R2O" id="3bR-zB-bmZ"/>
                                     <outlet property="nameLabel" destination="IX5-k8-d4v" id="VvV-Ds-uaB"/>
                                     <outlet property="weightLabel" destination="tnH-nw-T2g" id="G0K-Zs-MMN"/>
                                 </connections>
@@ -997,6 +1008,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CheckmarkBlue-50.png" width="50" height="50"/>
         <image name="Forward100.png" width="100" height="100"/>
         <image name="Fridge" width="25" height="25"/>
         <image name="Seach" width="25" height="25"/>
