@@ -258,8 +258,8 @@
                                     <constraint firstAttribute="height" constant="169" id="Pca-c9-99V"/>
                                 </constraints>
                             </imageView>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgH-Mf-2oP">
-                                <rect key="frame" x="125" y="331" width="350" height="200"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgH-Mf-2oP">
+                                <rect key="frame" x="125" y="328" width="350" height="200"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="HGq-a3-wZf"/>
