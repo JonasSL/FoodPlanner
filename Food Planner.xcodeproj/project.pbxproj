@@ -176,18 +176,18 @@
 		E548DA851C061A8C0013A08B /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				E58DFC2B1C10F1340025A9A4 /* LaunchScreenRetina2HD55.png */,
-				E58DFC271C10EB4C0025A9A4 /* logo3.png */,
-				E58DFC211C10E5C90025A9A4 /* CheckmarkBlue-50.png */,
 				E58DFC1F1C10E4DE0025A9A4 /* Checkmark-50.png */,
-				E5E8431E1C0E3D0200155629 /* Forward100.png */,
-				E54456B41C051B2C00E3D730 /* Fridge.png */,
-				E54456B51C051B2C00E3D730 /* Search.png */,
-				E54456B81C051B3600E3D730 /* Fridge@2x.png */,
-				E54456B91C051B3600E3D730 /* Search@2x.png */,
-				E54456B21C0518B600E3D730 /* logo.png */,
+				E58DFC211C10E5C90025A9A4 /* CheckmarkBlue-50.png */,
 				E54456C21C051BE500E3D730 /* FoodPlannerIcon120.png */,
 				E54456C31C051BE500E3D730 /* FoodPlannerIcon180.png */,
+				E5E8431E1C0E3D0200155629 /* Forward100.png */,
+				E54456B41C051B2C00E3D730 /* Fridge.png */,
+				E54456B81C051B3600E3D730 /* Fridge@2x.png */,
+				E58DFC2B1C10F1340025A9A4 /* LaunchScreenRetina2HD55.png */,
+				E54456B21C0518B600E3D730 /* logo.png */,
+				E58DFC271C10EB4C0025A9A4 /* logo3.png */,
+				E54456B51C051B2C00E3D730 /* Search.png */,
+				E54456B91C051B3600E3D730 /* Search@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -195,17 +195,17 @@
 		E55933CA1C089045006C749C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E5C5CECB1BFE28EB00B67F14 /* FindDishViewController.swift */,
-				E5FD65061C010F4400A6B382 /* DBTableViewController.swift */,
-				E547FDB11C03426600C4BD9C /* ProductDetailViewController.swift */,
-				E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */,
-				E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */,
-				E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */,
-				E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */,
-				E55933C81C088D7C006C749C /* ScannerViewController .swift */,
-				E51A7EB41C0B701A00F76735 /* ShoppingListViewController.swift */,
-				E51A7EBA1C0B76C100F76735 /* ShoppingListCell.swift */,
 				E5E843201C0E3F4800155629 /* AddProductTableViewController.swift */,
+				E5FD65061C010F4400A6B382 /* DBTableViewController.swift */,
+				E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */,
+				E5C5CECB1BFE28EB00B67F14 /* FindDishViewController.swift */,
+				E547FDB11C03426600C4BD9C /* ProductDetailViewController.swift */,
+				E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */,
+				E55933C81C088D7C006C749C /* ScannerViewController .swift */,
+				E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */,
+				E51A7EBA1C0B76C100F76735 /* ShoppingListCell.swift */,
+				E51A7EB41C0B701A00F76735 /* ShoppingListViewController.swift */,
+				E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

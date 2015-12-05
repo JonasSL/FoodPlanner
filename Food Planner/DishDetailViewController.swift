@@ -41,6 +41,11 @@ class DishDetailViewController: UIViewController {
             }
             forPersonsLabel.text = "- til \(numberOfPersons) \(personsString) (originalt til \(dish.persons) personer)"
         }
+        
+        //Make find button a rounded rectangle
+        let btnLayer = makeDishButton.layer
+        btnLayer.masksToBounds = true
+        btnLayer.cornerRadius = 5
     }
     
     //MARK: Formatting

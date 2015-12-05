@@ -42,7 +42,7 @@ class AddProductTableViewController: UITableViewController, UIPickerViewDataSour
         toolBar.tintColor = UIColor.blackColor()
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Færdig", style: UIBarButtonItemStyle.Bordered, target: self, action: "donePicking")
+        let doneButton = UIBarButtonItem(title: "Færdig", style: UIBarButtonItemStyle.Plain, target: self, action: "donePicking")
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
 
         toolBar.setItems([spaceButton, doneButton], animated: false)

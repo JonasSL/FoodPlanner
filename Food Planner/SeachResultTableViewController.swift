@@ -15,6 +15,11 @@ class SeachResultTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Resultater"
+        
+        //Remove empty cells
+        let tblView = UIView(frame: CGRectZero)
+        tableView.tableFooterView = tblView
+        tableView.tableFooterView?.hidden = true
     }
     
     override func viewWillAppear(animated: Bool) {
