@@ -62,6 +62,11 @@ class DishDetailViewController: UIViewController {
     @IBAction func makeDish(sender: AnyObject) {
         let database = loadProducts()
         
+        //Make button disabled
+        makeDishButton.enabled = false
+        makeDishButton.backgroundColor = UIColor(red:0.67, green:0.67, blue:0.67, alpha:1.0)
+        
+        
         //Subtracts the weight of the products in the dish from the DB
         if var DB = database {
             for dishProduct in dish!.ingredients {
