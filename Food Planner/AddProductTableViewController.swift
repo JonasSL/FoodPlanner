@@ -216,8 +216,4 @@ class AddProductTableViewController: UITableViewController, UIPickerViewDataSour
             }
         }
     }
-
-    
-    
-
 }

@@ -119,7 +119,7 @@ class DBTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowDetail" {
-            let productDetailViewController = segue.destinationViewController as! ProductDetailViewController
+            let productDetailViewController = segue.destinationViewController as! ProductDetailTableViewController
             if let selectedProductCell = sender as? UITableViewCell {
                 let indexPath = tableView.indexPathForCell(selectedProductCell)!
                 let selectedProduct = DB[indexPath.row]

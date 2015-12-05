@@ -17,7 +17,6 @@
 		E54456BB1C051B3600E3D730 /* Search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E54456B91C051B3600E3D730 /* Search@2x.png */; };
 		E54456C41C051BE500E3D730 /* FoodPlannerIcon120.png in Resources */ = {isa = PBXBuildFile; fileRef = E54456C21C051BE500E3D730 /* FoodPlannerIcon120.png */; };
 		E54456C51C051BE500E3D730 /* FoodPlannerIcon180.png in Resources */ = {isa = PBXBuildFile; fileRef = E54456C31C051BE500E3D730 /* FoodPlannerIcon180.png */; };
-		E547FDB21C03426600C4BD9C /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547FDB11C03426600C4BD9C /* ProductDetailViewController.swift */; };
 		E547FDB51C03789900C4BD9C /* SeachResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */; };
 		E548DA801C0618DB0013A08B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E548DA7F1C0618DB0013A08B /* Launch Screen.storyboard */; };
 		E55933C91C088D7C006C749C /* ScannerViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = E55933C81C088D7C006C749C /* ScannerViewController .swift */; };
@@ -36,6 +35,7 @@
 		E58DFC221C10E5C90025A9A4 /* CheckmarkBlue-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E58DFC211C10E5C90025A9A4 /* CheckmarkBlue-50.png */; };
 		E58DFC281C10EB4C0025A9A4 /* logo3.png in Resources */ = {isa = PBXBuildFile; fileRef = E58DFC271C10EB4C0025A9A4 /* logo3.png */; };
 		E58DFC2C1C10F1340025A9A4 /* LaunchScreenRetina2HD55.png in Resources */ = {isa = PBXBuildFile; fileRef = E58DFC2B1C10F1340025A9A4 /* LaunchScreenRetina2HD55.png */; };
+		E596C9281C13350200EFCEBE /* ProductDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596C9271C13350200EFCEBE /* ProductDetailTableViewController.swift */; };
 		E5A331DC1C070BFB00A0F81A /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */; };
 		E5B268DD1C0B4C38000BC1B5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B268DB1C0B4C38000BC1B5 /* Bolts.framework */; };
 		E5B268DE1C0B4C38000BC1B5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B268DC1C0B4C38000BC1B5 /* Parse.framework */; };
@@ -82,7 +82,6 @@
 		E54456B91C051B3600E3D730 /* Search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search@2x.png"; sourceTree = "<group>"; };
 		E54456C21C051BE500E3D730 /* FoodPlannerIcon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FoodPlannerIcon120.png; sourceTree = "<group>"; };
 		E54456C31C051BE500E3D730 /* FoodPlannerIcon180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FoodPlannerIcon180.png; sourceTree = "<group>"; };
-		E547FDB11C03426600C4BD9C /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeachResultTableViewController.swift; sourceTree = "<group>"; };
 		E548DA7F1C0618DB0013A08B /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E55933C81C088D7C006C749C /* ScannerViewController .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScannerViewController .swift"; sourceTree = "<group>"; };
@@ -101,6 +100,7 @@
 		E58DFC211C10E5C90025A9A4 /* CheckmarkBlue-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckmarkBlue-50.png"; sourceTree = "<group>"; };
 		E58DFC271C10EB4C0025A9A4 /* logo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo3.png; sourceTree = "<group>"; };
 		E58DFC2B1C10F1340025A9A4 /* LaunchScreenRetina2HD55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenRetina2HD55.png; sourceTree = "<group>"; };
+		E596C9271C13350200EFCEBE /* ProductDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailTableViewController.swift; sourceTree = "<group>"; };
 		E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		E5B268DB1C0B4C38000BC1B5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E5B268DC1C0B4C38000BC1B5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -199,13 +199,13 @@
 				E5FD65061C010F4400A6B382 /* DBTableViewController.swift */,
 				E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */,
 				E5C5CECB1BFE28EB00B67F14 /* FindDishViewController.swift */,
-				E547FDB11C03426600C4BD9C /* ProductDetailViewController.swift */,
 				E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */,
 				E55933C81C088D7C006C749C /* ScannerViewController .swift */,
 				E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */,
 				E51A7EBA1C0B76C100F76735 /* ShoppingListCell.swift */,
 				E51A7EB41C0B701A00F76735 /* ShoppingListViewController.swift */,
 				E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */,
+				E596C9271C13350200EFCEBE /* ProductDetailTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -427,7 +427,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E547FDB21C03426600C4BD9C /* ProductDetailViewController.swift in Sources */,
 				E5F67A6F1C038A1E004852FF /* DishDetailViewController.swift in Sources */,
 				E547FDB51C03789900C4BD9C /* SeachResultTableViewController.swift in Sources */,
 				E55933C91C088D7C006C749C /* ScannerViewController .swift in Sources */,
@@ -443,6 +442,7 @@
 				E5C5CECA1BFE28EB00B67F14 /* AppDelegate.swift in Sources */,
 				E5FD65071C010F4400A6B382 /* DBTableViewController.swift in Sources */,
 				E5C5CEFA1BFE2E5E00B67F14 /* Product.swift in Sources */,
+				E596C9281C13350200EFCEBE /* ProductDetailTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
