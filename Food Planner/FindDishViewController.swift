@@ -49,6 +49,8 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
         btn2Layer.masksToBounds = true
         btn2Layer.cornerRadius = 5
         
+        //Set picker to start at 4 persons
+        personPickerView.selectRow(3, inComponent: 0, animated: true)
         
     }
     
