@@ -724,7 +724,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheckmarkBlue-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="O4B-VE-R2O">
+                                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheckmarkBlue-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="O4B-VE-R2O">
                                             <rect key="frame" x="555" y="8" width="27" height="27"/>
                                             <animations/>
                                             <constraints>

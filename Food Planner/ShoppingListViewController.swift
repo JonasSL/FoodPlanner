@@ -38,11 +38,18 @@ class ShoppingListViewController: UITableViewController {
         cell.nameLabel.text = product.name
         cell.weightLabel.text = String(product.weight) + " \(product.unit.rawValue)"
         
+        //Show or hide checkmark with animation
         if product.hasFound {
-            cell.checkMark.hidden = false
+            UIView.animateWithDuration(0.15, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                cell.checkMark.alpha = 1
+                }, completion: nil)
         } else {
-            cell.checkMark.hidden = true
+            UIView.animateWithDuration(0.15, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                cell.checkMark.alpha = 0
+                }, completion: nil)
         }
+        
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         return cell
         
