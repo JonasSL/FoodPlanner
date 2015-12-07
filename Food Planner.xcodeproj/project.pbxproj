@@ -37,6 +37,9 @@
 		E58DFC2C1C10F1340025A9A4 /* LaunchScreenRetina2HD55.png in Resources */ = {isa = PBXBuildFile; fileRef = E58DFC2B1C10F1340025A9A4 /* LaunchScreenRetina2HD55.png */; };
 		E596C9281C13350200EFCEBE /* ProductDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596C9271C13350200EFCEBE /* ProductDetailTableViewController.swift */; };
 		E5A331DC1C070BFB00A0F81A /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */; };
+		E5AE28191C1605EC005FC0BB /* HighPriorityRed-100.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AE28171C1605EC005FC0BB /* HighPriorityRed-100.png */; };
+		E5AE281A1C1605EC005FC0BB /* CheckmarkGreen-100.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AE28181C1605EC005FC0BB /* CheckmarkGreen-100.png */; };
+		E5AE281C1C160AAA005FC0BB /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AE281B1C160AAA005FC0BB /* Reach.swift */; };
 		E5B268DD1C0B4C38000BC1B5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B268DB1C0B4C38000BC1B5 /* Bolts.framework */; };
 		E5B268DE1C0B4C38000BC1B5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B268DC1C0B4C38000BC1B5 /* Parse.framework */; };
 		E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BFF53E1BFE51BE00449496 /* Dish.swift */; };
@@ -102,6 +105,9 @@
 		E58DFC2B1C10F1340025A9A4 /* LaunchScreenRetina2HD55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenRetina2HD55.png; sourceTree = "<group>"; };
 		E596C9271C13350200EFCEBE /* ProductDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailTableViewController.swift; sourceTree = "<group>"; };
 		E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
+		E5AE28171C1605EC005FC0BB /* HighPriorityRed-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HighPriorityRed-100.png"; sourceTree = "<group>"; };
+		E5AE28181C1605EC005FC0BB /* CheckmarkGreen-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckmarkGreen-100.png"; sourceTree = "<group>"; };
+		E5AE281B1C160AAA005FC0BB /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		E5B268DB1C0B4C38000BC1B5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E5B268DC1C0B4C38000BC1B5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E5BFF53E1BFE51BE00449496 /* Dish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
@@ -176,6 +182,8 @@
 		E548DA851C061A8C0013A08B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E5AE28171C1605EC005FC0BB /* HighPriorityRed-100.png */,
+				E5AE28181C1605EC005FC0BB /* CheckmarkGreen-100.png */,
 				E58DFC1F1C10E4DE0025A9A4 /* Checkmark-50.png */,
 				E58DFC211C10E5C90025A9A4 /* CheckmarkBlue-50.png */,
 				E54456C21C051BE500E3D730 /* FoodPlannerIcon120.png */,
@@ -261,6 +269,7 @@
 				E5C5CED01BFE28EB00B67F14 /* Assets.xcassets */,
 				E5C5CED51BFE28EB00B67F14 /* Info.plist */,
 				E548DA7F1C0618DB0013A08B /* Launch Screen.storyboard */,
+				E5AE281B1C160AAA005FC0BB /* Reach.swift */,
 			);
 			path = "Food Planner";
 			sourceTree = "<group>";
@@ -392,7 +401,9 @@
 				E54456BB1C051B3600E3D730 /* Search@2x.png in Resources */,
 				E54456B31C0518B600E3D730 /* logo.png in Resources */,
 				E54456C51C051BE500E3D730 /* FoodPlannerIcon180.png in Resources */,
+				E5AE281A1C1605EC005FC0BB /* CheckmarkGreen-100.png in Resources */,
 				E58DFC2C1C10F1340025A9A4 /* LaunchScreenRetina2HD55.png in Resources */,
+				E5AE28191C1605EC005FC0BB /* HighPriorityRed-100.png in Resources */,
 				E54456C41C051BE500E3D730 /* FoodPlannerIcon120.png in Resources */,
 				E54456B71C051B2C00E3D730 /* Search.png in Resources */,
 				E548DA801C0618DB0013A08B /* Launch Screen.storyboard in Resources */,
@@ -434,6 +445,7 @@
 				E51A7EBB1C0B76C100F76735 /* ShoppingListCell.swift in Sources */,
 				E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */,
 				E56DE9B31C012E8E00A60605 /* Unit.swift in Sources */,
+				E5AE281C1C160AAA005FC0BB /* Reach.swift in Sources */,
 				E5F09DD51C04F4BE000C7C92 /* ProductTableViewCell.swift in Sources */,
 				E51A7EB91C0B734E00F76735 /* ShoppingProduct.swift in Sources */,
 				E5E843211C0E3F4800155629 /* AddProductTableViewController.swift in Sources */,

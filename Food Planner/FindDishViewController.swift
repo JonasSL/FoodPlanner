@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import SystemConfiguration
 
 class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
         
@@ -15,31 +16,39 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var knownDishes = [Dish]()
     var resultDishes = [Dish]()
     
+    @IBOutlet weak var updateIcon: UIImageView!
+    @IBOutlet weak var updateActivity: UIActivityIndicatorView!
     @IBOutlet weak var findButton: UIButton!
+    @IBOutlet weak var updateDishesButton: UIButton!
     @IBOutlet weak var personPickerView: UIPickerView!
     var pickerData: [Int] = [1,2,3,4,5,6,7,8,9,10]
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
-        //Get dishes from Parse DB
-        knownDishes = getDishesFromServer()
-        //uploadSampleDishes()
-        
         //Load the products from the DB
         if let savedProducts = loadProducts() {
             DB = savedProducts
         }
         
+        //Load knownDishes from the DB
+        if let savedDishes = loadDishes() {
+            knownDishes = savedDishes
+        }
+        
         //Set delegate
         personPickerView.delegate = self
         
-        //Make find button a rounded rectangle
+        //Make buttons rounded rectangles
         let btnLayer = findButton.layer
         btnLayer.masksToBounds = true
         btnLayer.cornerRadius = 5
+        
+        let btn2Layer = updateDishesButton.layer
+        btn2Layer.masksToBounds = true
+        btn2Layer.cornerRadius = 5
+        
         
     }
     
@@ -50,6 +59,15 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
         resultDishes = []
         navigationController?.setNavigationBarHidden(true, animated: true)
 
+        //Hide and stop activity indicator
+        updateActivity.stopAnimating()
+        
+        //Set text and enable the update button
+        updateDishesButton.setTitle("Opdater retter", forState: UIControlState.Normal)
+        updateDishesButton.enabled = true
+
+        //Set updateIcon invisible
+        updateIcon.alpha = 0
     }
     
     //MARK: Algorithms
@@ -98,17 +116,22 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     //MARK: NSCoding
-    func saveProducts() {
-        let isSuccecfulSave = NSKeyedArchiver.archiveRootObject(DB, toFile: Product.ArchiveURL.path!)
-        
-        if !isSuccecfulSave {
-            print("Failed to save products")
-        }
-    }
-    
     func loadProducts() -> [Product]? {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Product.ArchiveURL.path!) as? [Product]
     }
+    
+    func saveDishes() {
+        let isSuccecfulSave = NSKeyedArchiver.archiveRootObject(knownDishes, toFile: Dish.ArchiveURL.path!)
+        if !isSuccecfulSave {
+            print("Failed to save knownDishes")
+        }
+    }
+    
+    func loadDishes() -> [Dish]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Dish.ArchiveURL.path!) as? [Dish]
+    }
+    
+    
     
     //MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -209,6 +232,43 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
         return result
     }
     
+    @IBAction func updateDishesPressed(sender: AnyObject) {
+        //Fade in activity indicator and start the animation
+        updateActivity.hidden = false
+        updateActivity.alpha = 0
+        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.updateActivity.alpha = 1
+            self.updateDishesButton.setTitle("", forState: UIControlState.Normal)
+        }, completion: nil)
+        
+        updateActivity.startAnimating()
+
+        //Remove button text and disable it
+        updateDishesButton.enabled = false
+        
+        //Check if you are connected to the internet
+        let status = Reach().connectionStatus()
+        switch status {
+        case .Unknown, .Offline:
+            updateIcon.image = UIImage(named: "HighPriorityRed-100")
+        case .Online(.WWAN), .Online(.WiFi):
+            //Get dishes from Parse DB
+            knownDishes = getDishesFromServer()
+            saveDishes()
+            updateIcon.image = UIImage(named: "CheckmarkGreen-100")
+        }
+
+        //Hide activity indicator and show checkmark
+        UIView.animateWithDuration(0.5, delay: 0.5, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.updateActivity.alpha = 0
+            }, completion: nil)
+        
+        //Show checkmark or warning
+        UIView.animateWithDuration(1, delay: 0.8, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.updateIcon.alpha = 1
+            }, completion: nil)
+        
+    }
 }
 
 
@@ -226,5 +286,8 @@ extension Array where Element: Equatable {
         }
     }
 }
+
+
+
 
 

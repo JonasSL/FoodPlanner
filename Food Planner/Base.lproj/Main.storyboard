@@ -224,7 +224,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpM-kZ-0fn">
-                                <rect key="frame" x="125" y="451" width="350" height="50"/>
+                                <rect key="frame" x="125" y="424" width="350" height="50"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.62352941176470589" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -239,8 +239,24 @@
                                     <action selector="findDish:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQh-s4-WEB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2a-6f-oDW">
+                                <rect key="frame" x="175" y="482" width="250" height="34"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="KaW-F4-LVL"/>
+                                    <constraint firstAttribute="width" constant="250" id="hZc-cR-CBR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Opdater retter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateDishesPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="swD-G4-O5e"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Antal personer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQJ-TO-L8N">
-                                <rect key="frame" x="213" y="314" width="175" height="18"/>
+                                <rect key="frame" x="213" y="287" width="175" height="18"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="175" id="gkS-S7-jt5"/>
@@ -259,22 +275,40 @@
                                 </constraints>
                             </imageView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgH-Mf-2oP">
-                                <rect key="frame" x="125" y="328" width="350" height="200"/>
+                                <rect key="frame" x="125" y="301" width="350" height="200"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="HGq-a3-wZf"/>
                                     <constraint firstAttribute="height" constant="200" id="Tj5-un-1uK"/>
                                 </constraints>
                             </pickerView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="zU9-7O-qOj">
+                                <rect key="frame" x="290" y="489" width="20" height="20"/>
+                                <animations/>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qmg-HX-oC0">
+                                <rect key="frame" x="288" y="486" width="25" height="25"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="Q8I-6f-xID"/>
+                                    <constraint firstAttribute="height" constant="25" id="qiz-zd-hgd"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="37y-u2-2EF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="0R9-Aa-lkb"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gpM-kZ-0fn" secondAttribute="bottom" constant="50" id="12E-QT-En7"/>
-                            <constraint firstItem="nQJ-TO-L8N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="250" id="1WO-Qd-eyG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gpM-kZ-0fn" secondAttribute="bottom" constant="77" id="12E-QT-En7"/>
+                            <constraint firstItem="nQJ-TO-L8N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="223" id="1WO-Qd-eyG"/>
+                            <constraint firstItem="Qmg-HX-oC0" firstAttribute="top" secondItem="gpM-kZ-0fn" secondAttribute="bottom" constant="12" id="5dN-Du-urk"/>
+                            <constraint firstItem="Qmg-HX-oC0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7fg-RQ-mp5"/>
+                            <constraint firstItem="c2a-6f-oDW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8lu-Bp-Nld"/>
+                            <constraint firstItem="c2a-6f-oDW" firstAttribute="top" secondItem="gpM-kZ-0fn" secondAttribute="bottom" constant="8" id="8qt-0d-WMB"/>
                             <constraint firstItem="pgH-Mf-2oP" firstAttribute="top" secondItem="nQJ-TO-L8N" secondAttribute="bottom" constant="-4" id="9Dk-UM-1pH"/>
                             <constraint firstItem="pgH-Mf-2oP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CWC-6t-n0i"/>
+                            <constraint firstItem="zU9-7O-qOj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QeG-Od-56T"/>
+                            <constraint firstItem="zU9-7O-qOj" firstAttribute="top" secondItem="gpM-kZ-0fn" secondAttribute="bottom" constant="15" id="ZHd-2Z-Qh0"/>
                             <constraint firstItem="gpM-kZ-0fn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ayZ-9F-dda"/>
                             <constraint firstItem="nQJ-TO-L8N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gVv-mz-9Po"/>
                             <constraint firstItem="37y-u2-2EF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uKT-nF-LZp"/>
@@ -284,6 +318,9 @@
                     <connections>
                         <outlet property="findButton" destination="gpM-kZ-0fn" id="BX1-yP-s59"/>
                         <outlet property="personPickerView" destination="pgH-Mf-2oP" id="VII-nQ-eA0"/>
+                        <outlet property="updateActivity" destination="zU9-7O-qOj" id="lEE-3j-g3i"/>
+                        <outlet property="updateDishesButton" destination="c2a-6f-oDW" id="aKr-Qc-IiR"/>
+                        <outlet property="updateIcon" destination="Qmg-HX-oC0" id="nhz-y9-E5v"/>
                         <segue destination="KnY-1c-LSn" kind="show" identifier="FindDish" id="Huf-gl-bbf"/>
                         <segue destination="BvV-76-qYg" kind="show" identifier="NeedHelp" id="DYp-Qz-JPx"/>
                     </connections>
