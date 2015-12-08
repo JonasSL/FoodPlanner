@@ -15,14 +15,16 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var DB: [Product] = []
     var knownDishes = [Dish]()
     var resultDishes = [Dish]()
+    var lastUpdateDate: NSDate?
     
+    @IBOutlet weak var lastUpdatedLabel: UILabel!
     @IBOutlet weak var updateIcon: UIImageView!
     @IBOutlet weak var updateActivity: UIActivityIndicatorView!
     @IBOutlet weak var findButton: UIButton!
     @IBOutlet weak var updateDishesButton: UIButton!
+    
     @IBOutlet weak var personPickerView: UIPickerView!
     var pickerData: [Int] = [1,2,3,4,5,6,7,8,9,10]
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +53,10 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         //Set picker to start at 4 persons
         personPickerView.selectRow(3, inComponent: 0, animated: true)
-        
+
+        //Load date from DB
+        lastUpdateDate = loadDate()
+        updateLastUpdateLabel()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -133,6 +138,22 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Dish.ArchiveURL.path!) as? [Dish]
     }
     
+    func saveDate() {
+        let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+        let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("lastUpdateDate")
+        
+        let isSuccecfulSave = NSKeyedArchiver.archiveRootObject(lastUpdateDate!, toFile: ArchiveURL.path!)
+        if !isSuccecfulSave {
+            print("Failed to save knownDishes")
+        }
+    }
+    
+    func loadDate() -> NSDate? {
+        let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+        let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("lastUpdateDate")
+
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(ArchiveURL.path!) as? NSDate
+    }
     
     
     //MARK: Navigation
@@ -238,6 +259,7 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
         //Fade in activity indicator and start the animation
         updateActivity.hidden = false
         updateActivity.alpha = 0
+
         UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.updateActivity.alpha = 1
             self.updateDishesButton.setTitle("", forState: UIControlState.Normal)
@@ -245,7 +267,7 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         updateActivity.startAnimating()
 
-        //Remove button text and disable it
+        //Disable button
         updateDishesButton.enabled = false
         
         //Check if you are connected to the internet
@@ -260,7 +282,7 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
             updateIcon.image = UIImage(named: "CheckmarkGreen-100")
         }
 
-        //Hide activity indicator and show checkmark
+        //Hide activity indicator
         UIView.animateWithDuration(0.5, delay: 0.5, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.updateActivity.alpha = 0
             }, completion: nil)
@@ -270,6 +292,37 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
             self.updateIcon.alpha = 1
             }, completion: nil)
         
+        lastUpdateDate = NSDate.init()
+        updateLastUpdateLabel()
+        saveDate()
+    }
+    
+    private func formatDateWithTime(date: NSDate) -> String{
+        let formatter = NSDateFormatter()
+        //let danishFormat = NSDateFormatter.dateFormatFromTemplate("MMMMddyyyyHM", options: 0, locale: NSLocale(localeIdentifier: "da-DK"))
+        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        formatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        //formatter.dateFormat = danishFormat
+
+        return formatter.stringFromDate(date)
+    }
+    
+    private func updateLastUpdateLabel() {
+        //Fade out label
+        UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.lastUpdatedLabel.alpha = 0
+            }, completion: nil)
+        //Set lastUpdatedLabel to date, else tell to update
+        if let date = lastUpdateDate {
+            lastUpdatedLabel.text = "Sidst opdateret: " + formatDateWithTime(date)
+        } else {
+            lastUpdatedLabel.text = "Ingen data, tryk opdater"
+        }
+        
+        //Fade in label
+        UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.lastUpdatedLabel.alpha = 1
+            }, completion: nil)
     }
 }
 

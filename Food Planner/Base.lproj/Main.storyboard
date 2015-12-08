@@ -294,6 +294,13 @@
                                     <constraint firstAttribute="height" constant="25" id="qiz-zd-hgd"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last updated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVU-6h-4RY">
+                                <rect key="frame" x="266" y="524" width="69" height="14"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <color key="textColor" red="0.53010574494949481" green="0.53010574494949481" blue="0.53010574494949481" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
@@ -307,7 +314,9 @@
                             <constraint firstItem="c2a-6f-oDW" firstAttribute="top" secondItem="gpM-kZ-0fn" secondAttribute="bottom" constant="8" id="8qt-0d-WMB"/>
                             <constraint firstItem="pgH-Mf-2oP" firstAttribute="top" secondItem="nQJ-TO-L8N" secondAttribute="bottom" constant="-4" id="9Dk-UM-1pH"/>
                             <constraint firstItem="pgH-Mf-2oP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CWC-6t-n0i"/>
+                            <constraint firstItem="GVU-6h-4RY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CeO-GZ-FNz"/>
                             <constraint firstItem="zU9-7O-qOj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QeG-Od-56T"/>
+                            <constraint firstItem="GVU-6h-4RY" firstAttribute="top" secondItem="c2a-6f-oDW" secondAttribute="bottom" constant="8" id="RLJ-kP-Fea"/>
                             <constraint firstItem="zU9-7O-qOj" firstAttribute="top" secondItem="gpM-kZ-0fn" secondAttribute="bottom" constant="15" id="ZHd-2Z-Qh0"/>
                             <constraint firstItem="gpM-kZ-0fn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ayZ-9F-dda"/>
                             <constraint firstItem="nQJ-TO-L8N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gVv-mz-9Po"/>
@@ -317,6 +326,7 @@
                     <navigationItem key="navigationItem" title="Find Ret" id="sXM-ye-qdu"/>
                     <connections>
                         <outlet property="findButton" destination="gpM-kZ-0fn" id="BX1-yP-s59"/>
+                        <outlet property="lastUpdatedLabel" destination="GVU-6h-4RY" id="nbe-qq-ysj"/>
                         <outlet property="personPickerView" destination="pgH-Mf-2oP" id="VII-nQ-eA0"/>
                         <outlet property="updateActivity" destination="zU9-7O-qOj" id="lEE-3j-g3i"/>
                         <outlet property="updateDishesButton" destination="c2a-6f-oDW" id="aKr-Qc-IiR"/>
