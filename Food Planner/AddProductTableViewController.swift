@@ -182,38 +182,31 @@ class AddProductTableViewController: UITableViewController, UIPickerViewDataSour
     //MARK: Parse Datase methods
     func updateLabelsWithInfoFor(barcode: String) {
         let query = PFQuery(className:"Barcodes")
+        query.whereKey("EAN", equalTo: barcode)
         
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
+        var objects = [PFObject]()
+        
+        do {
+            objects = try query.findObjects()
+        } catch {
+            print("Couldn't get objects from Parse")
+        }
+        for object in objects {
+            self.isInDatabase = true
             
-            if error == nil {
-                //Unrwrap optional valus
-                if let objects = objects {
-                    for object in objects {
-                        if object["EAN"] as! String == barcode {
-                            //Product has been found!
-                            self.isInDatabase = true
-                            
-                            self.productName.text = object["name"] as? String
-                            self.productWeight.text = object["weight"] as? String
-                            
-                            let unitString = object["unit"] as! String
-                            self.unitTextField.text = unitString
-                            /*
-                            if let indexOfString = self.pickerData.indexOf(Unit(rawValue: unitString)!) {
-                                self.productUnit.selectRow(indexOfString, inComponent: 0, animated: true)
-                            }*/
-
-                            self.scanBarcodeLabel.text = "Produkt fundet!"
-                            self.scanBarcodeLabel.textColor = UIColor(red: 0.08, green: 0.93, blue: 0.08, alpha: 1.0)
-                        }
-                    }
-                    
-                }
-            } else {
-                // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
-            }
+            self.productName.text = object["name"] as? String
+            self.productWeight.text = object["weight"] as? String
+            
+            let unitString = object["unit"] as! String
+            self.unitTextField.text = unitString
+            /*
+            if let indexOfString = self.pickerData.indexOf(Unit(rawValue: unitString)!) {
+            self.productUnit.selectRow(indexOfString, inComponent: 0, animated: true)
+            }*/
+            
+            self.scanBarcodeLabel.text = "Produkt fundet!"
+            self.scanBarcodeLabel.textColor = UIColor(red: 0.08, green: 0.93, blue: 0.08, alpha: 1.0)
+            break
         }
     }
 }
