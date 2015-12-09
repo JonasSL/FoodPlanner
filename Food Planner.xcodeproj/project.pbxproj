@@ -47,8 +47,6 @@
 		E5C5CECC1BFE28EB00B67F14 /* FindDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CECB1BFE28EB00B67F14 /* FindDishViewController.swift */; };
 		E5C5CECF1BFE28EB00B67F14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5C5CECD1BFE28EB00B67F14 /* Main.storyboard */; };
 		E5C5CED11BFE28EB00B67F14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C5CED01BFE28EB00B67F14 /* Assets.xcassets */; };
-		E5C5CEDF1BFE28EB00B67F14 /* Food_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEDE1BFE28EB00B67F14 /* Food_PlannerTests.swift */; };
-		E5C5CEEA1BFE28EB00B67F14 /* Food_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEE91BFE28EB00B67F14 /* Food_PlannerUITests.swift */; };
 		E5C5CEFA1BFE2E5E00B67F14 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5CEF91BFE2E5E00B67F14 /* Product.swift */; };
 		E5E8431F1C0E3D0200155629 /* Forward100.png in Resources */ = {isa = PBXBuildFile; fileRef = E5E8431E1C0E3D0200155629 /* Forward100.png */; };
 		E5E843211C0E3F4800155629 /* AddProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E843201C0E3F4800155629 /* AddProductTableViewController.swift */; };
@@ -118,11 +116,7 @@
 		E5C5CED01BFE28EB00B67F14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5C5CED51BFE28EB00B67F14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5C5CEDA1BFE28EB00B67F14 /* Food PlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Food PlannerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5C5CEDE1BFE28EB00B67F14 /* Food_PlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_PlannerTests.swift; sourceTree = "<group>"; };
-		E5C5CEE01BFE28EB00B67F14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5C5CEE51BFE28EB00B67F14 /* Food PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Food PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5C5CEE91BFE28EB00B67F14 /* Food_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_PlannerUITests.swift; sourceTree = "<group>"; };
-		E5C5CEEB1BFE28EB00B67F14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5C5CEF91BFE2E5E00B67F14 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E5E8431E1C0E3D0200155629 /* Forward100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Forward100.png; sourceTree = "<group>"; };
 		E5E843201C0E3F4800155629 /* AddProductTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductTableViewController.swift; sourceTree = "<group>"; };
@@ -242,8 +236,6 @@
 			children = (
 				E5C5CEC81BFE28EB00B67F14 /* Food Planner */,
 				E55933E31C09009E006C749C /* FrameWorks */,
-				E5C5CEDD1BFE28EB00B67F14 /* Food PlannerTests */,
-				E5C5CEE81BFE28EB00B67F14 /* Food PlannerUITests */,
 				E5C5CEC71BFE28EB00B67F14 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -272,24 +264,6 @@
 				E5AE281B1C160AAA005FC0BB /* Reach.swift */,
 			);
 			path = "Food Planner";
-			sourceTree = "<group>";
-		};
-		E5C5CEDD1BFE28EB00B67F14 /* Food PlannerTests */ = {
-			isa = PBXGroup;
-			children = (
-				E5C5CEDE1BFE28EB00B67F14 /* Food_PlannerTests.swift */,
-				E5C5CEE01BFE28EB00B67F14 /* Info.plist */,
-			);
-			path = "Food PlannerTests";
-			sourceTree = "<group>";
-		};
-		E5C5CEE81BFE28EB00B67F14 /* Food PlannerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E5C5CEE91BFE28EB00B67F14 /* Food_PlannerUITests.swift */,
-				E5C5CEEB1BFE28EB00B67F14 /* Info.plist */,
-			);
-			path = "Food PlannerUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,7 +436,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5C5CEDF1BFE28EB00B67F14 /* Food_PlannerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +443,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5C5CEEA1BFE28EB00B67F14 /* Food_PlannerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
