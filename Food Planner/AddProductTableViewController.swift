@@ -192,20 +192,17 @@ class AddProductTableViewController: UITableViewController, UIPickerViewDataSour
             print("Couldn't get objects from Parse")
         }
         for object in objects {
-            self.isInDatabase = true
+            isInDatabase = true
             
-            self.productName.text = object["name"] as? String
-            self.productWeight.text = object["weight"] as? String
+            productName.text = object["name"] as? String
+            productWeight.text = object["weight"] as? String
             
             let unitString = object["unit"] as! String
-            self.unitTextField.text = unitString
-            /*
-            if let indexOfString = self.pickerData.indexOf(Unit(rawValue: unitString)!) {
-            self.productUnit.selectRow(indexOfString, inComponent: 0, animated: true)
-            }*/
+            unitTextField.text = unitString
             
-            self.scanBarcodeLabel.text = "Produkt fundet!"
-            self.scanBarcodeLabel.textColor = UIColor(red: 0.08, green: 0.93, blue: 0.08, alpha: 1.0)
+            scanBarcodeLabel.text = "Produkt fundet!"
+            scanBarcodeLabel.textColor = UIColor(red: 0.08, green: 0.93, blue: 0.08, alpha: 1.0)
+            
             break
         }
     }
