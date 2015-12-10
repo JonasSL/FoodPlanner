@@ -1,5 +1,5 @@
 # FoodPlanner
-An iPhone app that can help you find a dish to make, based on the products you have.
+An iPhone app that can help you find a dish to make, based on the products you have in your fridge.
 
 # Description 
 (danish)
