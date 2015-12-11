@@ -59,6 +59,9 @@ class AddProductTableViewController: UITableViewController, UIPickerViewDataSour
     }
     
     func donePicking() {
+        if unitTextField.text == "" {
+            unitTextField.text = "g"
+        }
         unitTextField.endEditing(true)
         dateTextField.endEditing(true)
     }
