@@ -231,7 +231,7 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
             let dishName = dish["name"] as! String
             let dishRecipe = dish["recipe"] as! String
             let dishPersons = dish["persons"] as! Int
-            
+            let dishId = dish["webId"] as! Int
             var dishIngredients = [Product]()
             
             let allIngredients = dish["ingredients"] as! [[String]]
@@ -247,7 +247,7 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
                 dishIngredients.append(newProduct)
             }
             
-            let newDish = Dish(name: dishName, ingredients: dishIngredients, recipe: dishRecipe, persons: dishPersons)
+            let newDish = Dish(name: dishName, ingredients: dishIngredients, recipe: dishRecipe, persons: dishPersons, id: dishId)
             result.append(newDish)
         }
         

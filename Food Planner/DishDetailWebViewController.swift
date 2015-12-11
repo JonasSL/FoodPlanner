@@ -28,7 +28,9 @@ class DishDetailWebViewController: UITableViewController, WKNavigationDelegate {
         self.navigationItem.rightBarButtonItem = sendButton
         
         if let dish = dish {
-            let url = NSURL(string: "http://www.dk-kogebogen.dk/opskrifter/visopskrift.php?id=28546&utm_source=foodPlanner&utm_medium=ios&utm_campaign=recipes")!
+            print(dish.id)
+            let urlString = "http://www.dk-kogebogen.dk/opskrifter/visopskrift.php?id=" + String(dish.id) + "&utm_source=foodPlanner&utm_medium=ios&utm_campaign=recipes"
+            let url = NSURL(string: urlString)!
             webView.loadRequest(NSURLRequest(URL: url))
             webView.allowsBackForwardNavigationGestures = true
             
