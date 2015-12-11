@@ -40,6 +40,7 @@
 		E5AE28191C1605EC005FC0BB /* HighPriorityRed-100.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AE28171C1605EC005FC0BB /* HighPriorityRed-100.png */; };
 		E5AE281A1C1605EC005FC0BB /* CheckmarkGreen-100.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AE28181C1605EC005FC0BB /* CheckmarkGreen-100.png */; };
 		E5AE281C1C160AAA005FC0BB /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AE281B1C160AAA005FC0BB /* Reach.swift */; };
+		E5B170221C1AF2FE00C246BA /* DishDetailWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B170211C1AF2FE00C246BA /* DishDetailWebViewController.swift */; };
 		E5B268DD1C0B4C38000BC1B5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B268DB1C0B4C38000BC1B5 /* Bolts.framework */; };
 		E5B268DE1C0B4C38000BC1B5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B268DC1C0B4C38000BC1B5 /* Parse.framework */; };
 		E5BFF53F1BFE51BE00449496 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BFF53E1BFE51BE00449496 /* Dish.swift */; };
@@ -106,6 +107,7 @@
 		E5AE28171C1605EC005FC0BB /* HighPriorityRed-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HighPriorityRed-100.png"; sourceTree = "<group>"; };
 		E5AE28181C1605EC005FC0BB /* CheckmarkGreen-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckmarkGreen-100.png"; sourceTree = "<group>"; };
 		E5AE281B1C160AAA005FC0BB /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
+		E5B170211C1AF2FE00C246BA /* DishDetailWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishDetailWebViewController.swift; sourceTree = "<group>"; };
 		E5B268DB1C0B4C38000BC1B5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E5B268DC1C0B4C38000BC1B5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E5BFF53E1BFE51BE00449496 /* Dish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				E51A7EB41C0B701A00F76735 /* ShoppingListViewController.swift */,
 				E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */,
 				E596C9271C13350200EFCEBE /* ProductDetailTableViewController.swift */,
+				E5B170211C1AF2FE00C246BA /* DishDetailWebViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 			files = (
 				E5F67A6F1C038A1E004852FF /* DishDetailViewController.swift in Sources */,
 				E547FDB51C03789900C4BD9C /* SeachResultTableViewController.swift in Sources */,
+				E5B170221C1AF2FE00C246BA /* DishDetailWebViewController.swift in Sources */,
 				E55933C91C088D7C006C749C /* ScannerViewController .swift in Sources */,
 				E5C5CECC1BFE28EB00B67F14 /* FindDishViewController.swift in Sources */,
 				E51A7EBB1C0B76C100F76735 /* ShoppingListCell.swift in Sources */,

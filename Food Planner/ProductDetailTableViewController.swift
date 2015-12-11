@@ -4,7 +4,7 @@
 //
 //  Created by Jonas Larsen on 05/12/2015.
 //  Copyright © 2015 JonasLarsen. All rights reserved.
-//asd
+//
 
 import UIKit
 

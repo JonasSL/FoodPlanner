@@ -333,7 +333,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="GwH-N9-dln" kind="show" identifier="ShowDishDetail" id="OzJ-3X-EzB"/>
+                                    <segue destination="CjY-dL-pIc" kind="show" id="1LP-JL-o6w"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -954,6 +954,24 @@
                 <exit id="vom-1H-O4m" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2798" y="996"/>
+        </scene>
+        <!--Dish Detail Web View Controller-->
+        <scene sceneID="uMc-14-rji">
+            <objects>
+                <viewController id="CjY-dL-pIc" customClass="DishDetailWebViewController" customModule="Food_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uJO-NL-jvF"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Ux-7j-3zh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sdK-qx-g1c">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tBy-xs-Ryi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3467" y="-404"/>
         </scene>
         <!--Dish Detail View Controller-->
         <scene sceneID="cin-So-0Xa">
