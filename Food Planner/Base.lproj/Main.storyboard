@@ -333,7 +333,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="CjY-dL-pIc" kind="show" id="1LP-JL-o6w"/>
+                                    <segue destination="CjY-dL-pIc" kind="show" identifier="ShowDishDetailWeb" id="1LP-JL-o6w"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -968,6 +968,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tBy-xs-Ryi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

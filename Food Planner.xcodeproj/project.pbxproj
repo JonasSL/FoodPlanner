@@ -202,15 +202,15 @@
 				E5E843201C0E3F4800155629 /* AddProductTableViewController.swift */,
 				E5FD65061C010F4400A6B382 /* DBTableViewController.swift */,
 				E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */,
+				E5B170211C1AF2FE00C246BA /* DishDetailWebViewController.swift */,
 				E5C5CECB1BFE28EB00B67F14 /* FindDishViewController.swift */,
+				E596C9271C13350200EFCEBE /* ProductDetailTableViewController.swift */,
 				E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */,
 				E55933C81C088D7C006C749C /* ScannerViewController .swift */,
 				E547FDB41C03789900C4BD9C /* SeachResultTableViewController.swift */,
 				E51A7EBA1C0B76C100F76735 /* ShoppingListCell.swift */,
 				E51A7EB41C0B701A00F76735 /* ShoppingListViewController.swift */,
 				E5A331DB1C070BFB00A0F81A /* SuggestionViewController.swift */,
-				E596C9271C13350200EFCEBE /* ProductDetailTableViewController.swift */,
-				E5B170211C1AF2FE00C246BA /* DishDetailWebViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

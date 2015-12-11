@@ -22,6 +22,7 @@ class Dish: NSObject, NSCoding {
         self.ingredients = ingredients
         self.recipe = recipe
         self.persons = persons
+       
     }
     
     //MARK: Properties

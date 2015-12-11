@@ -51,7 +51,14 @@ class SeachResultTableViewController: UITableViewController {
                 dishDetailViewController.dish = selectedProduct
                 dishDetailViewController.numberOfPersons = numberOfPersons
             }
-            
+        } else if segue.identifier == "ShowDishDetailWeb" {
+            let dishDetailViewController = segue.destinationViewController as! DishDetailWebViewController
+            if let selectedProductCell = sender as? UITableViewCell {
+                let indexPath = tableView.indexPathForCell(selectedProductCell)!
+                let selectedProduct = resultDishes[indexPath.row]
+                dishDetailViewController.dish = selectedProduct
+                dishDetailViewController.numberOfPersons = numberOfPersons
+            }
         }
     }
     
