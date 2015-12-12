@@ -57,6 +57,11 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
         //Load date from DB
         lastUpdateDate = loadDate()
         updateLastUpdateLabel()
+        
+        let controller = DataController()
+        controller.fetchDish()
+        
+        print("ran datacontroller")
     }
     
     override func viewWillAppear(animated: Bool) {
