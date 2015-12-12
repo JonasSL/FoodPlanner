@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		728E979A05A41DC6D2D6289F /* Pods_Food_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3A27E350D9E12CBDE6FD3A /* Pods_Food_Planner.framework */; };
+		E50543711C1CA75E0007221E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50543701C1CA75E0007221E /* DataController.swift */; };
 		E51A7EB51C0B701A00F76735 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7EB41C0B701A00F76735 /* ShoppingListViewController.swift */; };
 		E51A7EB91C0B734E00F76735 /* ShoppingProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7EB81C0B734E00F76735 /* ShoppingProduct.swift */; };
 		E51A7EBB1C0B76C100F76735 /* ShoppingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7EBA1C0B76C100F76735 /* ShoppingListCell.swift */; };
@@ -74,6 +76,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B33E01B1DED446D8C2D38DF /* Pods-Food Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Food Planner/Pods-Food Planner.release.xcconfig"; sourceTree = "<group>"; };
+		E50543701C1CA75E0007221E /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		E51A7EB41C0B701A00F76735 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		E51A7EB81C0B734E00F76735 /* ShoppingProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingProduct.swift; sourceTree = "<group>"; };
 		E51A7EBA1C0B76C100F76735 /* ShoppingListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListCell.swift; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 		E5F09DD41C04F4BE000C7C92 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		E5F67A6E1C038A1E004852FF /* DishDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
 		E5FD65061C010F4400A6B382 /* DBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBTableViewController.swift; sourceTree = "<group>"; };
+		EA3A27E350D9E12CBDE6FD3A /* Pods_Food_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F04901444576A3CC4C7EAF8A /* Pods-Food Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Planner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Food Planner/Pods-Food Planner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,7 @@
 				E55933D41C090052006C749C /* CoreGraphics.framework in Frameworks */,
 				E55933D21C09004A006C749C /* CFNetwork.framework in Frameworks */,
 				E55933D01C09003B006C749C /* AudioToolbox.framework in Frameworks */,
+				728E979A05A41DC6D2D6289F /* Pods_Food_Planner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +171,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2071C4B72056613C267A69C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA3A27E350D9E12CBDE6FD3A /* Pods_Food_Planner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A483F6D8FCFD452389474DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F04901444576A3CC4C7EAF8A /* Pods-Food Planner.debug.xcconfig */,
+				2B33E01B1DED446D8C2D38DF /* Pods-Food Planner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E547FDB31C0356AB00C4BD9C /* DataObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +264,8 @@
 				E5C5CEC81BFE28EB00B67F14 /* Food Planner */,
 				E55933E31C09009E006C749C /* FrameWorks */,
 				E5C5CEC71BFE28EB00B67F14 /* Products */,
+				2A483F6D8FCFD452389474DE /* Pods */,
+				2071C4B72056613C267A69C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -265,6 +291,7 @@
 				E5C5CED51BFE28EB00B67F14 /* Info.plist */,
 				E548DA7F1C0618DB0013A08B /* Launch Screen.storyboard */,
 				E5AE281B1C160AAA005FC0BB /* Reach.swift */,
+				E50543701C1CA75E0007221E /* DataController.swift */,
 			);
 			path = "Food Planner";
 			sourceTree = "<group>";
@@ -276,9 +303,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5C5CEEE1BFE28EB00B67F14 /* Build configuration list for PBXNativeTarget "Food Planner" */;
 			buildPhases = (
+				7EBDC83C13F96191074007FF /* Check Pods Manifest.lock */,
 				E5C5CEC21BFE28EB00B67F14 /* Sources */,
 				E5C5CEC31BFE28EB00B67F14 /* Frameworks */,
 				E5C5CEC41BFE28EB00B67F14 /* Resources */,
+				E249901C7BB000FD9144837C /* Embed Pods Frameworks */,
+				11A2575C83047A7E750ABF5F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -410,6 +440,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11A2575C83047A7E750ABF5F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Food Planner/Pods-Food Planner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EBDC83C13F96191074007FF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E249901C7BB000FD9144837C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Food Planner/Pods-Food Planner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E5C5CEC21BFE28EB00B67F14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -425,6 +503,7 @@
 				E56DE9B31C012E8E00A60605 /* Unit.swift in Sources */,
 				E5AE281C1C160AAA005FC0BB /* Reach.swift in Sources */,
 				E5F09DD51C04F4BE000C7C92 /* ProductTableViewCell.swift in Sources */,
+				E50543711C1CA75E0007221E /* DataController.swift in Sources */,
 				E51A7EB91C0B734E00F76735 /* ShoppingProduct.swift in Sources */,
 				E5E843211C0E3F4800155629 /* AddProductTableViewController.swift in Sources */,
 				E5A331DC1C070BFB00A0F81A /* SuggestionViewController.swift in Sources */,
@@ -560,6 +639,7 @@
 		};
 		E5C5CEEF1BFE28EB00B67F14 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F04901444576A3CC4C7EAF8A /* Pods-Food Planner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -596,6 +676,7 @@
 		};
 		E5C5CEF01BFE28EB00B67F14 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B33E01B1DED446D8C2D38DF /* Pods-Food Planner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

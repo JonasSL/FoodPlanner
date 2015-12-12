@@ -10,10 +10,10 @@ import Foundation
 
 enum Unit: String {
     case GRAM = "g"
-    case KG = "kg"
     case STK = "stk"
     case L = "l"
     case ML = "ml"
+    case DL = "dl"
     
-    static let allUnits = [GRAM,KG,STK,L,ML]
+    static let allUnits = [GRAM,STK,L,ML,DL]
 }
