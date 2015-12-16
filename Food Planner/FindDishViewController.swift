@@ -59,9 +59,13 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
         updateLastUpdateLabel()
         
         let controller = DataController()
-        controller.fetchDish()
-        
-        print("ran datacontroller")
+        controller.fetchDish() { dish, error in
+            if error == nil && dish != nil {
+                print(dish?.name)
+            } else {
+                print(error)
+            }
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
