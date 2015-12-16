@@ -12,7 +12,7 @@ import HTMLReader
 
 class DataController {
 
-    let URLString = "http://www.dk-kogebogen.dk/opskrifter/visopskrift_tom_koleskab_app.php?id=28546"
+    let URLString = "http://www.dk-kogebogen.dk/opskrifter/visopskrift_tom_koleskab_app.php?id=28546&utm_source=foodPlannerApp&utm_medium=iOS&utm_campaign=fetchDishes"
     
     func fetchDish(completionHandler: (Dish?, NSError?) -> Void) {
         var dish: Dish?
