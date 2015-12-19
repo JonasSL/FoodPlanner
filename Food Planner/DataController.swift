@@ -14,8 +14,9 @@ class DataController {
 
     let URLString = "http://www.dk-kogebogen.dk/opskrifter/visopskrift_tom_koleskab_app.php?id=28546&utm_source=foodPlannerApp&utm_medium=iOS&utm_campaign=fetchDishes"
     
-    func fetchDish(completionHandler: (Dish?, NSError?) -> Void) {
+    func fetchDish(id: Int, completionHandler: (Dish?, NSError?) -> Void) {
         var dish: Dish?
+        let URLString = "http://www.dk-kogebogen.dk/opskrifter/visopskrift_tom_koleskab_app.php?id=\(id)&utm_source=foodPlannerApp&utm_medium=iOS&utm_campaign=fetchDishes"
         Alamofire.request(.GET, URLString)
             .responseString { responseString in
                 guard responseString.result.error == nil else {

@@ -59,7 +59,7 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
         updateLastUpdateLabel()
         
         let controller = DataController()
-        controller.fetchDish() { dish, error in
+        controller.fetchDish(187) { dish, error in
             if error == nil && dish != nil {
                 print(dish?.name)
             } else {
