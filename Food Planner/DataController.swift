@@ -71,10 +71,10 @@ class DataController {
                         //Check whether unit and weight is correctly formatted
                         if let weight = Int(self.trimString(pWeight)) {
                             //Trim unit and replace it with known(if unknown)
-                            if let unit = Unit(rawValue: self.trimString(pUnit)) {
-                                
-                                ingredient = Product(name: pName, weight: weight, unit: unit, dateExpires: NSDate.init())
-                                
+                            if let unit = self.convertUnitToKnown(pUnit) {
+                                if pName.characters.count < 20 {
+                                    ingredient = Product(name: pName, weight: weight, unit: unit, dateExpires: NSDate.init())
+                                }
                             } else {
                                 print("Unit for \(pName) is not valid:" + pUnit)
                             }
@@ -88,10 +88,12 @@ class DataController {
                     }
                 }
                 
-                
-                if let name = name, persons = persons {
-                    dish = Dish(name: name, ingredients: ingredients, recipe: recipe, persons: persons, id: id)
+                if !ingredients.isEmpty {
+                    if let name = name, persons = persons {
+                        dish = Dish(name: name, ingredients: ingredients, recipe: recipe, persons: persons, id: id)
+                    }
                 }
+                
                 completionHandler(dish,nil)
         }
     }
@@ -117,5 +119,17 @@ class DataController {
         //Remove whitespace
         resultString = resultString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         return resultString
+    }
+    
+    private func convertUnitToKnown(input: String) -> Unit? {
+        var trimmedString = trimString(input)
+        
+        switch (trimmedString){
+        case "gram":
+            trimmedString = "g"
+        default:
+            break
+        }
+        return Unit(rawValue: trimmedString)
     }
 }
