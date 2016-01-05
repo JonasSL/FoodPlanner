@@ -333,7 +333,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="CjY-dL-pIc" kind="show" identifier="ShowDishDetailWeb" id="1LP-JL-o6w"/>
+                                    <segue destination="GwH-N9-dln" kind="show" identifier="ShowDishDetail" id="2mr-Jo-6AS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -345,7 +345,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QY5-2y-TRn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2740" y="261"/>
+            <point key="canvasLocation" x="2765" y="269"/>
         </scene>
         <!--Dit køleskab-->
         <scene sceneID="Uf4-Yt-w0c">

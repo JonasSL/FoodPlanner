@@ -132,4 +132,17 @@ class DataController {
         }
         return Unit(rawValue: trimmedString)
     }
+    
+    private func trimName(input: String) -> String {
+        var name = ""
+        let stringChars = input.characters
+        /*
+        var isDoneReadingName = false
+        for c in stringChars {
+            if  = "" {
+                
+            }
+        }*/
+        return input
+    }
 }

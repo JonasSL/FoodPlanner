@@ -58,6 +58,7 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
         lastUpdateDate = loadDate()
         updateLastUpdateLabel()
         
+        /*
         let controller = DataController()
         controller.fetchDish(187) { dish, error in
             if error == nil && dish != nil {
@@ -65,7 +66,7 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
             } else {
                 print(error)
             }
-        }
+        }*/
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -244,8 +245,6 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
             var dishIngredients = [Product]()
             
             let allIngredients = dish["ingredients"] as! [[String]]
-            print(allIngredients)
-            
             for ingredients in allIngredients {
                 //1st element is name, 2nd is weight, 3rd is rawvalue of unit
                 let productName = ingredients[0]
@@ -258,6 +257,7 @@ class FindDishViewController: UIViewController, UIPickerViewDataSource, UIPicker
             
             let newDish = Dish(name: dishName, ingredients: dishIngredients, recipe: dishRecipe, persons: dishPersons, id: dishId)
             result.append(newDish)
+            print("== \(newDish.name) has been added ==")
         }
         
         print(result)
